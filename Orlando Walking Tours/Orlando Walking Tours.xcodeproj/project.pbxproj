@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D71D6F831A7D6AE1006D0456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6F821A7D6AE1006D0456 /* main.m */; };
+		D71D6F861A7D6AE1006D0456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6F851A7D6AE1006D0456 /* AppDelegate.m */; };
+		D71D6F891A7D6AE1006D0456 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6F881A7D6AE1006D0456 /* ViewController.m */; };
+		D71D6F8C1A7D6AE1006D0456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71D6F8A1A7D6AE1006D0456 /* Main.storyboard */; };
+		D71D6F8E1A7D6AE1006D0456 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71D6F8D1A7D6AE1006D0456 /* Images.xcassets */; };
+		D71D6F911A7D6AE1006D0456 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71D6F8F1A7D6AE1006D0456 /* LaunchScreen.xib */; };
+		D71D6F9D1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6F9C1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D71D6F971A7D6AE1006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6F751A7D6AE1006D0456 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D71D6F7C1A7D6AE1006D0456;
+			remoteInfo = "Orlando Walking Tours";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D71D6F7D1A7D6AE1006D0456 /* Orlando Walking Tours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orlando Walking Tours.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71D6F811A7D6AE1006D0456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D71D6F821A7D6AE1006D0456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D71D6F841A7D6AE1006D0456 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D71D6F851A7D6AE1006D0456 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D71D6F871A7D6AE1006D0456 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D71D6F881A7D6AE1006D0456 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D71D6F8B1A7D6AE1006D0456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D71D6F8D1A7D6AE1006D0456 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D71D6F901A7D6AE1006D0456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D71D6F961A7D6AE1006D0456 /* Orlando Walking ToursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orlando Walking ToursTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71D6F9B1A7D6AE1006D0456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D71D6F9C1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Orlando_Walking_ToursTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D71D6F7A1A7D6AE1006D0456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D71D6F931A7D6AE1006D0456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D71D6F741A7D6AE1006D0456 = {
+			isa = PBXGroup;
+			children = (
+				D71D6F7F1A7D6AE1006D0456 /* Orlando Walking Tours */,
+				D71D6F991A7D6AE1006D0456 /* Orlando Walking ToursTests */,
+				D71D6F7E1A7D6AE1006D0456 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D71D6F7E1A7D6AE1006D0456 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6F7D1A7D6AE1006D0456 /* Orlando Walking Tours.app */,
+				D71D6F961A7D6AE1006D0456 /* Orlando Walking ToursTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D71D6F7F1A7D6AE1006D0456 /* Orlando Walking Tours */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6F841A7D6AE1006D0456 /* AppDelegate.h */,
+				D71D6F851A7D6AE1006D0456 /* AppDelegate.m */,
+				D71D6F871A7D6AE1006D0456 /* ViewController.h */,
+				D71D6F881A7D6AE1006D0456 /* ViewController.m */,
+				D71D6F8A1A7D6AE1006D0456 /* Main.storyboard */,
+				D71D6F8D1A7D6AE1006D0456 /* Images.xcassets */,
+				D71D6F8F1A7D6AE1006D0456 /* LaunchScreen.xib */,
+				D71D6F801A7D6AE1006D0456 /* Supporting Files */,
+			);
+			path = "Orlando Walking Tours";
+			sourceTree = "<group>";
+		};
+		D71D6F801A7D6AE1006D0456 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6F811A7D6AE1006D0456 /* Info.plist */,
+				D71D6F821A7D6AE1006D0456 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D71D6F991A7D6AE1006D0456 /* Orlando Walking ToursTests */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6F9C1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m */,
+				D71D6F9A1A7D6AE1006D0456 /* Supporting Files */,
+			);
+			path = "Orlando Walking ToursTests";
+			sourceTree = "<group>";
+		};
+		D71D6F9A1A7D6AE1006D0456 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6F9B1A7D6AE1006D0456 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D71D6F7C1A7D6AE1006D0456 /* Orlando Walking Tours */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D71D6FA01A7D6AE1006D0456 /* Build configuration list for PBXNativeTarget "Orlando Walking Tours" */;
+			buildPhases = (
+				D71D6F791A7D6AE1006D0456 /* Sources */,
+				D71D6F7A1A7D6AE1006D0456 /* Frameworks */,
+				D71D6F7B1A7D6AE1006D0456 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Orlando Walking Tours";
+			productName = "Orlando Walking Tours";
+			productReference = D71D6F7D1A7D6AE1006D0456 /* Orlando Walking Tours.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D71D6F951A7D6AE1006D0456 /* Orlando Walking ToursTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D71D6FA31A7D6AE1006D0456 /* Build configuration list for PBXNativeTarget "Orlando Walking ToursTests" */;
+			buildPhases = (
+				D71D6F921A7D6AE1006D0456 /* Sources */,
+				D71D6F931A7D6AE1006D0456 /* Frameworks */,
+				D71D6F941A7D6AE1006D0456 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D71D6F981A7D6AE1006D0456 /* PBXTargetDependency */,
+			);
+			name = "Orlando Walking ToursTests";
+			productName = "Orlando Walking ToursTests";
+			productReference = D71D6F961A7D6AE1006D0456 /* Orlando Walking ToursTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D71D6F751A7D6AE1006D0456 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Andrew Kozlik";
+				TargetAttributes = {
+					D71D6F7C1A7D6AE1006D0456 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					D71D6F951A7D6AE1006D0456 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = D71D6F7C1A7D6AE1006D0456;
+					};
+				};
+			};
+			buildConfigurationList = D71D6F781A7D6AE1006D0456 /* Build configuration list for PBXProject "Orlando Walking Tours" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D71D6F741A7D6AE1006D0456;
+			productRefGroup = D71D6F7E1A7D6AE1006D0456 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D71D6F7C1A7D6AE1006D0456 /* Orlando Walking Tours */,
+				D71D6F951A7D6AE1006D0456 /* Orlando Walking ToursTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D71D6F7B1A7D6AE1006D0456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71D6F8C1A7D6AE1006D0456 /* Main.storyboard in Resources */,
+				D71D6F911A7D6AE1006D0456 /* LaunchScreen.xib in Resources */,
+				D71D6F8E1A7D6AE1006D0456 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D71D6F941A7D6AE1006D0456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D71D6F791A7D6AE1006D0456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71D6F891A7D6AE1006D0456 /* ViewController.m in Sources */,
+				D71D6F861A7D6AE1006D0456 /* AppDelegate.m in Sources */,
+				D71D6F831A7D6AE1006D0456 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D71D6F921A7D6AE1006D0456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D71D6F9D1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D71D6F981A7D6AE1006D0456 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D71D6F7C1A7D6AE1006D0456 /* Orlando Walking Tours */;
+			targetProxy = D71D6F971A7D6AE1006D0456 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D71D6F8A1A7D6AE1006D0456 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D71D6F8B1A7D6AE1006D0456 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D71D6F8F1A7D6AE1006D0456 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D71D6F901A7D6AE1006D0456 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D71D6F9E1A7D6AE1006D0456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D71D6F9F1A7D6AE1006D0456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D71D6FA11A7D6AE1006D0456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D71D6FA21A7D6AE1006D0456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D71D6FA41A7D6AE1006D0456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Orlando Walking ToursTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orlando Walking Tours.app/Orlando Walking Tours";
+			};
+			name = Debug;
+		};
+		D71D6FA51A7D6AE1006D0456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Orlando Walking ToursTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orlando Walking Tours.app/Orlando Walking Tours";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D71D6F781A7D6AE1006D0456 /* Build configuration list for PBXProject "Orlando Walking Tours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D71D6F9E1A7D6AE1006D0456 /* Debug */,
+				D71D6F9F1A7D6AE1006D0456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D71D6FA01A7D6AE1006D0456 /* Build configuration list for PBXNativeTarget "Orlando Walking Tours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D71D6FA11A7D6AE1006D0456 /* Debug */,
+				D71D6FA21A7D6AE1006D0456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D71D6FA31A7D6AE1006D0456 /* Build configuration list for PBXNativeTarget "Orlando Walking ToursTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D71D6FA41A7D6AE1006D0456 /* Debug */,
+				D71D6FA51A7D6AE1006D0456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D71D6F751A7D6AE1006D0456 /* Project object */;
+}
