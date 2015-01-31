@@ -14,6 +14,19 @@
 		D71D6F8E1A7D6AE1006D0456 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71D6F8D1A7D6AE1006D0456 /* Images.xcassets */; };
 		D71D6F911A7D6AE1006D0456 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71D6F8F1A7D6AE1006D0456 /* LaunchScreen.xib */; };
 		D71D6F9D1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6F9C1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m */; };
+		D71D6FC01A7D717C006D0456 /* libMagicalRecord-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D71D6FB91A7D7160006D0456 /* libMagicalRecord-iOS.a */; };
+		D71D6FC31A7D720F006D0456 /* DashboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FC21A7D720F006D0456 /* DashboardTableViewController.m */; };
+		D71D6FC71A7D72FA006D0456 /* TourTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FC61A7D72FA006D0456 /* TourTableViewCell.m */; };
+		D71D6FCA1A7D76FB006D0456 /* AddTourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FC91A7D76FB006D0456 /* AddTourViewController.m */; };
+		D71D6FCE1A7D78C0006D0456 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FCD1A7D78C0006D0456 /* Tour.m */; };
+		D71D6FD11A7D79C6006D0456 /* LocationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FD01A7D79C6006D0456 /* LocationListTableViewController.m */; };
+		D71D6FD41A7D7B77006D0456 /* WalkingTours.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FD21A7D7B77006D0456 /* WalkingTours.xcdatamodeld */; };
+		D71D6FD71A7D7E14006D0456 /* HistoricLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FD61A7D7E14006D0456 /* HistoricLocation.m */; };
+		D71D6FD91A7D7E3B006D0456 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71D6FD81A7D7E3B006D0456 /* CoreData.framework */; };
+		D71D6FDB1A7D7E43006D0456 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71D6FDA1A7D7E43006D0456 /* CoreLocation.framework */; };
+		D71D6FDD1A7D7E47006D0456 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71D6FDC1A7D7E47006D0456 /* MapKit.framework */; };
+		D71D6FE01A7D8097006D0456 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FDF1A7D8097006D0456 /* LocationTableViewCell.m */; };
+		D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +36,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = D71D6F7C1A7D6AE1006D0456;
 			remoteInfo = "Orlando Walking Tours";
+		};
+		D71D6FB41A7D7160006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 905D07181A63DE190076B54E;
+			remoteInfo = "MagicalRecord-iOS";
+		};
+		D71D6FB61A7D7160006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 905D073B1A63DE690076B54E;
+			remoteInfo = "MagicalRecord-OSX";
+		};
+		D71D6FB81A7D7160006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF97AB17498414008D9D13;
+			remoteInfo = "libMagicalRecord-iOS";
+		};
+		D71D6FBA1A7D7160006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF97BB1749843F008D9D13;
+			remoteInfo = "libMagicalRecord-OSX";
+		};
+		D71D6FBC1A7D7160006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF97FF174984CA008D9D13;
+			remoteInfo = "MagicalRecordTests-iOS";
+		};
+		D71D6FBE1A7D7160006D0456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7CF9816174984E4008D9D13;
+			remoteInfo = "MagicalRecordTests-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,6 +95,27 @@
 		D71D6F961A7D6AE1006D0456 /* Orlando Walking ToursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orlando Walking ToursTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D71D6F9B1A7D6AE1006D0456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71D6F9C1A7D6AE1006D0456 /* Orlando_Walking_ToursTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Orlando_Walking_ToursTests.m; sourceTree = "<group>"; };
+		D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = Vendor/MagicalRecord/MagicalRecord.xcodeproj; sourceTree = "<group>"; };
+		D71D6FC11A7D720F006D0456 /* DashboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardTableViewController.h; sourceTree = "<group>"; };
+		D71D6FC21A7D720F006D0456 /* DashboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTableViewController.m; sourceTree = "<group>"; };
+		D71D6FC51A7D72FA006D0456 /* TourTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourTableViewCell.h; sourceTree = "<group>"; };
+		D71D6FC61A7D72FA006D0456 /* TourTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourTableViewCell.m; sourceTree = "<group>"; };
+		D71D6FC81A7D76FB006D0456 /* AddTourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTourViewController.h; sourceTree = "<group>"; };
+		D71D6FC91A7D76FB006D0456 /* AddTourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTourViewController.m; sourceTree = "<group>"; };
+		D71D6FCC1A7D78C0006D0456 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
+		D71D6FCD1A7D78C0006D0456 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
+		D71D6FCF1A7D79C6006D0456 /* LocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListTableViewController.h; sourceTree = "<group>"; };
+		D71D6FD01A7D79C6006D0456 /* LocationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListTableViewController.m; sourceTree = "<group>"; };
+		D71D6FD31A7D7B77006D0456 /* WalkingTours.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalkingTours.xcdatamodel; sourceTree = "<group>"; };
+		D71D6FD51A7D7E14006D0456 /* HistoricLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoricLocation.h; sourceTree = "<group>"; };
+		D71D6FD61A7D7E14006D0456 /* HistoricLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoricLocation.m; sourceTree = "<group>"; };
+		D71D6FD81A7D7E3B006D0456 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D71D6FDA1A7D7E43006D0456 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D71D6FDC1A7D7E47006D0456 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D71D6FDE1A7D8097006D0456 /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
+		D71D6FDF1A7D8097006D0456 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
+		D71D6FE11A7D829C006D0456 /* LocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailViewController.h; sourceTree = "<group>"; };
+		D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +123,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71D6FDD1A7D7E47006D0456 /* MapKit.framework in Frameworks */,
+				D71D6FDB1A7D7E43006D0456 /* CoreLocation.framework in Frameworks */,
+				D71D6FD91A7D7E3B006D0456 /* CoreData.framework in Frameworks */,
+				D71D6FC01A7D717C006D0456 /* libMagicalRecord-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +143,11 @@
 		D71D6F741A7D6AE1006D0456 = {
 			isa = PBXGroup;
 			children = (
+				D71D6FDC1A7D7E47006D0456 /* MapKit.framework */,
+				D71D6FDA1A7D7E43006D0456 /* CoreLocation.framework */,
+				D71D6FD81A7D7E3B006D0456 /* CoreData.framework */,
+				D71D6FD21A7D7B77006D0456 /* WalkingTours.xcdatamodeld */,
+				D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */,
 				D71D6F7F1A7D6AE1006D0456 /* Orlando Walking Tours */,
 				D71D6F991A7D6AE1006D0456 /* Orlando Walking ToursTests */,
 				D71D6F7E1A7D6AE1006D0456 /* Products */,
@@ -81,6 +166,9 @@
 		D71D6F7F1A7D6AE1006D0456 /* Orlando Walking Tours */ = {
 			isa = PBXGroup;
 			children = (
+				D71D6FCB1A7D78B2006D0456 /* Models */,
+				D71D6FC41A7D72D6006D0456 /* Cells */,
+				D71D6FA91A7D70FA006D0456 /* Libraries */,
 				D71D6F841A7D6AE1006D0456 /* AppDelegate.h */,
 				D71D6F851A7D6AE1006D0456 /* AppDelegate.m */,
 				D71D6F871A7D6AE1006D0456 /* ViewController.h */,
@@ -89,6 +177,14 @@
 				D71D6F8D1A7D6AE1006D0456 /* Images.xcassets */,
 				D71D6F8F1A7D6AE1006D0456 /* LaunchScreen.xib */,
 				D71D6F801A7D6AE1006D0456 /* Supporting Files */,
+				D71D6FC11A7D720F006D0456 /* DashboardTableViewController.h */,
+				D71D6FC21A7D720F006D0456 /* DashboardTableViewController.m */,
+				D71D6FC81A7D76FB006D0456 /* AddTourViewController.h */,
+				D71D6FC91A7D76FB006D0456 /* AddTourViewController.m */,
+				D71D6FCF1A7D79C6006D0456 /* LocationListTableViewController.h */,
+				D71D6FD01A7D79C6006D0456 /* LocationListTableViewController.m */,
+				D71D6FE11A7D829C006D0456 /* LocationDetailViewController.h */,
+				D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */,
 			);
 			path = "Orlando Walking Tours";
 			sourceTree = "<group>";
@@ -117,6 +213,48 @@
 				D71D6F9B1A7D6AE1006D0456 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D71D6FA91A7D70FA006D0456 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		D71D6FAB1A7D715F006D0456 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6FB51A7D7160006D0456 /* MagicalRecord.framework */,
+				D71D6FB71A7D7160006D0456 /* MagicalRecord.framework */,
+				D71D6FB91A7D7160006D0456 /* libMagicalRecord-iOS.a */,
+				D71D6FBB1A7D7160006D0456 /* libMagicalRecord-OSX.dylib */,
+				D71D6FBD1A7D7160006D0456 /* MagicalRecordTests-iOS.xctest */,
+				D71D6FBF1A7D7160006D0456 /* MagicalRecordTests-OSX.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D71D6FC41A7D72D6006D0456 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6FC51A7D72FA006D0456 /* TourTableViewCell.h */,
+				D71D6FC61A7D72FA006D0456 /* TourTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		D71D6FCB1A7D78B2006D0456 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6FCC1A7D78C0006D0456 /* Tour.h */,
+				D71D6FCD1A7D78C0006D0456 /* Tour.m */,
+				D71D6FD51A7D7E14006D0456 /* HistoricLocation.h */,
+				D71D6FD61A7D7E14006D0456 /* HistoricLocation.m */,
+				D71D6FDE1A7D8097006D0456 /* LocationTableViewCell.h */,
+				D71D6FDF1A7D8097006D0456 /* LocationTableViewCell.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +324,12 @@
 			mainGroup = D71D6F741A7D6AE1006D0456;
 			productRefGroup = D71D6F7E1A7D6AE1006D0456 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D71D6FAB1A7D715F006D0456 /* Products */;
+					ProjectRef = D71D6FAA1A7D715F006D0456 /* MagicalRecord.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D71D6F7C1A7D6AE1006D0456 /* Orlando Walking Tours */,
@@ -193,6 +337,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D71D6FB51A7D7160006D0456 /* MagicalRecord.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MagicalRecord.framework;
+			remoteRef = D71D6FB41A7D7160006D0456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D71D6FB71A7D7160006D0456 /* MagicalRecord.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MagicalRecord.framework;
+			remoteRef = D71D6FB61A7D7160006D0456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D71D6FB91A7D7160006D0456 /* libMagicalRecord-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMagicalRecord-iOS.a";
+			remoteRef = D71D6FB81A7D7160006D0456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D71D6FBB1A7D7160006D0456 /* libMagicalRecord-OSX.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = "libMagicalRecord-OSX.dylib";
+			remoteRef = D71D6FBA1A7D7160006D0456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D71D6FBD1A7D7160006D0456 /* MagicalRecordTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MagicalRecordTests-iOS.xctest";
+			remoteRef = D71D6FBC1A7D7160006D0456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D71D6FBF1A7D7160006D0456 /* MagicalRecordTests-OSX.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MagicalRecordTests-OSX.xctest";
+			remoteRef = D71D6FBE1A7D7160006D0456 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D71D6F7B1A7D6AE1006D0456 /* Resources */ = {
@@ -219,9 +408,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */,
+				D71D6FD11A7D79C6006D0456 /* LocationListTableViewController.m in Sources */,
+				D71D6FC31A7D720F006D0456 /* DashboardTableViewController.m in Sources */,
+				D71D6FD41A7D7B77006D0456 /* WalkingTours.xcdatamodeld in Sources */,
 				D71D6F891A7D6AE1006D0456 /* ViewController.m in Sources */,
 				D71D6F861A7D6AE1006D0456 /* AppDelegate.m in Sources */,
+				D71D6FCE1A7D78C0006D0456 /* Tour.m in Sources */,
+				D71D6FD71A7D7E14006D0456 /* HistoricLocation.m in Sources */,
 				D71D6F831A7D6AE1006D0456 /* main.m in Sources */,
+				D71D6FCA1A7D76FB006D0456 /* AddTourViewController.m in Sources */,
+				D71D6FE01A7D8097006D0456 /* LocationTableViewCell.m in Sources */,
+				D71D6FC71A7D72FA006D0456 /* TourTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +541,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Vendor/MagicalRecord/MagicalRecord/**",
+				);
 				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +556,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/Vendor/MagicalRecord/MagicalRecord/**",
+				);
 				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +630,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D71D6FD21A7D7B77006D0456 /* WalkingTours.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D71D6FD31A7D7B77006D0456 /* WalkingTours.xcdatamodel */,
+			);
+			currentVersion = D71D6FD31A7D7B77006D0456 /* WalkingTours.xcdatamodel */;
+			path = WalkingTours.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D71D6F751A7D6AE1006D0456 /* Project object */;
 }

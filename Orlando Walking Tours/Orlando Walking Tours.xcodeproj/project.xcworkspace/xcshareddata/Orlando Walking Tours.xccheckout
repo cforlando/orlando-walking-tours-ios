@@ -12,6 +12,8 @@
 	<dict>
 		<key>92BA65CE50853B0DAA9F302537BE6E3F7231EE30</key>
 		<string>https://github.com/cforlando/orlando-walking-tours-ios.git</string>
+		<key>958932E9D08E4465709D54DB1E7CECF23B0F442E</key>
+		<string>https://github.com/magicalpanda/MagicalRecord.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Orlando Walking Tours/Orlando Walking Tours.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>92BA65CE50853B0DAA9F302537BE6E3F7231EE30</key>
 		<string>../../..</string>
+		<key>958932E9D08E4465709D54DB1E7CECF23B0F442E</key>
+		<string>../../..Orlando%20Walking%20Tours/Vendor/MagicalRecord/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/cforlando/orlando-walking-tours-ios.git</string>
@@ -28,6 +32,14 @@
 	<string>92BA65CE50853B0DAA9F302537BE6E3F7231EE30</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>958932E9D08E4465709D54DB1E7CECF23B0F442E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MagicalRecord</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

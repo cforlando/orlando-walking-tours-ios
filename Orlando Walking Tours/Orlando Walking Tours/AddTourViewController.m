@@ -1,18 +1,19 @@
 //
-//  DashboardViewController.m
+//  AddTourViewController.m
 //  Orlando Walking Tours
 //
 //  Created by Andrew Kozlik on 1/31/15.
 //  Copyright (c) 2015 Andrew Kozlik. All rights reserved.
 //
 
-#import "DashboardViewController.h"
+#import "AddTourViewController.h"
+#import "Tour.h"
 
-@interface DashboardViewController ()
+@interface AddTourViewController ()
 
 @end
 
-@implementation DashboardViewController
+@implementation AddTourViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +23,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)saveTourTapped:(id)sender {
+    
+    Tour *tour = [Tour new];
+    tour.title = self.tourTitleTextField.text;
+    NSLog(@"%@", self.tourTitleTextField.text);
+    
+    // TODO: Implement saving a tour
+    
+    [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
 }
 
 /*

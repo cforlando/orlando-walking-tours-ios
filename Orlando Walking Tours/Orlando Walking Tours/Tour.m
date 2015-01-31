@@ -1,13 +1,13 @@
 //
-//  DashboardViewController.h
+//  Tour.m
 //  Orlando Walking Tours
 //
 //  Created by Andrew Kozlik on 1/31/15.
 //  Copyright (c) 2015 Andrew Kozlik. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Tour.h"
 
-@interface DashboardViewController : UIViewController
+@implementation Tour
 
 @end
