@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import <CoreLocation/CoreLocation.h>
+#import "CoreData+MagicalRecord.h"
+
 
 @interface HistoricLocation : NSManagedObject
 
@@ -18,5 +20,7 @@
 @property (nonatomic, retain) NSString *locationTitle;
 @property (nonatomic, retain) NSString *locationType;
 @property (nonatomic, retain) NSString *locationDescription;
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) NSNumber *longitude;
 
 @end

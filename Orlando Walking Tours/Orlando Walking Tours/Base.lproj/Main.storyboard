@@ -86,6 +86,9 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Dyq-mM-LCa" kind="show" identifier="ShowLocationList" id="jYb-oE-omK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2r-HX-5JG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,28 +166,46 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="63N-2i-GEs" id="YxY-Z8-Dis">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kC-82-PqP">
-                                            <rect key="frame" x="18" y="17" width="564" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="504" placeholderIntrinsicHeight="21" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kC-82-PqP">
+                                            <rect key="frame" x="18" y="13" width="504" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-VJ-lVx">
+                                            <rect key="frame" x="548" y="9" width="34" height="30"/>
+                                            <state key="normal" title="Save">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="tappedSave:" destination="Dyq-mM-LCa" eventType="touchUpInside" id="fnx-7D-RZg"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="B5J-VJ-lVx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1kC-82-PqP" secondAttribute="trailing" constant="26" id="Lrw-c3-Txd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="1kC-82-PqP" secondAttribute="trailing" constant="10" id="Nrh-JC-YFd"/>
                                         <constraint firstItem="1kC-82-PqP" firstAttribute="bottom" secondItem="YxY-Z8-Dis" secondAttribute="bottomMargin" constant="5" id="YF5-2Z-ZFG"/>
                                         <constraint firstItem="1kC-82-PqP" firstAttribute="top" secondItem="YxY-Z8-Dis" secondAttribute="topMargin" constant="5" id="fVA-uQ-uMk"/>
-                                        <constraint firstAttribute="centerY" secondItem="1kC-82-PqP" secondAttribute="centerY" constant="-5" id="pZr-kB-2kq"/>
+                                        <constraint firstAttribute="centerY" secondItem="B5J-VJ-lVx" secondAttribute="centerY" constant="-2.5" id="gok-Vy-jb4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="B5J-VJ-lVx" secondAttribute="trailing" constant="10" id="oUD-8X-geT"/>
+                                        <constraint firstAttribute="centerY" secondItem="1kC-82-PqP" secondAttribute="centerY" constant="-1.5" id="pZr-kB-2kq"/>
+                                        <constraint firstItem="B5J-VJ-lVx" firstAttribute="top" secondItem="1kC-82-PqP" secondAttribute="bottom" constant="-25" id="t7P-Ox-D5S"/>
+                                        <constraint firstItem="B5J-VJ-lVx" firstAttribute="centerY" secondItem="1kC-82-PqP" secondAttribute="centerY" id="vyV-Pa-ELg"/>
                                         <constraint firstItem="1kC-82-PqP" firstAttribute="leading" secondItem="YxY-Z8-Dis" secondAttribute="leadingMargin" constant="10" id="waf-bd-9XO"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="Nrh-JC-YFd"/>
                                             <exclude reference="YF5-2Z-ZFG"/>
                                             <exclude reference="fVA-uQ-uMk"/>
+                                            <exclude reference="t7P-Ox-D5S"/>
+                                            <exclude reference="vyV-Pa-ELg"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="saveButton" destination="B5J-VJ-lVx" id="dSI-ed-caB"/>
                                     <outlet property="textLabel" destination="1kC-82-PqP" id="I90-uf-Dmk"/>
                                 </connections>
                             </tableViewCell>
@@ -200,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aS8-nF-8XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="-46"/>
+            <point key="canvasLocation" x="2124" y="-50"/>
         </scene>
         <!--Location Detail View Controller-->
         <scene sceneID="q71-6M-Raf">
@@ -278,4 +299,7 @@
             <point key="canvasLocation" x="-364" y="-56"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jYb-oE-omK"/>
+    </inferredMetricsTieBreakers>
 </document>

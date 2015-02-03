@@ -7,6 +7,8 @@
 //
 
 #import "TourDetailListViewController.h"
+#import "Tour.h"
+#import "HistoricLocation.h"
 
 @interface TourDetailListViewController ()
 
@@ -16,9 +18,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = self.tour.title;
+    
     self.locationsArray = [NSMutableArray new];
     
+    [self loadLocations];
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)loadLocations {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tour == %@", self.tour];
+    NSArray *locations = [HistoricLocation MR_findAllWithPredicate:predicate];
+    self.locationsArray = [NSMutableArray arrayWithArray:locations];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +46,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [self.locationsArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -42,6 +57,29 @@
     }
     cell.textLabel.text = @"Something";
     return cell;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+    view.backgroundColor = [UIColor blueColor];
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, 0, 140, 40)];
+    button.titleLabel.textAlignment = NSTextAlignmentRight;
+    
+    [button setTitle:@"Add Locations" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(addLocationsTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:button];
+    
+    return view;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
+
+-(void)addLocationsTapped:(id)sender {
+    [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
 }
 
 /*

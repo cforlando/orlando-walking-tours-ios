@@ -9,6 +9,7 @@
 #import "LocationListTableViewController.h"
 #import "LocationDetailViewController.h"
 #import "HistoricLocation.h"
+#import "LocationTableViewCell.h"
 
 @interface LocationListTableViewController ()
 
@@ -30,7 +31,7 @@
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
         NSLog(@"%@", json);
         for (NSDictionary *loc in json) {
-            HistoricLocation *location = [HistoricLocation new];
+            HistoricLocation *location = [HistoricLocation MR_createEntity];
             location.address = [loc objectForKey:@"address"];
             location.locationDescription = [loc objectForKey:@"downtown_walking_tour"];
             location.locationTitle  = [loc objectForKey:@"name"];
@@ -39,8 +40,11 @@
             double lat = [[[loc objectForKey:@"location"] objectForKey:@"latitude"] doubleValue];
             double lng = [[[loc objectForKey:@"location"] objectForKey:@"longitude"] doubleValue];
             
-            CLLocation *locationObj = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
-            location.location = locationObj;
+//            CLLocation *locationObj = [[CLLocation alloc] initWithLatitude:lat longitude:lng];
+//            location.location = locationObj;
+
+            location.latitude = [NSNumber numberWithDouble:lat];
+            location.longitude = [NSNumber numberWithDouble:lng];
             
             [self.locationsArray addObject:location];
         }
@@ -73,10 +77,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
+    LocationTableViewCell *cell = (LocationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
     
     HistoricLocation *historicLocation = [self.locationsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = historicLocation.locationTitle;
+    cell.saveButton.tag = indexPath.row;
     
     return cell;
 }
@@ -98,6 +103,10 @@
         vc.historicLocation = self.selectedHistoricLocation;
     }
 
+}
+
+-(void)tappedSave:(UIButton *)sender {
+    NSLog(@"%d", sender.tag);
 }
 
 

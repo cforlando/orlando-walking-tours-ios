@@ -9,9 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "HistoricLocation.h"
 
+@class LocationListTableViewController;
+
+@protocol LocationListTableViewControllerDelegate <NSObject>
+
+-(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location;
+
+@end
+
 @interface LocationListTableViewController : UITableViewController
 
 @property (nonatomic, retain) NSMutableArray *locationsArray;
 @property (nonatomic, retain) HistoricLocation *selectedHistoricLocation;
+@property (weak) id delegate;
+
+-(IBAction)tappedSave:(id)sender;
 
 @end
