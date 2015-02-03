@@ -11,6 +11,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "CoreData+MagicalRecord.h"
 
+@class Tour;
+
 
 @interface HistoricLocation : NSManagedObject
 
@@ -22,5 +24,6 @@
 @property (nonatomic, retain) NSString *locationDescription;
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
+@property (nonatomic, retain) Tour *tour;
 
 @end

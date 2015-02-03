@@ -29,7 +29,7 @@
 
         NSError *jsonError;
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        NSLog(@"%@", json);
+
         for (NSDictionary *loc in json) {
             HistoricLocation *location = [HistoricLocation MR_createEntity];
             location.address = [loc objectForKey:@"address"];
@@ -48,9 +48,7 @@
             
             [self.locationsArray addObject:location];
         }
-        
-        NSLog(@"%@", self.locationsArray);
-        
+
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
         
         
@@ -106,7 +104,11 @@
 }
 
 -(void)tappedSave:(UIButton *)sender {
-    NSLog(@"%d", sender.tag);
+    HistoricLocation *location = [self.locationsArray objectAtIndex:sender.tag];
+
+    if ([self.delegate respondsToSelector:@selector(locationListTableViewController:didSelectHistoricLocation:)]) {
+        [self.delegate locationListTableViewController:self didSelectHistoricLocation:location];
+    }
 }
 
 

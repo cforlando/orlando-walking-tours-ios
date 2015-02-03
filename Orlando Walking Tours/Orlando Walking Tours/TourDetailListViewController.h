@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationListTableViewController.h"
 
 @class Tour;
 
-@interface TourDetailListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TourDetailListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, LocationListTableViewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *locationsArray;

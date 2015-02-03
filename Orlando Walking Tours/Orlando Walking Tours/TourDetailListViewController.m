@@ -9,6 +9,7 @@
 #import "TourDetailListViewController.h"
 #import "Tour.h"
 #import "HistoricLocation.h"
+#import "LocationListTableViewController.h"
 
 @interface TourDetailListViewController ()
 
@@ -55,7 +56,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellIdentifier"];
     }
-    cell.textLabel.text = @"Something";
+    
+    HistoricLocation *location = [self.locationsArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = location.locationTitle;
     return cell;
 }
 
@@ -82,14 +85,23 @@
     [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowLocationList"]) {
+        LocationListTableViewController *vc = (LocationListTableViewController *)segue.destinationViewController;
+        vc.delegate = self;
+    }
 }
-*/
+
+-(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
+    
+    [self.locationsArray addObject:location];
+    
+    [self.tableView reloadData];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
