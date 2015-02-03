@@ -97,11 +97,25 @@
 
 -(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
     
-    [self.locationsArray addObject:location];
-    
-    [self.tableView reloadData];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        
+        HistoricLocation *historicLocation = [HistoricLocation MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+        historicLocation.locationTitle = location.locationTitle;
+        historicLocation.tour = self.tour;
+        
+        [self.locationsArray addObject:location];
+        
+    } completion:^(BOOL success, NSError *error) {
+        if (!error) {
+            
+        } else {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        
+        [self.tableView reloadData];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 @end

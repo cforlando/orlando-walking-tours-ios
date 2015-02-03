@@ -107,6 +107,7 @@
     HistoricLocation *location = [self.locationsArray objectAtIndex:sender.tag];
 
     if ([self.delegate respondsToSelector:@selector(locationListTableViewController:didSelectHistoricLocation:)]) {
+        
         [self.delegate locationListTableViewController:self didSelectHistoricLocation:location];
     }
 }
