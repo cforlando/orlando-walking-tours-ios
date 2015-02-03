@@ -8,6 +8,8 @@
 
 #import "DashboardTableViewController.h"
 #import "TourTableViewCell.h"
+#import "Tour.h"
+
 
 @interface DashboardTableViewController ()
 
@@ -17,6 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.toursArray = [NSArray new];
+    self.toursArray = [Tour MR_findAll];
+    
+    NSLog(@"%@", [Tour MR_findAll]);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,7 +46,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 5;
+    return [self.toursArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -47,7 +54,9 @@
     // Configure the cell...
     if (indexPath.section == 0) {
         TourTableViewCell *cell = (TourTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"TourTableViewCell" forIndexPath:indexPath];
-        cell.tourTitleLabel.text = [NSString stringWithFormat:@"Row %d", indexPath.row];
+        
+        Tour *tour = [self.toursArray objectAtIndex:indexPath.row];
+        cell.tourTitleLabel.text = [NSString stringWithFormat:@"%@", tour.title];
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];

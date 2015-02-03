@@ -8,6 +8,7 @@
 
 #import "AddTourViewController.h"
 #import "Tour.h"
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 
 @interface AddTourViewController ()
 
@@ -27,13 +28,12 @@
 
 -(void)saveTourTapped:(id)sender {
     
-    Tour *tour = [Tour new];
-    tour.title = self.tourTitleTextField.text;
-    NSLog(@"%@", self.tourTitleTextField.text);
-    
-    // TODO: Implement saving a tour
-    
-    [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        Tour *tour = [Tour MR_createInContext:localContext];
+        tour.title = self.tourTitleTextField.text;
+    } completion:^(BOOL success, NSError *error) {
+        [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
+    }];
 }
 
 /*

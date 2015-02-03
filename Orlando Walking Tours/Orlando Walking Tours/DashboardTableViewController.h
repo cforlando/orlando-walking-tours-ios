@@ -10,4 +10,6 @@
 
 @interface DashboardTableViewController : UITableViewController
 
+@property (nonatomic, retain) NSArray *toursArray;
+
 @end

@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "CoreData+MagicalRecord.h"
 #define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"WalkingTours"];
 
     return YES;
 }
