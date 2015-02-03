@@ -99,9 +99,9 @@
     
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
-        HistoricLocation *historicLocation = [HistoricLocation MR_createInContext:[NSManagedObjectContext MR_defaultContext]];
+        HistoricLocation *historicLocation = [HistoricLocation MR_createInContext:localContext];
         historicLocation.locationTitle = location.locationTitle;
-        historicLocation.tour = self.tour;
+        historicLocation.tour = [self.tour MR_inContext:localContext];
         
         [self.locationsArray addObject:location];
         
