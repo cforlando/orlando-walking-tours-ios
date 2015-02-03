@@ -96,14 +96,22 @@
 }
 
 -(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
-    
+
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
-        HistoricLocation *historicLocation = [HistoricLocation MR_createInContext:localContext];
-        historicLocation.locationTitle = location.locationTitle;
-        historicLocation.tour = [self.tour MR_inContext:localContext];
+        HistoricLocation *localLocation = [HistoricLocation MR_createInContext:localContext];
         
-        [self.locationsArray addObject:location];
+        localLocation.address = location.address;
+        localLocation.localRegistryDate = location.localRegistryDate;
+        localLocation.locationTitle = location.locationTitle;
+        localLocation.locationType = location.locationType;
+        localLocation.locationDescription = location.locationDescription;
+        localLocation.latitude = location.latitude;
+        localLocation.longitude = location.longitude;
+        
+        localLocation.tour = [self.tour MR_inContext:localContext];
+        
+        [self.locationsArray addObject:localLocation];
         
     } completion:^(BOOL success, NSError *error) {
         if (!error) {

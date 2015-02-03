@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44.0; // set to whatever your "average" cell height is
+    
     self.locationsArray = [NSMutableArray new];
     NSString *locationsUrlString = @"https://brigades.opendatanetwork.com/resource/hzkr-id6u.json";
     
