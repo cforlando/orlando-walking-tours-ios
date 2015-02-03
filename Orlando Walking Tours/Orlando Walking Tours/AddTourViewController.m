@@ -32,7 +32,10 @@
         Tour *tour = [Tour MR_createInContext:localContext];
         tour.title = self.tourTitleTextField.text;
     } completion:^(BOOL success, NSError *error) {
-        [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
+        if ([self.delegate respondsToSelector:@selector(addTourViewControllerDidSaveTour:)]) {
+            [self.delegate addTourViewControllerDidSaveTour:self];
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 

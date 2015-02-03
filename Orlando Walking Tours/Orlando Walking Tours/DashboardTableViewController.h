@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddTourViewController.h"
 
-@interface DashboardTableViewController : UITableViewController
+@interface DashboardTableViewController : UITableViewController <AddTourViewControllerDelegate>
 
 @property (nonatomic, retain) NSArray *toursArray;
 

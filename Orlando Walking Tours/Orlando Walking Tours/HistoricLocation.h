@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface HistoricLocation : NSObject
+@interface HistoricLocation : NSManagedObject
 
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSDate *localRegistryDate;

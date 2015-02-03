@@ -26,6 +26,7 @@
 		D71D6FE01A7D8097006D0456 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FDF1A7D8097006D0456 /* LocationTableViewCell.m */; };
 		D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */; };
 		D75DDA641A807CB900988B18 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = D75DDA631A807CB900988B18 /* Tour.m */; };
+		D75DDA6A1A8087A200988B18 /* TourDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75DDA691A8087A200988B18 /* TourDetailListViewController.m */; };
 		F83BECCA1CB00D0827DA13B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C24C308243E028BC2F46390 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
 		D75DDA621A807CB900988B18 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 		D75DDA631A807CB900988B18 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
+		D75DDA681A8087A200988B18 /* TourDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourDetailListViewController.h; sourceTree = "<group>"; };
+		D75DDA691A8087A200988B18 /* TourDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourDetailListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,18 +227,44 @@
 		D75DDA611A807B9A00988B18 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D71D6FC11A7D720F006D0456 /* DashboardTableViewController.h */,
-				D71D6FC21A7D720F006D0456 /* DashboardTableViewController.m */,
-				D71D6FC81A7D76FB006D0456 /* AddTourViewController.h */,
-				D71D6FC91A7D76FB006D0456 /* AddTourViewController.m */,
-				D71D6FCF1A7D79C6006D0456 /* LocationListTableViewController.h */,
-				D71D6FD01A7D79C6006D0456 /* LocationListTableViewController.m */,
+				D75DDA671A8086B800988B18 /* Location List */,
+				D75DDA661A8086B000988B18 /* Add Tour */,
+				D75DDA651A8086A000988B18 /* Dashboard */,
 				D71D6FE11A7D829C006D0456 /* LocationDetailViewController.h */,
 				D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */,
 				D71D6F871A7D6AE1006D0456 /* ViewController.h */,
 				D71D6F881A7D6AE1006D0456 /* ViewController.m */,
+				D75DDA681A8087A200988B18 /* TourDetailListViewController.h */,
+				D75DDA691A8087A200988B18 /* TourDetailListViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D75DDA651A8086A000988B18 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6FC11A7D720F006D0456 /* DashboardTableViewController.h */,
+				D71D6FC21A7D720F006D0456 /* DashboardTableViewController.m */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		D75DDA661A8086B000988B18 /* Add Tour */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6FC81A7D76FB006D0456 /* AddTourViewController.h */,
+				D71D6FC91A7D76FB006D0456 /* AddTourViewController.m */,
+			);
+			name = "Add Tour";
+			sourceTree = "<group>";
+		};
+		D75DDA671A8086B800988B18 /* Location List */ = {
+			isa = PBXGroup;
+			children = (
+				D71D6FCF1A7D79C6006D0456 /* LocationListTableViewController.h */,
+				D71D6FD01A7D79C6006D0456 /* LocationListTableViewController.m */,
+			);
+			name = "Location List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +405,7 @@
 				D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */,
 				D71D6FD11A7D79C6006D0456 /* LocationListTableViewController.m in Sources */,
 				D71D6FC31A7D720F006D0456 /* DashboardTableViewController.m in Sources */,
+				D75DDA6A1A8087A200988B18 /* TourDetailListViewController.m in Sources */,
 				D75DDA641A807CB900988B18 /* Tour.m in Sources */,
 				D71D6FD41A7D7B77006D0456 /* WalkingTours.xcdatamodeld in Sources */,
 				D71D6F891A7D6AE1006D0456 /* ViewController.m in Sources */,

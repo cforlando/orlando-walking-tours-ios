@@ -40,11 +40,30 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="79Z-vh-xS3"/>
                     <connections>
                         <segue destination="k12-9P-8Cj" kind="show" identifier="AddTourSegue" id="dnN-v0-Fzy"/>
+                        <segue destination="2oP-Jm-rea" kind="show" identifier="TourDetailSegue" id="YnC-4L-Jeh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUb-Wb-6S6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="456" y="-55"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aYU-8A-UVK">
+            <objects>
+                <viewController id="2oP-Jm-rea" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="avp-eX-5S3"/>
+                        <viewControllerLayoutGuide type="bottom" id="jTL-oh-cQO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3D8-Xx-tSR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2r-HX-5JG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="620"/>
         </scene>
         <!--Add Tour View Controller-->
         <scene sceneID="YmE-lV-KOB">

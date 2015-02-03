@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Orlando Historic Tours";
+    
     self.toursArray = [NSArray new];
     self.toursArray = [Tour MR_findAll];
     
@@ -35,6 +37,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)addTourViewControllerDidSaveTour:(AddTourViewController *)controller {
+    NSLog(@"Saved Tour");
+    self.toursArray = [Tour MR_findAll];
+    [self.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -57,6 +66,7 @@
         
         Tour *tour = [self.toursArray objectAtIndex:indexPath.row];
         cell.tourTitleLabel.text = [NSString stringWithFormat:@"%@", tour.title];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
@@ -83,6 +93,13 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 40;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AddTourSegue"]) {
+        AddTourViewController *tourVC = (AddTourViewController *)segue.destinationViewController;
+        tourVC.delegate = self;
+    }
 }
 
 /*
