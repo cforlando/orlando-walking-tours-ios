@@ -8,6 +8,7 @@
 
 #import "DashboardTableViewController.h"
 #import "TourTableViewCell.h"
+#import "TourDetailListViewController.h"
 #import "Tour.h"
 
 
@@ -74,6 +75,12 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:@"TourDetailSegue" sender:self];
+    }
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     view.backgroundColor = [UIColor blueColor];
@@ -97,8 +104,13 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddTourSegue"]) {
-        AddTourViewController *tourVC = (AddTourViewController *)segue.destinationViewController;
-        tourVC.delegate = self;
+        AddTourViewController *vc = (AddTourViewController *)segue.destinationViewController;
+        vc.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"TourDetailSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Tour *tour = [self.toursArray objectAtIndex:indexPath.row];
+        TourDetailListViewController *vc = (TourDetailListViewController *)segue.destinationViewController;
+        vc.tour = tour;
     }
 }
 

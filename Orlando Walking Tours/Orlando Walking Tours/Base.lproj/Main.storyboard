@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="456" y="-55"/>
         </scene>
-        <!--View Controller-->
+        <!--Tour Detail List View Controller-->
         <scene sceneID="aYU-8A-UVK">
             <objects>
-                <viewController id="2oP-Jm-rea" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TourDetailListViewController" id="2oP-Jm-rea" customClass="TourDetailListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="avp-eX-5S3"/>
                         <viewControllerLayoutGuide type="bottom" id="jTL-oh-cQO"/>
@@ -58,8 +58,34 @@
                     <view key="view" contentMode="scaleToFill" id="3D8-Xx-tSR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yaS-G2-WO3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2oP-Jm-rea" id="NgP-Iv-g6Z"/>
+                                    <outlet property="delegate" destination="2oP-Jm-rea" id="Eio-zd-XhN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yaS-G2-WO3" firstAttribute="leading" secondItem="3D8-Xx-tSR" secondAttribute="leading" id="0oq-gW-qGj"/>
+                            <constraint firstItem="yaS-G2-WO3" firstAttribute="width" secondItem="3D8-Xx-tSR" secondAttribute="width" id="ABl-tJ-VaM"/>
+                            <constraint firstAttribute="centerX" secondItem="yaS-G2-WO3" secondAttribute="centerX" id="Dir-5a-66p"/>
+                            <constraint firstAttribute="centerY" secondItem="yaS-G2-WO3" secondAttribute="centerY" id="PYk-gw-s0T"/>
+                            <constraint firstItem="yaS-G2-WO3" firstAttribute="height" secondItem="3D8-Xx-tSR" secondAttribute="height" id="nim-t5-6AK"/>
+                            <constraint firstItem="yaS-G2-WO3" firstAttribute="top" secondItem="avp-eX-5S3" secondAttribute="bottom" id="zD9-mm-iFS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0oq-gW-qGj"/>
+                                <exclude reference="zD9-mm-iFS"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2r-HX-5JG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
