@@ -108,6 +108,16 @@
     return YES;
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    HistoricLocation *location = [self.locationsArray objectAtIndex:indexPath.row];
+    
+    NSLog(@"Location: %@", location.locationTitle);
+    
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+}
 
 
 -(void)addLocationsTapped:(id)sender {
