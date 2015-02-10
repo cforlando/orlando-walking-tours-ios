@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoricLocation.h"
+#import <MapKit/MapKit.h>
 
 @interface LocationDetailViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *typeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, retain) IBOutlet UIButton *addButton;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @property (nonatomic, retain) HistoricLocation *historicLocation;
 

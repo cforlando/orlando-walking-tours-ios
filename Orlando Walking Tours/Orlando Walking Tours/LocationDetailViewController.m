@@ -7,6 +7,7 @@
 //
 
 #import "LocationDetailViewController.h"
+#import "LocationAnnotation.h"
 
 @interface LocationDetailViewController ()
 
@@ -23,6 +24,10 @@
     self.typeLabel.text = self.historicLocation.locationType;
     self.descriptionLabel.text = self.historicLocation.locationDescription;
     
+    // Set the location's annotation and zoom in
+    LocationAnnotation *annotation = [[LocationAnnotation alloc] initWithHistoricLocation:self.historicLocation];
+    [self.mapView addAnnotation:annotation];
+    [self.mapView setRegion:MKCoordinateRegionMake(annotation.coordinate, MKCoordinateSpanMake(.0125, .0125))];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

@@ -372,6 +372,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="TIC-KH-yWx" id="SLC-LH-rYE"/>
+                        <outlet property="mapView" destination="9Du-Rl-ImS" id="1Ag-J4-TvQ"/>
                         <outlet property="scrollView" destination="rHM-FW-gd3" id="LfL-Z6-YVN"/>
                         <outlet property="titleLabel" destination="Kvp-0G-Ofx" id="Zg1-eH-ID8"/>
                         <outlet property="typeLabel" destination="Zad-UO-7Kk" id="Vbu-Jv-kdd"/>
