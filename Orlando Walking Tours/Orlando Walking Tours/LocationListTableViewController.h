@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoricLocation.h"
+#import "LocationDetailViewController.h"
 
 @class LocationListTableViewController;
 
@@ -17,7 +18,7 @@
 
 @end
 
-@interface LocationListTableViewController : UITableViewController
+@interface LocationListTableViewController : UITableViewController <LocationDetailViewControllerDelegate>
 
 @property (nonatomic, retain) NSMutableArray *locationsArray;
 @property (nonatomic, retain) HistoricLocation *selectedHistoricLocation;

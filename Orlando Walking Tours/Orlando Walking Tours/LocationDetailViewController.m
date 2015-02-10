@@ -40,8 +40,10 @@
 }
 
 #pragma mark - IBActions
--(void)saveLocationTapped:(id)sender {
-    NSLog(@"Saved Location");
+-(IBAction)saveLocationTapped:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(locationDetailViewController:didSelectHistoricLocation:)]) {
+        [self.delegate locationDetailViewController:self didSelectHistoricLocation:self.historicLocation];
+    }
 }
 
 /*

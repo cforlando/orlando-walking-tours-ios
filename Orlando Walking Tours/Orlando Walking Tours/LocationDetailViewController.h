@@ -10,6 +10,15 @@
 #import "HistoricLocation.h"
 #import <MapKit/MapKit.h>
 
+@class LocationDetailViewController;
+
+@protocol LocationDetailViewControllerDelegate <NSObject>
+
+-(void)locationDetailViewController:(LocationDetailViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location;
+
+@end
+
+
 @interface LocationDetailViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
@@ -18,6 +27,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, retain) IBOutlet UIButton *addButton;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+
+@property id delegate;
 
 @property (nonatomic, retain) HistoricLocation *historicLocation;
 

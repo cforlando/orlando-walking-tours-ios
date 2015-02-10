@@ -102,9 +102,19 @@
         
         // Pass any objects to the view controller here, like...
         vc.historicLocation = self.selectedHistoricLocation;
+        vc.delegate = self;
     }
-
 }
+
+#pragma mark - Custom Delegate Methods
+-(void)locationDetailViewController:(LocationDetailViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
+    if ([self.delegate respondsToSelector:@selector(locationListTableViewController:didSelectHistoricLocation:)]) {
+        [self.delegate locationListTableViewController:self didSelectHistoricLocation:location];
+    }
+}
+
+
+#pragma mark - Button Actions
 
 -(void)tappedSave:(UIButton *)sender {
     HistoricLocation *location = [self.locationsArray objectAtIndex:sender.tag];

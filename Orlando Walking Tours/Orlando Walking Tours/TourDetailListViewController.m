@@ -9,9 +9,7 @@
 #import "TourDetailListViewController.h"
 #import "Tour.h"
 #import "HistoricLocation.h"
-#import "LocationListTableViewController.h"
 #import "HistoricLocationTableViewCell.h"
-#import "LocationDetailViewController.h"
 
 @interface TourDetailListViewController ()
 
@@ -113,12 +111,21 @@
         
         // Pass any objects to the view controller here, like...
         vc.historicLocation = (HistoricLocation *)sender;
-        NSLog(@"Sender: %@", sender);
+        vc.delegate = self;
     }
 }
 
+#pragma mark - Custom Delegate Methods
 -(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
 
+    [self saveLocation:location];
+}
+
+-(void)locationDetailViewController:(LocationDetailViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
+    [self saveLocation:location];
+}
+
+-(void)saveLocation:(HistoricLocation *)location {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
         HistoricLocation *localLocation = [HistoricLocation MR_createInContext:localContext];
@@ -143,8 +150,6 @@
         }
         
         [self.tableView reloadData];
-        
-        [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 
