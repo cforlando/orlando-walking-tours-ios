@@ -25,5 +25,6 @@
 @property (nonatomic, retain) NSNumber *latitude;
 @property (nonatomic, retain) NSNumber *longitude;
 @property (nonatomic, retain) Tour *tour;
+@property (nonatomic, retain) NSNumber *sortOrder;
 
 @end

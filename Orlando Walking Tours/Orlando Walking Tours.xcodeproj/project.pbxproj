@@ -25,6 +25,7 @@
 		D71D6FDD1A7D7E47006D0456 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71D6FDC1A7D7E47006D0456 /* MapKit.framework */; };
 		D71D6FE01A7D8097006D0456 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FDF1A7D8097006D0456 /* LocationTableViewCell.m */; };
 		D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */; };
+		D74F20AD1A89B83E00F2F894 /* HistoricLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D74F20AC1A89B83E00F2F894 /* HistoricLocationTableViewCell.m */; };
 		D75DDA641A807CB900988B18 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = D75DDA631A807CB900988B18 /* Tour.m */; };
 		D75DDA6A1A8087A200988B18 /* TourDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75DDA691A8087A200988B18 /* TourDetailListViewController.m */; };
 		F83BECCA1CB00D0827DA13B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C24C308243E028BC2F46390 /* libPods.a */; };
@@ -75,6 +76,8 @@
 		D71D6FDF1A7D8097006D0456 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
 		D71D6FE11A7D829C006D0456 /* LocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailViewController.h; sourceTree = "<group>"; };
 		D71D6FE21A7D829C006D0456 /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
+		D74F20AB1A89B83E00F2F894 /* HistoricLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoricLocationTableViewCell.h; sourceTree = "<group>"; };
+		D74F20AC1A89B83E00F2F894 /* HistoricLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoricLocationTableViewCell.m; sourceTree = "<group>"; };
 		D75DDA621A807CB900988B18 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 		D75DDA631A807CB900988B18 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
 		D75DDA681A8087A200988B18 /* TourDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourDetailListViewController.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			children = (
 				D71D6FC51A7D72FA006D0456 /* TourTableViewCell.h */,
 				D71D6FC61A7D72FA006D0456 /* TourTableViewCell.m */,
+				D74F20AB1A89B83E00F2F894 /* HistoricLocationTableViewCell.h */,
+				D74F20AC1A89B83E00F2F894 /* HistoricLocationTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */,
+				D74F20AD1A89B83E00F2F894 /* HistoricLocationTableViewCell.m in Sources */,
 				D71D6FD11A7D79C6006D0456 /* LocationListTableViewController.m in Sources */,
 				D71D6FC31A7D720F006D0456 /* DashboardTableViewController.m in Sources */,
 				D75DDA6A1A8087A200988B18 /* TourDetailListViewController.m in Sources */,
