@@ -55,7 +55,25 @@
     return [self.locationsArray count];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
 #pragma mark - UITableViewDelegate Methods
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+    view.backgroundColor = [UIColor blueColor];
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, 0, 140, 40)];
+    button.titleLabel.textAlignment = NSTextAlignmentRight;
+    
+    [button setTitle:@"Add Locations" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(addLocationsTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:button];
+    
+    return view;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoricLocationTableViewCell"];
     
@@ -77,23 +95,19 @@
     
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
-    view.backgroundColor = [UIColor blueColor];
-    
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, 0, 140, 40)];
-    button.titleLabel.textAlignment = NSTextAlignmentRight;
-    
-    [button setTitle:@"Add Locations" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(addLocationsTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:button];
-    
-    return view;
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Yes");
+    return YES;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
 }
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 
 
 -(void)addLocationsTapped:(id)sender {

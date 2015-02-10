@@ -28,15 +28,22 @@
 
 -(void)saveTourTapped:(id)sender {
     
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        Tour *tour = [Tour MR_createInContext:localContext];
-        tour.title = self.tourTitleTextField.text;
-    } completion:^(BOOL success, NSError *error) {
-        if ([self.delegate respondsToSelector:@selector(addTourViewControllerDidSaveTour:)]) {
-            [self.delegate addTourViewControllerDidSaveTour:self];
-        }
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
+    if ([self.tourTitleTextField.text isEqualToString:@""]) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"We need a tour name to get started." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    } else {
+        
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+            Tour *tour = [Tour MR_createInContext:localContext];
+            tour.title = self.tourTitleTextField.text;
+        } completion:^(BOOL success, NSError *error) {
+            if ([self.delegate respondsToSelector:@selector(addTourViewControllerDidSaveTour:)]) {
+                [self.delegate addTourViewControllerDidSaveTour:self];
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
 }
 
 /*
