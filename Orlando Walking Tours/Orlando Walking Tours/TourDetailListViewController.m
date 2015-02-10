@@ -29,6 +29,10 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [self loadLocations];
+}
+
 -(void)loadLocations {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tour == %@", self.tour];
     NSArray *locations = [HistoricLocation MR_findAllWithPredicate:predicate];
@@ -126,6 +130,7 @@
 }
 
 -(void)saveLocation:(HistoricLocation *)location {
+    
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
         HistoricLocation *localLocation = [HistoricLocation MR_createInContext:localContext];
@@ -140,7 +145,7 @@
         
         localLocation.tour = [self.tour MR_inContext:localContext];
         
-        [self.locationsArray addObject:localLocation];
+        [self.locationsArray addObject:location];
         
     } completion:^(BOOL success, NSError *error) {
         if (!error) {
@@ -149,7 +154,7 @@
             NSLog(@"Error: %@", error.localizedDescription);
         }
         
-        [self.tableView reloadData];
+        [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
     }];
 }
 
