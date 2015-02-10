@@ -44,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableViewDataSource Methods
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -52,6 +53,7 @@
     return [self.locationsArray count];
 }
 
+#pragma mark - UITableViewDelegate Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoricLocationTableViewCell"];
     
@@ -61,6 +63,7 @@
     
     HistoricLocation *location = [self.locationsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = location.locationTitle;
+    cell.textLabel.numberOfLines = 0;
     return cell;
 }
 
