@@ -11,11 +11,14 @@
 
 @interface LocationDetailViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *typeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, retain) IBOutlet UIButton *addButton;
 
 @property (nonatomic, retain) HistoricLocation *historicLocation;
+
+-(IBAction)saveLocationTapped:(id)sender;
 
 @end

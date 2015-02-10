@@ -22,11 +22,21 @@
     self.titleLabel.text = self.historicLocation.locationTitle;
     self.typeLabel.text = self.historicLocation.locationType;
     self.descriptionLabel.text = self.historicLocation.locationDescription;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 1000); 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - IBActions
+-(void)saveLocationTapped:(id)sender {
+    NSLog(@"Saved Location");
 }
 
 /*
