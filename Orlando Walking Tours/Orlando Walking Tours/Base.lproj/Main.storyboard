@@ -63,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoricLocationTableViewCell" id="9JZ-2t-XyE">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoricLocationTableViewCell" id="9JZ-2t-XyE" customClass="HistoricLocationTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9JZ-2t-XyE" id="CRe-Y8-P0K">
@@ -97,6 +97,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="Dyq-mM-LCa" kind="show" identifier="ShowLocationList" id="jYb-oE-omK"/>
+                        <segue destination="fJa-x3-V6A" kind="show" identifier="LocationDetailSegue" id="iHK-9O-4Gl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2r-HX-5JG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,7 +231,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aS8-nF-8XH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="-52"/>
+            <point key="canvasLocation" x="2104" y="344"/>
         </scene>
         <!--Location Detail View Controller-->
         <scene sceneID="q71-6M-Raf">
@@ -285,6 +286,7 @@
                         <outlet property="descriptionLabel" destination="TIC-KH-yWx" id="SLC-LH-rYE"/>
                         <outlet property="titleLabel" destination="Kvp-0G-Ofx" id="Zg1-eH-ID8"/>
                         <outlet property="typeLabel" destination="Zad-UO-7Kk" id="Vbu-Jv-kdd"/>
+                        <segue destination="2oP-Jm-rea" kind="show" id="KUt-rH-B7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbB-fx-KSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,6 +311,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="YnC-4L-Jeh"/>
         <segue reference="jYb-oE-omK"/>
+        <segue reference="iHK-9O-4Gl"/>
     </inferredMetricsTieBreakers>
 </document>

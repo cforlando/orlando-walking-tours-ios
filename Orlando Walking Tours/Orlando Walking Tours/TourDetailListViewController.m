@@ -10,6 +10,8 @@
 #import "Tour.h"
 #import "HistoricLocation.h"
 #import "LocationListTableViewController.h"
+#import "HistoricLocationTableViewCell.h"
+#import "LocationDetailViewController.h"
 
 @interface TourDetailListViewController ()
 
@@ -62,6 +64,14 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    HistoricLocation *location = [self.locationsArray objectAtIndex:indexPath.row];
+    NSLog(@"%@", location.locationTitle);
+    [self performSegueWithIdentifier:@"LocationDetailSegue" sender:location];
+    
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
     view.backgroundColor = [UIColor blueColor];
@@ -89,9 +99,18 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:@"ShowLocationList"]) {
         LocationListTableViewController *vc = (LocationListTableViewController *)segue.destinationViewController;
         vc.delegate = self;
+    } else if ([[segue identifier] isEqualToString:@"LocationDetailSegue"])
+    {
+        // Get reference to the destination view controller
+        LocationDetailViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        vc.historicLocation = (HistoricLocation *)sender;
+        NSLog(@"Sender: %@", sender);
     }
 }
 
