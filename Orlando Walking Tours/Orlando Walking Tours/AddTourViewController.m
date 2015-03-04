@@ -8,7 +8,6 @@
 
 #import "AddTourViewController.h"
 #import "Tour.h"
-#import <MagicalRecord/CoreData+MagicalRecord.h>
 
 @interface AddTourViewController ()
 
