@@ -10,6 +10,7 @@
 #import "Tour.h"
 #import "HistoricLocation.h"
 #import "HistoricLocationTableViewCell.h"
+#import "NSArray+HistoricLocation.h"
 
 @interface TourDetailListViewController ()
 
@@ -145,12 +146,15 @@
 
 #pragma mark - Custom Delegate Methods
 -(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
-
-    [self saveLocation:location];
+    
+    if(![self.locationsArray containsLocation:location])
+        [self saveLocation:location];
 }
 
 -(void)locationDetailViewController:(LocationDetailViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
-    [self saveLocation:location];
+    
+    if(![self.locationsArray containsLocation:location])
+        [self saveLocation:location];
 }
 
 -(void)saveLocation:(HistoricLocation *)location {
