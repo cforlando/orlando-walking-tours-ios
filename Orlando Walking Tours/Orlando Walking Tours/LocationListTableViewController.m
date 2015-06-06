@@ -109,6 +109,7 @@
 #pragma mark - Custom Delegate Methods
 -(void)locationDetailViewController:(LocationDetailViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
     if ([self.delegate respondsToSelector:@selector(locationListTableViewController:didSelectHistoricLocation:)]) {
+        
         [self.delegate locationListTableViewController:self didSelectHistoricLocation:location];
     }
 }

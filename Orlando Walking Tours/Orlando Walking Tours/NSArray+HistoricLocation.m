@@ -17,7 +17,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"address == %@ && locationTitle == %@", location.address, location.locationTitle];
     NSArray * results = [self filteredArrayUsingPredicate:predicate];
     
-    return [results count] == 0;
+    return [results count] > 0;
 }
 
 
