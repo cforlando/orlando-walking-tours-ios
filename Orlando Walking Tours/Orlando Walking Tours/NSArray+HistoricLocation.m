@@ -11,7 +11,8 @@
 
 @implementation NSArray (HistoricLocation)
 
--(BOOL) isLocationInarray: (HistoricLocation*) location
+// NOTE: Without a unique id for historic locations, we are using address and locationTitle
+-(BOOL) containsLocation: (HistoricLocation*) location
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"address == %@ && locationTitle == %@", location.address, location.locationTitle];
     NSArray * results = [self filteredArrayUsingPredicate:predicate];

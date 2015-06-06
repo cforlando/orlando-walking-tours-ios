@@ -147,13 +147,13 @@
 #pragma mark - Custom Delegate Methods
 -(void)locationListTableViewController:(LocationListTableViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
     
-    if([self.locationsArray isLocationInarray:location])
+    if([self.locationsArray containsLocation:location])
         [self saveLocation:location];
 }
 
 -(void)locationDetailViewController:(LocationDetailViewController *)controller didSelectHistoricLocation:(HistoricLocation *)location {
     
-    if([self.locationsArray isLocationInarray:location])
+    if([self.locationsArray containsLocation:location])
         [self saveLocation:location];
 }
 

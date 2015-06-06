@@ -12,6 +12,6 @@
 
 @interface NSArray (HistoricLocation)
 
--(BOOL)isLocationInarray: (HistoricLocation*) location;
+-(BOOL)containsLocation: (HistoricLocation*) location;
 
 @end
