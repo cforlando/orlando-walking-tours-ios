@@ -30,6 +30,7 @@
 		D74F20B41A89C89600F2F894 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D74F20B31A89C89600F2F894 /* LocationAnnotation.m */; };
 		D75DDA641A807CB900988B18 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = D75DDA631A807CB900988B18 /* Tour.m */; };
 		D75DDA6A1A8087A200988B18 /* TourDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75DDA691A8087A200988B18 /* TourDetailListViewController.m */; };
+		F23866701B2372E500D7CACC /* NSArray+HistoricLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F238666F1B2372E500D7CACC /* NSArray+HistoricLocation.m */; };
 		F83BECCA1CB00D0827DA13B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C24C308243E028BC2F46390 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		D75DDA631A807CB900988B18 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
 		D75DDA681A8087A200988B18 /* TourDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourDetailListViewController.h; sourceTree = "<group>"; };
 		D75DDA691A8087A200988B18 /* TourDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourDetailListViewController.m; sourceTree = "<group>"; };
+		F238666E1B2372E500D7CACC /* NSArray+HistoricLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HistoricLocation.h"; sourceTree = "<group>"; };
+		F238666F1B2372E500D7CACC /* NSArray+HistoricLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HistoricLocation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,7 @@
 		D71D6F7F1A7D6AE1006D0456 /* Orlando Walking Tours */ = {
 			isa = PBXGroup;
 			children = (
+				F238666D1B2372C900D7CACC /* Categories */,
 				D74F20AE1A89C7FD00F2F894 /* Annotations */,
 				D75DDA601A807B8C00988B18 /* Resources */,
 				D71D6FCB1A7D78B2006D0456 /* Models */,
@@ -288,6 +292,15 @@
 				D71D6FD01A7D79C6006D0456 /* LocationListTableViewController.m */,
 			);
 			name = "Location List";
+			sourceTree = "<group>";
+		};
+		F238666D1B2372C900D7CACC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F238666E1B2372E500D7CACC /* NSArray+HistoricLocation.h */,
+				F238666F1B2372E500D7CACC /* NSArray+HistoricLocation.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23866701B2372E500D7CACC /* NSArray+HistoricLocation.m in Sources */,
 				D71D6FE31A7D829C006D0456 /* LocationDetailViewController.m in Sources */,
 				D74F20AD1A89B83E00F2F894 /* HistoricLocationTableViewCell.m in Sources */,
 				D71D6FD11A7D79C6006D0456 /* LocationListTableViewController.m in Sources */,
