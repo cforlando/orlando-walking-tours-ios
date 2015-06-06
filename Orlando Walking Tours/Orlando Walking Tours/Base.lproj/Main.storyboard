@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zA5-oz-hcX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zA5-oz-hcX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -271,43 +271,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-KH-yWx" userLabel="Description">
-                                        <rect key="frame" x="24" y="518" width="552" height="21"/>
+                                        <rect key="frame" x="24" y="430" width="552" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Du-Rl-ImS">
-                                        <rect key="frame" x="24" y="324" width="552" height="128"/>
+                                        <rect key="frame" x="24" y="265" width="552" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="olq-NW-XTX"/>
                                         </constraints>
                                     </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Historic Sign" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjM-0d-khQ">
-                                        <rect key="frame" x="24" y="237" width="552" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Historic Building" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mi-ON-9gq">
-                                        <rect key="frame" x="24" y="266" width="552" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="National Register of Historic Places" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-gv-tZs">
-                                        <rect key="frame" x="24" y="295" width="552" height="21"/>
+                                        <rect key="frame" x="24" y="236" width="552" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-jm-16G">
-                                        <rect key="frame" x="24" y="460" width="552" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQx-RB-1bQ">
-                                        <rect key="frame" x="24" y="489" width="552" height="21"/>
+                                        <rect key="frame" x="24" y="401" width="552" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -319,30 +301,21 @@
                                     <constraint firstAttribute="trailing" secondItem="9Du-Rl-ImS" secondAttribute="trailing" constant="24" id="2cf-xO-0oB"/>
                                     <constraint firstItem="FBz-jm-16G" firstAttribute="top" secondItem="9Du-Rl-ImS" secondAttribute="bottom" constant="8" id="7Uc-VR-oT9"/>
                                     <constraint firstAttribute="trailing" secondItem="Zad-UO-7Kk" secondAttribute="trailing" constant="24" id="8uk-L4-StI"/>
-                                    <constraint firstItem="kjM-0d-khQ" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" constant="24" id="B8V-Jg-hq3"/>
-                                    <constraint firstItem="TIC-KH-yWx" firstAttribute="top" secondItem="oQx-RB-1bQ" secondAttribute="bottom" constant="8" id="Eus-IN-orl"/>
+                                    <constraint firstItem="wwm-gv-tZs" firstAttribute="top" secondItem="Zad-UO-7Kk" secondAttribute="bottom" constant="8" id="HJo-Pc-W3c"/>
                                     <constraint firstItem="g3r-rq-HfT" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" id="I4L-2D-G9W"/>
-                                    <constraint firstItem="1mi-ON-9gq" firstAttribute="top" secondItem="kjM-0d-khQ" secondAttribute="bottom" constant="8" id="J4k-5Y-MRu"/>
-                                    <constraint firstAttribute="trailing" secondItem="kjM-0d-khQ" secondAttribute="trailing" constant="24" id="K5A-F8-kxg"/>
                                     <constraint firstItem="Kvp-0G-Ofx" firstAttribute="top" secondItem="g3r-rq-HfT" secondAttribute="bottom" constant="8" id="MsQ-I5-eBh"/>
-                                    <constraint firstItem="1mi-ON-9gq" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" constant="24" id="QN4-kP-lbU"/>
-                                    <constraint firstAttribute="trailing" secondItem="1mi-ON-9gq" secondAttribute="trailing" constant="24" id="QtU-0V-qWL"/>
                                     <constraint firstItem="Zad-UO-7Kk" firstAttribute="top" secondItem="Kvp-0G-Ofx" secondAttribute="bottom" constant="8" id="SUN-zA-Zsh"/>
                                     <constraint firstAttribute="trailing" secondItem="Kvp-0G-Ofx" secondAttribute="trailing" constant="24" id="Tbd-6A-cpa"/>
                                     <constraint firstItem="wwm-gv-tZs" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" constant="24" id="UpC-eL-tmE"/>
                                     <constraint firstAttribute="trailing" secondItem="g3r-rq-HfT" secondAttribute="trailing" id="VE6-dp-TA6"/>
-                                    <constraint firstItem="wwm-gv-tZs" firstAttribute="top" secondItem="1mi-ON-9gq" secondAttribute="bottom" constant="8" id="VHB-Su-kWR"/>
-                                    <constraint firstItem="oQx-RB-1bQ" firstAttribute="top" secondItem="FBz-jm-16G" secondAttribute="bottom" constant="8" id="VVd-4B-fZb"/>
                                     <constraint firstItem="g3r-rq-HfT" firstAttribute="top" secondItem="rHM-FW-gd3" secondAttribute="top" id="Xiz-eT-BzU"/>
-                                    <constraint firstItem="oQx-RB-1bQ" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" constant="24" id="a7N-HN-Uhb"/>
                                     <constraint firstAttribute="bottom" secondItem="TIC-KH-yWx" secondAttribute="bottom" constant="53" id="bdk-8l-6H2"/>
                                     <constraint firstAttribute="trailing" secondItem="TIC-KH-yWx" secondAttribute="trailing" constant="24" id="cKU-J2-djE"/>
                                     <constraint firstAttribute="centerX" secondItem="g3r-rq-HfT" secondAttribute="centerX" id="cja-o0-TP1"/>
                                     <constraint firstAttribute="centerX" secondItem="Zad-UO-7Kk" secondAttribute="centerX" id="csO-8E-tHE"/>
-                                    <constraint firstItem="kjM-0d-khQ" firstAttribute="top" secondItem="Zad-UO-7Kk" secondAttribute="bottom" constant="9" id="ept-ZE-otI"/>
                                     <constraint firstAttribute="trailing" secondItem="FBz-jm-16G" secondAttribute="trailing" constant="24" id="f2B-Ll-1EG"/>
+                                    <constraint firstItem="TIC-KH-yWx" firstAttribute="top" secondItem="FBz-jm-16G" secondAttribute="bottom" constant="8" id="jlz-H4-Yil"/>
                                     <constraint firstItem="9Du-Rl-ImS" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" constant="24" id="m0I-cf-Kva"/>
-                                    <constraint firstAttribute="trailing" secondItem="oQx-RB-1bQ" secondAttribute="trailing" constant="24" id="m8R-ER-riE"/>
                                     <constraint firstAttribute="trailing" secondItem="wwm-gv-tZs" secondAttribute="trailing" constant="24" id="tdm-91-af7"/>
                                     <constraint firstAttribute="centerX" secondItem="Kvp-0G-Ofx" secondAttribute="centerX" id="w0X-x6-iHH"/>
                                     <constraint firstItem="Kvp-0G-Ofx" firstAttribute="leading" secondItem="rHM-FW-gd3" secondAttribute="leading" constant="24" id="wVZ-OX-6Se"/>
@@ -374,6 +347,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="address1Label" destination="FBz-jm-16G" id="Vbj-ip-8Ef"/>
                         <outlet property="descriptionLabel" destination="TIC-KH-yWx" id="SLC-LH-rYE"/>
                         <outlet property="mapView" destination="9Du-Rl-ImS" id="1Ag-J4-TvQ"/>
                         <outlet property="scrollView" destination="rHM-FW-gd3" id="LfL-Z6-YVN"/>
@@ -404,8 +378,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KUt-rH-B7e"/>
-        <segue reference="iHK-9O-4Gl"/>
         <segue reference="jYb-oE-omK"/>
+        <segue reference="KUt-rH-B7e"/>
+        <segue reference="lqs-Mh-a8P"/>
     </inferredMetricsTieBreakers>
 </document>
