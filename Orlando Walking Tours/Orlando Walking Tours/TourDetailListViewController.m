@@ -186,6 +186,4 @@
     }];
 }
 
-#pragma mark - Location helper
-
 @end
