@@ -23,6 +23,7 @@
     self.titleLabel.text = self.historicLocation.locationTitle;
     self.typeLabel.text = self.historicLocation.locationType;
     self.descriptionLabel.text = self.historicLocation.locationDescription;
+    self.address1Label.text = self.historicLocation.address;
     
     // Set the location's annotation and zoom in
     LocationAnnotation *annotation = [[LocationAnnotation alloc] initWithHistoricLocation:self.historicLocation];

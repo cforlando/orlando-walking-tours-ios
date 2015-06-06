@@ -25,6 +25,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *typeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, retain) IBOutlet UILabel *address1Label;
+
 @property (nonatomic, retain) IBOutlet UIButton *addButton;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
