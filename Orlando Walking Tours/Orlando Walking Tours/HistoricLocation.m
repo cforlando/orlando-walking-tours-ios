@@ -10,4 +10,15 @@
 
 @implementation HistoricLocation
 
+@dynamic locationType;
+@dynamic localRegistryDate;
+@dynamic sortOrder;
+@dynamic location;
+@dynamic longitude;
+@dynamic locationDescription;
+@dynamic latitude;
+@dynamic address;
+@dynamic tour;
+@dynamic locationTitle;
+
 @end
