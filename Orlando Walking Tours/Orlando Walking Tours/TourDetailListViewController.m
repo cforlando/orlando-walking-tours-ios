@@ -112,7 +112,11 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     HistoricLocation *location = [self.locationsArray objectAtIndex:indexPath.row];
     
-    NSLog(@"Location: %@", location.locationTitle);
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self removeLocation:location];
+        [self.locationsArray removeObjectAtIndex:indexPath.row];
+        [tableView reloadData];
+    }
     
 }
 
@@ -183,6 +187,18 @@
         }
         
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    }];
+}
+
+-(void)removeLocation:(HistoricLocation *)location {
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        if (![location MR_deleteEntity]) {
+            NSLog(@"%@ could not be deleted", location.locationTitle);
+        }
+    } completion:^(BOOL success, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
     }];
 }
 

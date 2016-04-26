@@ -52,6 +52,10 @@
             [self.locationsArray addObject:location];
         }
 
+        NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"locationTitle" ascending:YES];
+        NSArray *sortDescriptors = @[nameDescriptor];
+        [self.locationsArray sortUsingDescriptors:sortDescriptors];
+
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
         
         
