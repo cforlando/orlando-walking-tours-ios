@@ -97,7 +97,6 @@
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Yes");
     return YES;
 }
 
@@ -191,15 +190,26 @@
 }
 
 -(void)removeLocation:(HistoricLocation *)location {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        if (![location MR_deleteEntity]) {
-            NSLog(@"%@ could not be deleted", location.locationTitle);
-        }
-    } completion:^(BOOL success, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@", error.localizedDescription);
-        }
-    }];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"locationTitle == %@", location.locationTitle];
+    NSArray *locations = [HistoricLocation MR_findAllWithPredicate:predicate];
+
+    if (locations.count > 0) {
+
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+
+            HistoricLocation *location = [locations[0] MR_inContext:localContext];
+
+            if (![location MR_deleteInContext:localContext]) {
+                NSLog(@"%@ could not be deleted", location.locationTitle);
+            }
+        } completion:^(BOOL success, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error.localizedDescription);
+            }
+        }];
+
+    }
 }
 
 @end
