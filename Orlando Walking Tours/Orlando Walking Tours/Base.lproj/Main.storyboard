@@ -176,7 +176,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="44" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="57" id="63N-2i-GEs" customClass="LocationTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="600" height="57"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="57"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="63N-2i-GEs" id="YxY-Z8-Dis">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
@@ -384,8 +384,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zqi-oX-Fcc"/>
-        <segue reference="lqs-Mh-a8P"/>
         <segue reference="KUt-rH-B7e"/>
+        <segue reference="lqs-Mh-a8P"/>
+        <segue reference="jYb-oE-omK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -97,7 +97,6 @@
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Yes");
     return YES;
 }
 
@@ -112,7 +111,11 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     HistoricLocation *location = [self.locationsArray objectAtIndex:indexPath.row];
     
-    NSLog(@"Location: %@", location.locationTitle);
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self removeLocation:location];
+        [self.locationsArray removeObjectAtIndex:indexPath.row];
+        [tableView reloadData];
+    }
     
 }
 
@@ -184,6 +187,29 @@
         
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
     }];
+}
+
+-(void)removeLocation:(HistoricLocation *)location {
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"locationTitle == %@", location.locationTitle];
+    NSArray *locations = [HistoricLocation MR_findAllWithPredicate:predicate];
+
+    if (locations.count > 0) {
+
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+
+            HistoricLocation *location = [locations[0] MR_inContext:localContext];
+
+            if (![location MR_deleteInContext:localContext]) {
+                NSLog(@"%@ could not be deleted", location.locationTitle);
+            }
+        } completion:^(BOOL success, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@", error.localizedDescription);
+            }
+        }];
+
+    }
 }
 
 @end
