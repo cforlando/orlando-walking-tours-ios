@@ -1,0 +1,6 @@
+framework module Pods_Orlando_Walking_Tours {
+  umbrella header "Pods-Orlando Walking Tours-umbrella.h"
+
+  export *
+  module * { export * }
+}
