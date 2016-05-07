@@ -1,4 +1,4 @@
-# Orlando Walking Tours for iOS
+# Orlando Walking Tours for iOS [![Build Status](https://travis-ci.org/cforlando/orlando-walking-tours-ios.svg?branch=master)](https://travis-ci.org/cforlando/orlando-walking-tours-ios)
 -----------
 **Orlando Walking Tours** is an iOS app that will allow users to create customized walking tours of the various historic locations around the city of Orlando.  
 
