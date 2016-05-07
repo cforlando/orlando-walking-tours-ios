@@ -3,7 +3,7 @@
 We encourage anyone who is interested in contributing to Orlando Walking Tours to do so!  In order to ensure good code quality, there are some guidelines we would like to adhere to when contributing to this project. 
 
 ### Code for Orlando Members
-If you are currently a member of Code for Orlando (ie. you have access to the Code for Orlando Github repo), we ask that you not push any commits directly into the master branch.  Please create a branch first.  You can do this by using the command `git checkout -b [name-of-branch]`.  You can name the branch anything you'd like, but we encourage using the following: `[your-github-username]/develop`.  WHen you are ready to commit, push your changes using the command 'git push origin [name-of-branch]` and then submit a pull request.  If you are working on a specific issue (which you should be! :P ), reference the issue number in the pull request.
+If you are currently a member of Code for Orlando (ie. you have access to the Code for Orlando Github repo), we ask that you not push any commits directly into master.  Please create a branch first.  You can do this by using the command `git checkout -b [name-of-branch]`.  You can name the branch anything you'd like, but we encourage using the following: `[your-github-username]/develop`.  When you are ready to commit, push your changes using the command `git push origin [name-of-branch]` and then submit a pull request.  If you are working on a specific issue (which you should be! :P ), reference the issue number in the pull request.
 
 By following these guidelines, we will be able to perform code reviews on all commits before merging with the master branch!
 
