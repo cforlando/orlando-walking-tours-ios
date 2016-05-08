@@ -10,6 +10,10 @@ The most up-to-date prototype is available on <a href="https://codefortravel.pro
 -----------
 The list of historic locations is currently stored [here](https://brigades.opendatanetwork.com/dataset/Orlando-Historical-Landmarks/hzkr-id6u).
 
+## Want to contribute?
+-----------
+If you'd like to contribute, check out our [Contributing](CONTRIBUTING.md) page for more details.
+
 ## About Code for Orlando
 -----------
 [Code for Orlando](http://www.codefororlando.com/), a local Code for America brigade, brings the community together to improve Orlando through technology.  We are a group of "civic hackers" from various disciplines who are committed to volunteering our talents to make a difference in the local community through technology.  We unite to improve the way the community, visitors, and local government experience Orlando.
