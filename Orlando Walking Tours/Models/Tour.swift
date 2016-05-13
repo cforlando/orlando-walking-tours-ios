@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(Tour)
 class Tour: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
