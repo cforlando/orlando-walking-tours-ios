@@ -9,8 +9,8 @@
 import Foundation
 import CoreData
 
-@objc(HistoricLocation)
-class HistoricLocation: NSManagedObject {
+class HistoricLocation: NSManagedObject
+{
 
 // Insert code here to add functionality to your managed object subclass
 

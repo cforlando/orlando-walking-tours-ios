@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42013C261CDF8CFD0030D2F8 /* LocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */; };
+		42013C291CE02E290030D2F8 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42013C281CE02E290030D2F8 /* LocationAnnotation.swift */; };
+		420B82CE1CE0D6B0005ED879 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B82CD1CE0D6B0005ED879 /* DataService.swift */; };
 		42BAF2B41CDE9F470095324B /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2B01CDE9F470095324B /* Tour+CoreDataProperties.swift */; };
 		42BAF2B51CDE9F470095324B /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2B11CDE9F470095324B /* Tour.swift */; };
 		42BAF2B61CDE9F470095324B /* HistoricLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2B21CDE9F470095324B /* HistoricLocation+CoreDataProperties.swift */; };
 		42BAF2B71CDE9F470095324B /* HistoricLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2B31CDE9F470095324B /* HistoricLocation.swift */; };
 		42CBE2291CDA8CE400F9E6D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CBE2281CDA8CE400F9E6D5 /* AppDelegate.swift */; };
-		42CBE22B1CDA8CE400F9E6D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CBE22A1CDA8CE400F9E6D5 /* ViewController.swift */; };
 		42CBE22E1CDA8CE400F9E6D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE22C1CDA8CE400F9E6D5 /* Main.storyboard */; };
 		42CBE2311CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42CBE22F1CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld */; };
 		42CBE2331CDA8CE400F9E6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2321CDA8CE400F9E6D5 /* Assets.xcassets */; };
@@ -21,13 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationMapVC.swift; path = Controllers/LocationMapVC.swift; sourceTree = "<group>"; };
+		42013C281CE02E290030D2F8 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Annotations/LocationAnnotation.swift; sourceTree = "<group>"; };
+		420B82CD1CE0D6B0005ED879 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
 		42BAF2B01CDE9F470095324B /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42BAF2B11CDE9F470095324B /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tour.swift; path = Models/Tour.swift; sourceTree = "<group>"; };
 		42BAF2B21CDE9F470095324B /* HistoricLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoricLocation+CoreDataProperties.swift"; path = "Models/HistoricLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42BAF2B31CDE9F470095324B /* HistoricLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoricLocation.swift; path = Models/HistoricLocation.swift; sourceTree = "<group>"; };
 		42CBE2251CDA8CE400F9E6D5 /* Orlando Walking Tours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orlando Walking Tours.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CBE2281CDA8CE400F9E6D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42CBE22A1CDA8CE400F9E6D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42CBE22D1CDA8CE400F9E6D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42CBE2301CDA8CE400F9E6D5 /* WalkingTours.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalkingTours.xcdatamodel; sourceTree = "<group>"; };
 		42CBE2321CDA8CE400F9E6D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42013C271CE02E050030D2F8 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				42013C281CE02E290030D2F8 /* LocationAnnotation.swift */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
+		420B82CC1CE0D603005ED879 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				420B82CD1CE0D6B0005ED879 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		42BAF2B81CDE9F500095324B /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,11 +100,12 @@
 		42CBE2271CDA8CE400F9E6D5 /* Orlando Walking Tours */ = {
 			isa = PBXGroup;
 			children = (
+				420B82CC1CE0D603005ED879 /* Services */,
+				42013C271CE02E050030D2F8 /* Annotations */,
 				42CBE23F1CDA8D7A00F9E6D5 /* Controllers */,
 				42CBE23E1CDA8D7300F9E6D5 /* Models */,
 				42CBE23D1CDA8D3800F9E6D5 /* Resources */,
 				42CBE2281CDA8CE400F9E6D5 /* AppDelegate.swift */,
-				42CBE22A1CDA8CE400F9E6D5 /* ViewController.swift */,
 				42CBE2371CDA8CE400F9E6D5 /* Info.plist */,
 			);
 			path = "Orlando Walking Tours";
@@ -114,6 +135,7 @@
 		42CBE23F1CDA8D7A00F9E6D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -257,13 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420B82CE1CE0D6B0005ED879 /* DataService.swift in Sources */,
 				42CBE2311CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld in Sources */,
 				42BAF2B41CDE9F470095324B /* Tour+CoreDataProperties.swift in Sources */,
-				42CBE22B1CDA8CE400F9E6D5 /* ViewController.swift in Sources */,
 				42BAF2B51CDE9F470095324B /* Tour.swift in Sources */,
 				42BAF2B71CDE9F470095324B /* HistoricLocation.swift in Sources */,
 				42CBE2291CDA8CE400F9E6D5 /* AppDelegate.swift in Sources */,
 				42BAF2B61CDE9F470095324B /* HistoricLocation+CoreDataProperties.swift in Sources */,
+				42013C261CDF8CFD0030D2F8 /* LocationMapVC.swift in Sources */,
+				42013C291CE02E290030D2F8 /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.Orlando-Walking-Tours";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,7 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.Orlando-Walking-Tours";
 				PRODUCT_NAME = "$(TARGET_NAME)";
