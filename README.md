@@ -6,6 +6,8 @@
 
 **Version** 1.0 (MVP)
 
+**Feature List** A list of features we would like finished for version 1.0 can be found [here](MVP Product List.md).
+
 **Data Source** The list of historic locations is currently stored [here](https://brigades.opendatanetwork.com/dataset/Orlando-Historical-Landmarks/hzkr-id6u).
 
 **Prototype** The most up-to-date prototype is available on <a href="https://codefortravel.proto.io/share/?id=d1c6b95c-c2a9-4fad-8329-62a4853971d7&v=1">proto.io</a>. Please use this prototype as a guide for what features need to be developed and how the application should be laid out. Please open issues with any questions you may have about functionality.
