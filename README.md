@@ -6,7 +6,7 @@
 
 **Version** 1.0 (MVP)
 
-**Feature List** A list of features we would like finished for version 1.0 can be found [here](MVP Product List.md).
+**Feature List** A list of features we would like finished for version 1.0 can be found [here](MVP Feature List.md).
 
 **Data Source** The list of historic locations is currently stored [here](https://brigades.opendatanetwork.com/dataset/Orlando-Historical-Landmarks/hzkr-id6u).
 
