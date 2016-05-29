@@ -1,4 +1,5 @@
 # Orlando Walking Tours
+## MVP Feature List
 --------
 The purpose of the Orlando Walking Tours app is to provide users with the opportunity to put together their own self-guided walking tour of Orlando's many historic buildings and signs.  The following list details the features we would like to have implemented in order to release a minimum viable product (MVP).
 
