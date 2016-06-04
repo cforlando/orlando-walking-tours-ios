@@ -72,9 +72,9 @@ struct DataService
                                 location.localRegistryDate = NSDateFormatter().dateFromString(localRegistryDate)
                             }
 
-                            if let nhrpDate = subJson["nhrp"].string
+                            if let nrhpDate = subJson["nhrp"].string
                             {
-                                location.nhrpDate = NSDateFormatter().dateFromString(nhrpDate)
+                                location.nrhpDate = NSDateFormatter().dateFromString(nrhpDate)
                             }
 
                             locations.append(location)

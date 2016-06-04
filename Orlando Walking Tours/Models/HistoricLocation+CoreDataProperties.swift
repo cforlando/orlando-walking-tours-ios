@@ -23,7 +23,7 @@ extension HistoricLocation {
     @NSManaged var longitude: NSNumber?
     @NSManaged var sortOrder: NSNumber?
     @NSManaged var id: NSNumber?
-    @NSManaged var nhrpDate: NSDate?
+    @NSManaged var nrhpDate: NSDate?
     @NSManaged var tour: Tour?
 
 }
