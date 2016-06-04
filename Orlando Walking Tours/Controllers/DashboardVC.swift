@@ -9,7 +9,7 @@
 import UIKit
 import MagicalRecord
 
-class DashboardVC: UIViewController
+class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,8 +20,11 @@ class DashboardVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        toursArray = Tour.MR_findAll() as! [Tour]
-
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        fetchAllTours()
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +37,11 @@ class DashboardVC: UIViewController
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func fetchAllTours() {
+        toursArray = Tour.MR_findAll() as! [Tour]
+        
+    }
 
     @IBAction func newTourPressed(sender: UIBarButtonItem)
         
@@ -64,8 +72,9 @@ class DashboardVC: UIViewController
                 let tour = Tour.MR_createEntityInContext(localContext)
                 tour!.title = nameTextField!.text!
             })
-
+            
             self.tableView.reloadData()
+
             removeTextFieldObserver()
         }
         
@@ -96,6 +105,10 @@ class DashboardVC: UIViewController
         cell.textLabel!.text = currentTour.title
         
         return cell
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
 
