@@ -2,7 +2,7 @@
 //  HistoricLocation+CoreDataProperties.swift
 //  Orlando Walking Tours
 //
-//  Created by Keli'i Martin on 5/7/16.
+//  Created by Keli'i Martin on 6/4/16.
 //  Copyright © 2016 Code for Orlando. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -22,6 +22,8 @@ extension HistoricLocation {
     @NSManaged var locationType: String?
     @NSManaged var longitude: NSNumber?
     @NSManaged var sortOrder: NSNumber?
+    @NSManaged var id: NSNumber?
+    @NSManaged var nhrpDate: NSDate?
     @NSManaged var tour: Tour?
 
 }

@@ -32,6 +32,11 @@ struct DataService
                         let location = HistoricLocation.MR_createEntity()
                         if let location = location
                         {
+                            if let id = subJson["id"].string
+                            {
+                                location.id = Int(id)
+                            }
+
                             if let title = subJson["name"].string
                             {
                                 location.locationTitle = title
@@ -64,8 +69,12 @@ struct DataService
 
                             if let localRegistryDate = subJson["local"].string
                             {
-                                let dateFormatter = NSDateFormatter()
-                                location.localRegistryDate = dateFormatter.dateFromString(localRegistryDate)
+                                location.localRegistryDate = NSDateFormatter().dateFromString(localRegistryDate)
+                            }
+
+                            if let nhrpDate = subJson["nhrp"].string
+                            {
+                                location.nhrpDate = NSDateFormatter().dateFromString(nhrpDate)
                             }
 
                             locations.append(location)
