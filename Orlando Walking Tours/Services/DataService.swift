@@ -16,7 +16,7 @@ struct DataService
 
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
     {
-        let locationsUrlString = "https://brigades.opendatanetwork.com/resource/hzkr-id6u.json"
+        let locationsUrlString = "https://brigades.opendatanetwork.com/resource/aq56-mwpv.json"
         var locations = [HistoricLocation]()
         
         Alamofire.request(.GET, locationsUrlString).validate().responseJSON
@@ -52,14 +52,14 @@ struct DataService
                                 location.locationType = locationType
                             }
 
-                            if let longitude = subJson["location"]["longitude"].string
+                            if let longitude = subJson["location"]["coordinates"][0].double
                             {
-                                location.longitude = Double(longitude)
+                               location.longitude = longitude
                             }
 
-                            if let latitude = subJson["location"]["latitude"].string
+                            if let latitude = subJson["location"]["coordinates"][1].double
                             {
-                                location.latitude = Double(latitude)
+                                location.latitude = latitude
                             }
 
                             if let localRegistryDate = subJson["local"].string
