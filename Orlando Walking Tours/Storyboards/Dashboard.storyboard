@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PxN-cf-ICF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Orlando Walking Tours-->
+        <scene sceneID="0h2-KO-Nho">
+            <objects>
+                <viewController id="x9W-jf-XkS" customClass="DashboardVC" customModule="Orlando_Walking_Tours" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yOO-Cz-jEY"/>
+                        <viewControllerLayoutGuide type="bottom" id="tPg-nl-jJj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jEY-VQ-KMC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t5x-WX-zae">
+                                <rect key="frame" x="0.0" y="64" width="595" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Orlando Walking Tours" id="csL-vC-cbJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="83L-ZD-SeT">
+                            <connections>
+                                <action selector="newTourPressed:" destination="x9W-jf-XkS" id="Ili-9h-Qtm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="t5x-WX-zae" id="oDi-Wi-CJv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PDW-68-nx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1194" y="1154"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yyU-ee-fpJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PxN-cf-ICF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vBm-71-ViG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x9W-jf-XkS" kind="relationship" relationship="rootViewController" id="hYJ-AE-cB4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olN-wU-r6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="1154"/>
+        </scene>
+    </scenes>
+</document>
