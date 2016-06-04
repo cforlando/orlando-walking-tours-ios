@@ -45,5 +45,6 @@ The purpose of the Orlando Walking Tours app is to provide users with the opport
 ##### Under the Hood
 ----
 - The user's tours shall be saved to a persistent store on the user's device.
-----
+
+
 * These views shall be used both when the user is selecting locations to put into their tours and also to display the locations in a tour that has already been created.
