@@ -25,6 +25,7 @@
 		42CBE2361CDA8CE400F9E6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2341CDA8CE400F9E6D5 /* LaunchScreen.storyboard */; };
 		42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */; };
 		42CE84E81D076F9C00A43005 /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */; };
+		42CE84E01D07346900A43005 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42CE84DF1D07346900A43005 /* GoogleService-Info.plist */; };
 		6727DFB4A1B4B19F5F8E526F /* Pods_Orlando_Walking_Tours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		42CBE2371CDA8CE400F9E6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoricLocation+CoreDataProperties.swift"; path = "Models/HistoricLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42CE84DF1D07346900A43005 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86A7766E555F3964A9AFD00F /* Pods-Orlando Walking Tours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.release.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.release.xcconfig"; sourceTree = "<group>"; };
 		9886207BC1C22F67BFFC6B39 /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orlando_Walking_Tours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				42CBE23D1CDA8D3800F9E6D5 /* Resources */,
 				42CBE2281CDA8CE400F9E6D5 /* AppDelegate.swift */,
 				42CBE2371CDA8CE400F9E6D5 /* Info.plist */,
+				42CE84DF1D07346900A43005 /* GoogleService-Info.plist */,
 			);
 			path = "Orlando Walking Tours";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				42CBE22E1CDA8CE400F9E6D5 /* Main.storyboard in Resources */,
 				42C0C7611D032B4B00073F90 /* LocationDetails.storyboard in Resources */,
 				42C0C75D1D032AD100073F90 /* Dashboard.storyboard in Resources */,
+				42CE84E01D07346900A43005 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
