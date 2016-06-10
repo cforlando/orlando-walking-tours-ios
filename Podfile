@@ -7,4 +7,5 @@ target 'Orlando Walking Tours' do
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   pod 'MagicalRecord'
   pod 'Firebase'
+  pod 'Firebase/Database'
 end

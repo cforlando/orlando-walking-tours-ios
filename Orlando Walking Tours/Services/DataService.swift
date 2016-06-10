@@ -9,9 +9,12 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 struct DataService
 {
+    let ref = FIRDatabase.database().reference()
+
     static let sharedInstance = DataService()
 
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
