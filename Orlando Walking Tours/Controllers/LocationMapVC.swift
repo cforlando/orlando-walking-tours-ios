@@ -37,7 +37,7 @@ class LocationMapVC: UIViewController, MKMapViewDelegate
         let region = MKCoordinateRegionMakeWithDistance(centerPoint, 2000, 2000)
         mapView.setRegion(region, animated: true)
 
-        DataService.sharedInstance.getLocations()
+        FirebaseDataService.sharedInstance.getLocations()
         { locations in
             var annotations = [LocationAnnotation]()
             for location in locations
