@@ -36,33 +36,21 @@ struct FirebaseDataService : DataServiceProtocol
 
                         if let location = HistoricLocation.MR_createEntity()
                         {
-                            if let title = locationJSON["name"].string
+                            if let title = locationJSON["name"].string,
+                               let description = locationJSON["description"].string,
+                               let address = locationJSON["address"].string,
+                               let locationType = locationJSON["type"].string
                             {
                                 location.locationTitle = title
-                            }
-
-                            if let description = locationJSON["description"].string
-                            {
                                 location.locationDescription = description
-                            }
-
-                            if let address = locationJSON["address"].string
-                            {
                                 location.address = address
-                            }
-
-                            if let locationType = locationJSON["type"].string
-                            {
                                 location.locationType = locationType
                             }
 
-                            if let latitude = locationJSON["location"]["latitude"].double
+                            if let latitude = locationJSON["location"]["latitude"].double,
+                               let longitude = locationJSON["location"]["longitude"].double
                             {
                                 location.latitude = latitude
-                            }
-
-                            if let longitude = locationJSON["location"]["longitude"].double
-                            {
                                 location.longitude = longitude
                             }
 
