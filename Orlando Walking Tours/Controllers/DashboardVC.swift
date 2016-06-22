@@ -65,7 +65,8 @@ class DashboardVC: UIViewController, UICollectionViewDataSource
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as? DashboardCollectionViewCell
         {
             // TODO: Image view for cell should be random photo of a location from the tour
-            //cell.imageView.image = UIImage(named: "plus")
+            cell.imageView.image = UIImage(named: "plus")
+            cell.tourName.text = self.tours[indexPath.row].title
             return cell
         }
         

@@ -38,6 +38,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SXM-Mn-3kP">
                                 <rect key="frame" x="0.0" y="128" width="600" height="472"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kTi-MQ-EIQ">
                                     <size key="itemSize" width="158" height="146"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -55,18 +56,29 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jmC-qE-iXE">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvi-bI-HAX">
+                                                    <rect key="frame" x="8" y="106" width="134" height="36"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Vvi-bI-HAX" secondAttribute="bottom" constant="8" id="04l-zR-5DA"/>
+                                            <constraint firstItem="Vvi-bI-HAX" firstAttribute="leading" secondItem="2ha-fR-Q1R" secondAttribute="leading" constant="8" id="FNu-W4-DEj"/>
                                             <constraint firstAttribute="bottom" secondItem="jmC-qE-iXE" secondAttribute="bottom" id="Jy3-96-wkb"/>
                                             <constraint firstItem="jmC-qE-iXE" firstAttribute="leading" secondItem="2ha-fR-Q1R" secondAttribute="leading" id="Nbz-LJ-tDf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vvi-bI-HAX" secondAttribute="trailing" constant="8" id="TUJ-4H-bjD"/>
                                             <constraint firstAttribute="trailing" secondItem="jmC-qE-iXE" secondAttribute="trailing" id="VqC-NB-IC0"/>
                                             <constraint firstItem="jmC-qE-iXE" firstAttribute="top" secondItem="2ha-fR-Q1R" secondAttribute="top" id="yp1-t4-ceJ"/>
                                         </constraints>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
                                             <outlet property="imageView" destination="jmC-qE-iXE" id="eiC-tu-1NL"/>
+                                            <outlet property="tourName" destination="Vvi-bI-HAX" id="tYr-Cf-7Ln"/>
+                                            <segue destination="9be-TP-5VS" kind="show" identifier="ShowTourListSegue" id="JyJ-R0-9M9"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -138,13 +150,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter tour name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-Sb-SYS">
-                                <rect key="frame" x="20" y="95" width="560" height="22"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tour name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-Sb-SYS">
+                                <rect key="frame" x="20" y="95" width="560" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFn-EM-4KP" customClass="CustomButton" customModule="Orlando_Walking_Tours" customModuleProvider="target">
-                                <rect key="frame" x="40" y="195" width="520" height="38"/>
+                                <rect key="frame" x="40" y="203" width="520" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="CANCEL"/>
                                 <userDefinedRuntimeAttributes>
@@ -162,8 +174,8 @@
                                     <action selector="cancelButtonTapped:" destination="84C-kJ-whP" eventType="touchUpInside" id="jl7-1q-1z3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-Tx-6hV" customClass="CustomButton" customModule="Orlando_Walking_Tours" customModuleProvider="target">
-                                <rect key="frame" x="40" y="137" width="520" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-Tx-6hV" customClass="CustomButton" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                                <rect key="frame" x="40" y="145" width="520" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="LET'S GO!"/>
                                 <userDefinedRuntimeAttributes>
@@ -201,6 +213,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addTourButton" destination="NdS-Tx-6hV" id="Jdu-GE-IXH"/>
                         <outlet property="tourNameTextField" destination="0zD-Sb-SYS" id="chM-6V-FlA"/>
                     </connections>
                 </viewController>
@@ -214,10 +227,13 @@
                 <viewControllerPlaceholder storyboardName="LocationList" id="9be-TP-5VS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ro6-Kw-Bgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847.5" y="1128"/>
+            <point key="canvasLocation" x="991.5" y="1606"/>
         </scene>
     </scenes>
     <resources>
         <image name="plus" width="150" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JyJ-R0-9M9"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class DashboardCollectionViewCell: UICollectionViewCell
 {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tourName: UILabel!
 
     override func prepareForReuse()
     {
