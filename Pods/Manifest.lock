@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (3.4.0)
-  - DZNEmptyDataSet (1.8.1)
   - Firebase (3.2.1):
     - Firebase/Core (= 3.2.1)
   - Firebase/Analytics (3.2.1):
@@ -30,7 +29,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
-  - DZNEmptyDataSet
   - Firebase
   - Firebase/Database
   - MagicalRecord
@@ -47,7 +45,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseDatabase: 34301d11621a83546f39f670d256477ba6f7fcea

@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import DZNEmptyDataSet
 
-class DashboardVC: UIViewController, UICollectionViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
+class DashboardVC: UIViewController, UICollectionViewDataSource
 {
     ////////////////////////////////////////////////////////////
     // MARK: - Outlets
     ////////////////////////////////////////////////////////////
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var newTourView: UIStackView!
 
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
@@ -32,54 +32,21 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, DZNEmptyDataSet
         super.viewDidLoad()
 
         self.collectionView.dataSource = self
-        self.collectionView.emptyDataSetSource = self
-        self.collectionView.emptyDataSetDelegate = self
         self.collectionView.collectionViewLayout = DashboardViewFlowLayout()
 
         if let tours = Tour.MR_findAll() as? [Tour]
         {
             self.tours = tours
         }
-    }
 
-    ////////////////////////////////////////////////////////////
-    // MARK: - DZNEmptyDataSetSource
-    ////////////////////////////////////////////////////////////
-
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage!
-    {
-        return UIImage(named: "plus")
+        self.newTourView.hidden = (self.tours.count > 0)
     }
 
     ////////////////////////////////////////////////////////////
 
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString!
+    @IBAction func newTourPressed(sender: UIButton)
     {
-        var attributes: [String: AnyObject] =
-        [
-            NSForegroundColorAttributeName: UIColor.blackColor()
-        ]
-
-        if let titleFont = UIFont(name: "HelveticaNeue", size: 28.0)
-        {
-            attributes[NSFontAttributeName] = titleFont
-        }
-
-        return NSAttributedString(string: "New Tour", attributes: attributes)
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor!
-    {
-        return UIColor.whiteColor()
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat
-    {
-        return -75.0
+        
     }
 
     ////////////////////////////////////////////////////////////

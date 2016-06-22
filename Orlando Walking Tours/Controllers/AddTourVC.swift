@@ -1,0 +1,51 @@
+//
+//  AddTourVC.swift
+//  Orlando Walking Tours
+//
+//  Created by Keli'i Martin on 6/21/16.
+//  Copyright © 2016 Code for Orlando. All rights reserved.
+//
+
+import UIKit
+
+class AddTourVC: UIViewController, UITextFieldDelegate
+{
+    ////////////////////////////////////////////////////////////
+    // MARK: - Outlets
+    ////////////////////////////////////////////////////////////
+
+    @IBOutlet weak var tourNameTextField: UITextField!
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - View Controller Life Cycle
+    ////////////////////////////////////////////////////////////
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - UITextFieldDelegate
+    ////////////////////////////////////////////////////////////
+
+
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - IBActions
+    ////////////////////////////////////////////////////////////
+
+    @IBAction func addTourButtonTapped(sender: UIButton)
+    {
+
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    @IBAction func cancelButtonTapped(sender: UIButton)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}

@@ -14,6 +14,8 @@
 		42760F551D18C8B7007BA422 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */; };
 		42760F561D18C8B7007BA422 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F531D18C8B7007BA422 /* FirebaseDataService.swift */; };
 		42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F541D18C8B7007BA422 /* SocrataDataService.swift */; };
+		42760F591D18D72E007BA422 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42760F581D18D72E007BA422 /* GoogleService-Info.plist */; };
+		42760F5B1D19D5AD007BA422 /* AddTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F5A1D19D5AD007BA422 /* AddTourVC.swift */; };
 		42863A581D16FA970014707B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A571D16FA970014707B /* CustomButton.swift */; };
 		42863A5B1D16FE070014707B /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */; };
 		42863A5D1D16FE890014707B /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A5C1D16FE890014707B /* UIColor+HexColor.swift */; };
@@ -42,6 +44,8 @@
 		42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataServiceProtocol.swift; path = Services/DataServiceProtocol.swift; sourceTree = "<group>"; };
 		42760F531D18C8B7007BA422 /* FirebaseDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseDataService.swift; path = Services/FirebaseDataService.swift; sourceTree = "<group>"; };
 		42760F541D18C8B7007BA422 /* SocrataDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocrataDataService.swift; path = Services/SocrataDataService.swift; sourceTree = "<group>"; };
+		42760F581D18D72E007BA422 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42760F5A1D19D5AD007BA422 /* AddTourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTourVC.swift; path = Controllers/AddTourVC.swift; sourceTree = "<group>"; };
 		42863A571D16FA970014707B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ThemeColors.swift"; path = "Extensions/UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		42863A5C1D16FE890014707B /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HexColor.swift"; path = "Extensions/UIColor+HexColor.swift"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				42CBE23D1CDA8D3800F9E6D5 /* Resources */,
 				42CBE2281CDA8CE400F9E6D5 /* AppDelegate.swift */,
 				42CBE2371CDA8CE400F9E6D5 /* Info.plist */,
+				42760F581D18D72E007BA422 /* GoogleService-Info.plist */,
 			);
 			path = "Orlando Walking Tours";
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				42C0C74D1D031CA000073F90 /* DashboardVC.swift */,
 				42C0C7511D031D1300073F90 /* LocationListVC.swift */,
 				42C0C7531D031D3400073F90 /* LocationDetailVC.swift */,
+				42760F5A1D19D5AD007BA422 /* AddTourVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 				42C0C75F1D032B2200073F90 /* LocationList.storyboard in Resources */,
 				42C0C7611D032B4B00073F90 /* LocationDetails.storyboard in Resources */,
 				42C0C75D1D032AD100073F90 /* Dashboard.storyboard in Resources */,
+				42760F591D18D72E007BA422 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +354,7 @@
 				42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */,
 				42CBE2311CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld in Sources */,
 				42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */,
+				42760F5B1D19D5AD007BA422 /* AddTourVC.swift in Sources */,
 				42BAF2B51CDE9F470095324B /* Tour.swift in Sources */,
 				42760F551D18C8B7007BA422 /* DataServiceProtocol.swift in Sources */,
 				42052F2A1D138D4800F28CC4 /* DashboardViewFlowLayout.swift in Sources */,
