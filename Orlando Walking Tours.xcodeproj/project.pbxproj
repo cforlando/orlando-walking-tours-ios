@@ -33,6 +33,7 @@
 		42CBE2361CDA8CE400F9E6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2341CDA8CE400F9E6D5 /* LaunchScreen.storyboard */; };
 		42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */; };
 		42CE84E81D076F9C00A43005 /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */; };
+		42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */; };
 		6727DFB4A1B4B19F5F8E526F /* Pods_Orlando_Walking_Tours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		42CBE2371CDA8CE400F9E6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoricLocation+CoreDataProperties.swift"; path = "Models/HistoricLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTourCollectionViewCell.swift; path = Views/AddTourCollectionViewCell.swift; sourceTree = "<group>"; };
 		86A7766E555F3964A9AFD00F /* Pods-Orlando Walking Tours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.release.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.release.xcconfig"; sourceTree = "<group>"; };
 		9886207BC1C22F67BFFC6B39 /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orlando_Walking_Tours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */,
 				42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */,
 				42863A571D16FA970014707B /* CustomButton.swift */,
+				42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */,
 				42863A5B1D16FE070014707B /* UIColor+ThemeColors.swift in Sources */,
 				42C0C7541D031D3400073F90 /* LocationDetailVC.swift in Sources */,
 				42760F561D18C8B7007BA422 /* FirebaseDataService.swift in Sources */,

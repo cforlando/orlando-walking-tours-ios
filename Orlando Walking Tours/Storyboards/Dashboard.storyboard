@@ -81,6 +81,31 @@
                                             <segue destination="9be-TP-5VS" kind="show" identifier="ShowTourListSegue" id="JyJ-R0-9M9"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddTourCell" id="lM1-S8-F5l" customClass="DashboardCollectionViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                                        <rect key="frame" x="225" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-zt-5Da">
+                                                    <rect key="frame" x="20" y="20" width="110" height="110"/>
+                                                    <state key="normal" image="plus"/>
+                                                    <connections>
+                                                        <segue destination="84C-kJ-whP" kind="presentation" identifier="AddTourSegue" id="arf-pa-pXl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="JOY-zt-5Da" secondAttribute="trailing" constant="20" id="CRm-df-VMf"/>
+                                            <constraint firstItem="JOY-zt-5Da" firstAttribute="leading" secondItem="lM1-S8-F5l" secondAttribute="leading" constant="20" id="R0e-b9-1N6"/>
+                                            <constraint firstAttribute="bottom" secondItem="JOY-zt-5Da" secondAttribute="bottom" constant="20" id="TfE-cl-7Ux"/>
+                                            <constraint firstItem="JOY-zt-5Da" firstAttribute="top" secondItem="lM1-S8-F5l" secondAttribute="top" constant="20" id="s6O-xL-5Rv"/>
+                                        </constraints>
+                                        <size key="customSize" width="150" height="150"/>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wmK-81-q3w">
@@ -235,5 +260,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JyJ-R0-9M9"/>
+        <segue reference="arf-pa-pXl"/>
     </inferredMetricsTieBreakers>
 </document>
