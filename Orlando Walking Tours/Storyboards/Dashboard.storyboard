@@ -81,7 +81,7 @@
                                             <segue destination="9be-TP-5VS" kind="show" identifier="ShowTourListSegue" id="JyJ-R0-9M9"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddTourCell" id="lM1-S8-F5l" customClass="DashboardCollectionViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddTourCell" id="lM1-S8-F5l" customClass="AddTourCollectionViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
