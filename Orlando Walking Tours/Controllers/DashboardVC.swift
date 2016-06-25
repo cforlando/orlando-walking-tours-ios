@@ -55,23 +55,25 @@ class DashboardVC: UIViewController, UICollectionViewDataSource
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.tours.count
+        return self.tours.count + 1
     }
 
     ////////////////////////////////////////////////////////////
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as! DashboardCollectionViewCell
+        // TODO: Image view for cell should be random photo of a location from the tour
+        cell.imageView?.image = UIImage(named: "plus")
+        cell.tourName?.text = self.tours[indexPath.row].title
+
+        let lastCell = collectionView.dequeueReusableCellWithReuseIdentifier("AddTourCell", forIndexPath: indexPath) as! AddTourCollectionViewCell
+
+        return (indexPath.item == self.tours.count) ? lastCell : cell
+/*
         if indexPath.item == self.tours.count
         {
-            if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AddTourCell", forIndexPath: indexPath) as? AddTourCollectionViewCell
-            {
-                return cell
-            }
-            else
-            {
-                return AddTourCollectionViewCell()
-            }
+            return AddTourCollectionViewCell()
         }
         else
         {
@@ -87,6 +89,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource
                 return DashboardCollectionViewCell()
             }
         }
+ */
     }
 
     ////////////////////////////////////////////////////////////
