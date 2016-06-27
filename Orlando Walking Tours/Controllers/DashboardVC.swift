@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, DashboardViewLayoutDelegate
 {
@@ -108,6 +109,37 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     }
 
     ////////////////////////////////////////////////////////////
+
+    func deleteTour(sender: UIButton)
+    {
+        if let cell = sender.superview?.superview as? DashboardCollectionViewCell
+        {
+            let alertController = UIAlertController(title: "Are you sure?", message: "Are you sure you want to delete \(cell.tourName.text!)?", preferredStyle: .Alert)
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive)
+            { action in
+                if let indexPath = self.collectionView.indexPathForCell(cell)
+                {
+                    MagicalRecord.saveWithBlock(
+                    { context in
+                        self.tours[indexPath.item].MR_deleteEntityInContext(context)
+                    })
+                    { (success, error) in
+                        self.tours.removeAtIndex(indexPath.item)
+                        self.collectionView.deleteItemsAtIndexPaths([indexPath])
+                    }
+                }
+            }
+
+            alertController.addAction(cancelAction)
+            alertController.addAction(deleteAction)
+
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
     // MARK: - UICollectionViewDataSource
     ////////////////////////////////////////////////////////////
 
@@ -130,6 +162,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             // TODO: Image view for cell should be random photo of a location from the tour
             cell.imageView?.image = UIImage.getPlaceholderImage(sized: Int(cell.frame.width), by: Int(cell.frame.height))
             cell.tourName?.text = self.tours[indexPath.item].title
+            cell.deleteButton.addTarget(self, action: #selector(DashboardVC.deleteTour(_:)), forControlEvents: .TouchUpInside)
             return cell
         }
     }
