@@ -28,7 +28,13 @@
                             <constraint firstItem="9aO-Sx-MVL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="m1X-6j-lrg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Orlando Walking Tours" id="tec-3u-cX6"/>
+                    <navigationItem key="navigationItem" title="Orlando Walking Tours" id="tec-3u-cX6">
+                        <barButtonItem key="rightBarButtonItem" title="Home" id="Sxj-Kc-808">
+                            <connections>
+                                <segue destination="Cp5-vf-3Cy" kind="show" id="2mK-Tr-nZL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="9aO-Sx-MVL" id="ADg-Nv-ixx"/>
                     </connections>
@@ -100,6 +106,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofz-nv-L5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="446"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="VhQ-vB-Gyo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="Cp5-vf-3Cy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTy-ui-NGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="912"/>
         </scene>
     </scenes>
 </document>

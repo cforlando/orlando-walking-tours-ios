@@ -8,6 +8,15 @@
 
 import UIKit
 
+/*
+protocol DashboardViewLayoutDelegate
+{
+    func isDeletionModeActiveForCollectionView(collectionView: UICollectionView, layout: UICollectionViewLayout) -> Bool
+}
+*/
+
+////////////////////////////////////////////////////////////
+
 class DashboardViewFlowLayout: UICollectionViewFlowLayout
 {
     override var itemSize: CGSize
@@ -24,11 +33,15 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
         }
     }
 
+    ////////////////////////////////////////////////////////////
+
     override init()
     {
         super.init()
         setupLayout()
     }
+
+    ////////////////////////////////////////////////////////////
 
     required init?(coder aDecoder: NSCoder)
     {
@@ -36,10 +49,55 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
         setupLayout()
     }
 
+    ////////////////////////////////////////////////////////////
+
     func setupLayout()
     {
         minimumInteritemSpacing = 0
-        minimumLineSpacing = 0
+        minimumLineSpacing = 1
         scrollDirection = .Vertical
     }
+
+    ////////////////////////////////////////////////////////////
+/*
+    func isDeletionModeOn() -> Bool
+    {
+        if let collectionView = self.collectionView,
+           let delegate = collectionView.delegate as? DashboardViewLayoutDelegate
+        {
+            return delegate.isDeletionModeActiveForCollectionView(collectionView, layout: self)
+        }
+        return false
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes?
+    {
+        if let attributes = super.layoutAttributesForItemAtIndexPath(indexPath) as? DashboardViewLayoutAttributes
+        {
+            attributes.deleteButtonHidden = isDeletionModeOn() ? false : true
+            return attributes
+        }
+
+        return nil
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]?
+    {
+        if let attributesArrayInRect = super.layoutAttributesForElementsInRect(rect) as? [DashboardViewLayoutAttributes]
+        {
+            for attributes in attributesArrayInRect
+            {
+                attributes.deleteButtonHidden = isDeletionModeOn() ? false : true
+            }
+
+            return attributesArrayInRect
+        }
+
+        return nil
+    }
+*/
 }
