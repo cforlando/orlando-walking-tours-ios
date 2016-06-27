@@ -73,7 +73,7 @@
                                                         <constraint firstItem="Vvi-bI-HAX" firstAttribute="centerX" secondItem="ERy-1N-sfJ" secondAttribute="centerX" id="eFf-gQ-RLN"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-mo-6gj">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-mo-6gj">
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                     <state key="normal" image="close"/>
                                                     <connections>

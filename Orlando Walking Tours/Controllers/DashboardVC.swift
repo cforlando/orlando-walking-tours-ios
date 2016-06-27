@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate//, UIGestureRecognizerDelegate, DashboardViewLayoutDelegate
+class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, DashboardViewLayoutDelegate
 {
     ////////////////////////////////////////////////////////////
     // MARK: - Outlets
@@ -22,7 +22,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     ////////////////////////////////////////////////////////////
 
     var tours = [Tour]()
-    //var deletionModeActive = false
+    var isDeletionModeActive = false
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -35,7 +35,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.collectionViewLayout = DashboardViewFlowLayout()
-/*
+
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(DashboardVC.activateDeletionMode(_:)))
         longPress.minimumPressDuration = 0.5
         longPress.delaysTouchesBegan = true
@@ -45,7 +45,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         let tap = UITapGestureRecognizer(target: self, action: #selector(DashboardVC.endDeletionMode(_:)))
         tap.delegate = self
         self.collectionView.addGestureRecognizer(tap)
-*/
+
         if let tours = Tour.MR_findAll() as? [Tour]
         {
             self.tours = tours
@@ -64,7 +64,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     ////////////////////////////////////////////////////////////
     // MARK: - UIGestureRecognizerDelegate
     ////////////////////////////////////////////////////////////
-/*
+
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
     {
         let point = touch.locationInView(self.collectionView)
@@ -85,7 +85,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         {
             if (self.collectionView.indexPathForItemAtPoint(gestureRecognizer.locationInView(self.collectionView)) != nil)
             {
-                self.deletionModeActive = true
+                self.isDeletionModeActive = true
                 let layout = self.collectionView.collectionViewLayout as! DashboardViewFlowLayout
                 layout.invalidateLayout()
             }
@@ -96,17 +96,17 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     func endDeletionMode(tapRecognizer: UITapGestureRecognizer)
     {
-        if self.deletionModeActive
+        if self.isDeletionModeActive
         {
             if (self.collectionView.indexPathForItemAtPoint(tapRecognizer.locationInView(self.collectionView)) == nil)
             {
-                self.deletionModeActive = false
+                self.isDeletionModeActive = false
                 let layout = self.collectionView.collectionViewLayout as! DashboardViewFlowLayout
                 layout.invalidateLayout()
             }
         }
     }
-*/
+
     ////////////////////////////////////////////////////////////
     // MARK: - UICollectionViewDataSource
     ////////////////////////////////////////////////////////////
@@ -144,19 +144,18 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     }
 
     ////////////////////////////////////////////////////////////
-/*
+
     func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {
-        return (deletionModeActive) ? false : true
+        return (isDeletionModeActive) ? false : true
     }
-*/
+
     ////////////////////////////////////////////////////////////
     // MARK: - DashboardViewLayoutDelegate
     ////////////////////////////////////////////////////////////
-/*
+
     func isDeletionModeActiveForCollectionView(collectionView: UICollectionView, layout: UICollectionViewLayout) -> Bool
     {
-        return deletionModeActive
+        return isDeletionModeActive
     }
-*/
 }

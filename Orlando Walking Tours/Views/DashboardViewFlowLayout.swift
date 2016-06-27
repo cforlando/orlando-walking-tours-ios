@@ -8,12 +8,10 @@
 
 import UIKit
 
-/*
 protocol DashboardViewLayoutDelegate
 {
     func isDeletionModeActiveForCollectionView(collectionView: UICollectionView, layout: UICollectionViewLayout) -> Bool
 }
-*/
 
 ////////////////////////////////////////////////////////////
 
@@ -59,7 +57,7 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
     }
 
     ////////////////////////////////////////////////////////////
-/*
+
     func isDeletionModeOn() -> Bool
     {
         if let collectionView = self.collectionView,
@@ -68,6 +66,13 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
             return delegate.isDeletionModeActiveForCollectionView(collectionView, layout: self)
         }
         return false
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override class func layoutAttributesClass() -> AnyClass
+    {
+        return DashboardViewLayoutAttributes.self
     }
 
     ////////////////////////////////////////////////////////////
@@ -87,11 +92,14 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
 
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]?
     {
-        if let attributesArrayInRect = super.layoutAttributesForElementsInRect(rect) as? [DashboardViewLayoutAttributes]
+        if let attributesArrayInRect = super.layoutAttributesForElementsInRect(rect)
         {
             for attributes in attributesArrayInRect
             {
-                attributes.deleteButtonHidden = isDeletionModeOn() ? false : true
+                if let attributes = attributes as? DashboardViewLayoutAttributes
+                {
+                    attributes.deleteButtonHidden = isDeletionModeOn() ? false : true
+                }
             }
 
             return attributesArrayInRect
@@ -99,5 +107,4 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
 
         return nil
     }
-*/
 }

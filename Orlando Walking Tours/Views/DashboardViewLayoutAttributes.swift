@@ -20,4 +20,19 @@ class DashboardViewLayoutAttributes: UICollectionViewLayoutAttributes
         attributes.deleteButtonHidden = self.deleteButtonHidden
         return attributes
     }
+
+    ////////////////////////////////////////////////////////////
+
+    override func isEqual(object: AnyObject?) -> Bool
+    {
+        if let customAttributes = object as? DashboardViewLayoutAttributes
+        {
+            if self.deleteButtonHidden == customAttributes.deleteButtonHidden
+            {
+                return super.isEqual(object)
+            }
+        }
+
+        return false
+    }
 }

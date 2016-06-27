@@ -20,14 +20,6 @@ class DashboardCollectionViewCell: UICollectionViewCell
 
     ////////////////////////////////////////////////////////////
 
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        self.startQuivering()
-    }
-
-    ////////////////////////////////////////////////////////////
-
     override func prepareForReuse()
     {
         super.prepareForReuse()
@@ -67,7 +59,7 @@ class DashboardCollectionViewCell: UICollectionViewCell
     }
 
     ////////////////////////////////////////////////////////////
-/*
+
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes)
     {
         if let attributes = layoutAttributes as? DashboardViewLayoutAttributes
@@ -84,5 +76,4 @@ class DashboardCollectionViewCell: UICollectionViewCell
             }
         }
     }
-*/
 }
