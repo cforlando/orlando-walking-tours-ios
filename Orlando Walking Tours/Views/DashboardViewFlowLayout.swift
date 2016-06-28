@@ -52,7 +52,7 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
     func setupLayout()
     {
         minimumInteritemSpacing = 0
-        minimumLineSpacing = 1
+        minimumLineSpacing = 0
         scrollDirection = .Vertical
     }
 
