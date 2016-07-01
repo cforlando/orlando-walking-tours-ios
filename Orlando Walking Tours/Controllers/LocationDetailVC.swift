@@ -10,10 +10,15 @@ import UIKit
 
 class LocationDetailVC: UIViewController {
 
+    @IBOutlet weak var locationTitleLabel: UILabel!
+    var location: HistoricLocation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("Details for \(location.locationTitle)")
+        locationTitleLabel.text = location.locationTitle
     }
 
     override func didReceiveMemoryWarning() {

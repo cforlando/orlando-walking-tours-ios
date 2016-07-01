@@ -13,70 +13,73 @@ import SwiftyJSON
 struct DataService
 {
     static let sharedInstance = DataService()
-
+    
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
+    //func getLocations(completion: (locations: [FakeLocation]) -> Void)
     {
-        let locationsUrlString = "https://brigades.opendatanetwork.com/resource/hzkr-id6u.json"
+        let locationsUrlString = "https://brigades.opendatanetwork.com/resource/aq56-mwpv.json"
         var locations = [HistoricLocation]()
+        //var locations = [FakeLocation]()
         
         Alamofire.request(.GET, locationsUrlString).validate().responseJSON
-        { response in
-            switch response.result
-            {
-            case .Success:
-                if let value = response.result.value
+            { response in
+                switch response.result
                 {
-                    let json = JSON(value)
-                    for (_, subJson) in json
+                case .Success:
+                    if let value = response.result.value
                     {
-                        let location = HistoricLocation.MR_createEntity()
-                        if let location = location
+                        let json = JSON(value)
+                        for (_, subJson) in json
                         {
-                            if let title = subJson["name"].string
+                            let location = HistoricLocation.MR_createEntity()
+                            //let location: FakeLocation? = FakeLocation()
+                            if let location = location
                             {
-                                location.locationTitle = title
+                                if let title = subJson["name"].string
+                                {
+                                    location.locationTitle = title
+                                }
+                                
+                                if let description = subJson["downtown_walking_tour"].string
+                                {
+                                    location.locationDescription = description
+                                }
+                                
+                                if let address = subJson["address"].string
+                                {
+                                    location.address = address
+                                }
+                                
+                                if let locationType = subJson["type"].string
+                                {
+                                    location.locationType = locationType
+                                }
+                                
+                                if let longitude = subJson["location"]["coordinates"][0].double
+                                {
+                                    location.longitude = longitude
+                                }
+                                
+                                if let latitude = subJson["location"]["coordinates"][1].double
+                                {
+                                    location.latitude = latitude
+                                }
+                                
+                                if let localRegistryDate = subJson["local"].string
+                                {
+                                    let dateFormatter = NSDateFormatter()
+                                    location.localRegistryDate = dateFormatter.dateFromString(localRegistryDate)
+                                }
+                                
+                                locations.append(location)
                             }
-
-                            if let description = subJson["downtown_walking_tour"].string
-                            {
-                                location.locationDescription = description
-                            }
-
-                            if let address = subJson["address"].string
-                            {
-                                location.address = address
-                            }
-
-                            if let locationType = subJson["type"].string
-                            {
-                                location.locationType = locationType
-                            }
-
-                            if let longitude = subJson["location"]["longitude"].string
-                            {
-                                location.longitude = Double(longitude)
-                            }
-
-                            if let latitude = subJson["location"]["latitude"].string
-                            {
-                                location.latitude = Double(latitude)
-                            }
-
-                            if let localRegistryDate = subJson["local"].string
-                            {
-                                let dateFormatter = NSDateFormatter()
-                                location.localRegistryDate = dateFormatter.dateFromString(localRegistryDate)
-                            }
-
-                            locations.append(location)
                         }
+                        
+                        completion(locations: locations)
                     }
-
-                    completion(locations: locations)
+                case .Failure(let error):
+                    print(error)
                 }
-            case .Failure(let error):
-                print(error)
-            }
         }
     }
 }
