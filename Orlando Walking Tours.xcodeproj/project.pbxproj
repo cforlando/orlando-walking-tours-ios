@@ -37,6 +37,12 @@
 		42CE84E81D076F9C00A43005 /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */; };
 		42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */; };
 		6727DFB4A1B4B19F5F8E526F /* Pods_Orlando_Walking_Tours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */; };
+		BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */; };
+		BFA485C71D270BE800918D0B /* InMemoryModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C31D270BE800918D0B /* InMemoryModelService.swift */; };
+		BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */; };
+		BFA485CA1D270BE800918D0B /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C61D270BE800918D0B /* UserLocationService.swift */; };
+		BFA485CC1D270C7700918D0B /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485CB1D270C7700918D0B /* ModelService.swift */; };
+		BFA485CE1D270CE400918D0B /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +80,12 @@
 		86A7766E555F3964A9AFD00F /* Pods-Orlando Walking Tours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.release.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.release.xcconfig"; sourceTree = "<group>"; };
 		9886207BC1C22F67BFFC6B39 /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orlando_Walking_Tours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVCExtensions.swift; path = Controllers/LocationListVCExtensions.swift; sourceTree = "<group>"; };
+		BFA485C31D270BE800918D0B /* InMemoryModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InMemoryModelService.swift; path = Services/InMemoryModelService.swift; sourceTree = "<group>"; };
+		BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicalRecordModelService.swift; path = Services/MagicalRecordModelService.swift; sourceTree = "<group>"; };
+		BFA485C61D270BE800918D0B /* UserLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationService.swift; path = Services/UserLocationService.swift; sourceTree = "<group>"; };
+		BFA485CB1D270C7700918D0B /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelService.swift; path = Services/ModelService.swift; sourceTree = "<group>"; };
+		BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = Cells/LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,10 @@
 				42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */,
 				42760F531D18C8B7007BA422 /* FirebaseDataService.swift */,
 				42760F541D18C8B7007BA422 /* SocrataDataService.swift */,
+				BFA485C31D270BE800918D0B /* InMemoryModelService.swift */,
+				BFA485CB1D270C7700918D0B /* ModelService.swift */,
+				BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */,
+				BFA485C61D270BE800918D0B /* UserLocationService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 			children = (
 				42863A591D16FDE80014707B /* Extensions */,
 				42052F261D13789A00F28CC4 /* Views */,
+				BFA485B21D07A0EA00918D0B /* Cells */,
 				42C0C7551D0329CE00073F90 /* Storyboards */,
 				420B82CC1CE0D603005ED879 /* Services */,
 				42013C271CE02E050030D2F8 /* Annotations */,
@@ -206,6 +223,7 @@
 		42CBE23F1CDA8D7A00F9E6D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */,
 				42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */,
 				42C0C74D1D031CA000073F90 /* DashboardVC.swift */,
 				42C0C7511D031D1300073F90 /* LocationListVC.swift */,
@@ -221,6 +239,14 @@
 				BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFA485B21D07A0EA00918D0B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		C8E96D58E7330AE4B00BF007 /* Pods */ = {
@@ -371,6 +397,14 @@
 				42CE84E81D076F9C00A43005 /* Tour+CoreDataProperties.swift in Sources */,
 				42C0C7521D031D1300073F90 /* LocationListVC.swift in Sources */,
 				42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */,
+				BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */,
+				BFA485CA1D270BE800918D0B /* UserLocationService.swift in Sources */,
+				BFA485C71D270BE800918D0B /* InMemoryModelService.swift in Sources */,
+				42C0C7521D031D1300073F90 /* LocationListVC.swift in Sources */,
+				BFA485CC1D270C7700918D0B /* ModelService.swift in Sources */,
+				42BAF2B71CDE9F470095324B /* HistoricLocation.swift in Sources */,
+				BFA485CE1D270CE400918D0B /* LocationTableViewCell.swift in Sources */,
+				BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */,
 				42CBE2291CDA8CE400F9E6D5 /* AppDelegate.swift in Sources */,
 				42863A5D1D16FE890014707B /* UIColor+HexColor.swift in Sources */,
 				42052F281D1378F600F28CC4 /* DashboardCollectionViewCell.swift in Sources */,
