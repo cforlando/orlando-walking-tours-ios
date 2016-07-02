@@ -40,13 +40,13 @@ class InMemoryModelService : ModelService {
     }
     
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?) {
-        if let historicLocations = tour.historiclocations {
+        if let historicLocations = tour.historicLocations {
             location.sortOrder = historicLocations.count
             print("Tour \(tour.title) Loc: \(location.sortOrder) \(location.locationTitle)")
-            tour.historiclocations = historicLocations.setByAddingObject(location)
+            tour.historicLocations = historicLocations.setByAddingObject(location)
         } else {
             location.sortOrder = 0
-            tour.historiclocations = [location]
+            tour.historicLocations = [location]
         }
         completion?(true, nil)
     }
@@ -55,13 +55,13 @@ class InMemoryModelService : ModelService {
         let sortOrder = location.sortOrder
         // since Set is immutable we can't remove,
         // so effectively remove by filtering all but the location we want to remove
-        if let locations = tour.historiclocations?.filter({
+        if let locations = tour.historicLocations?.filter({
             let loc = $0 as! HistoricLocation
             return loc.locationId != location.locationId
         }) {
-            tour.historiclocations = NSSet(array: locations)
+            tour.historicLocations = NSSet(array: locations)
             // now update sortOrder of locations since we removed one
-            for locTemp in tour.historiclocations! {
+            for locTemp in tour.historicLocations! {
                 let loc = locTemp as! HistoricLocation
                 if loc.sortOrder!.compare(sortOrder!) == NSComparisonResult.OrderedDescending {
                     loc.sortOrder = NSNumber(int: (loc.sortOrder?.intValue)! - 1)

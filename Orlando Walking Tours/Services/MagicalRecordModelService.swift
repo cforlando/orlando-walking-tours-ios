@@ -17,7 +17,7 @@ class MagicalRecordModelService : ModelService {
         MagicalRecord.saveWithBlock({ localContext in
             let tour = Tour.MR_createEntityInContext(localContext)!
             tour.title = title
-            tour.historiclocations = NSSet()
+            tour.historicLocations = NSSet()
         }, completion: completion)
     }
 
@@ -45,10 +45,10 @@ class MagicalRecordModelService : ModelService {
     
     // !!! Needs work, update sortOrder, etc
     func removeLocation(location: HistoricLocation, fromTour tour: Tour, completion: ModelServiceCompletionHandler?) {
-        let locations = tour.historiclocations?.filter {
+        let locations = tour.historicLocations?.filter {
             let loc = $0 as! HistoricLocation
             return loc.locationId != location.locationId
         }
-        tour.historiclocations = NSSet(array: locations!)
+        tour.historicLocations = NSSet(array: locations!)
     }
 }

@@ -11,14 +11,26 @@ import MapKit
 
 class LocationListVC: UIViewController
 {
+    ////////////////////////////////////////////////////////////
+    // MARK: - Outlets
+    ////////////////////////////////////////////////////////////
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var closestToMe: TouchableLabel!
-    
-    enum ViewMode {
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Enumerations
+    ////////////////////////////////////////////////////////////
+
+    enum ViewMode
+    {
         case List, Map
-        func update(viewController: LocationListVC) {
-            switch self {
+
+        func update(viewController: LocationListVC)
+        {
+            switch self
+            {
             case .List:
                 viewController.tableView.shown = true
                 viewController.mapView.hidden = true
@@ -28,15 +40,23 @@ class LocationListVC: UIViewController
                 let zoomLevel = 1.0.asMeters
                 let mapRegion = MKCoordinateRegionMakeWithDistance(viewController.simulatedLocation.coordinate, zoomLevel, zoomLevel)
                 viewController.mapView.setRegion(mapRegion, animated: true)    // animate the zoom
-                let locationAnnotations = viewController.locations.map {
+                let locationAnnotations = viewController.locations.map
+                {
                     return LocationAnnotation(location: $0)
                 }
                 viewController.mapView.addAnnotations(locationAnnotations)
             }
         }
     }
-    var viewMode : ViewMode! {
-        didSet {
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Properties
+    ////////////////////////////////////////////////////////////
+
+    var viewMode : ViewMode!
+    {
+        didSet
+        {
             viewMode.update(self)
         }
     }
@@ -48,13 +68,18 @@ class LocationListVC: UIViewController
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
 
+    ////////////////////////////////////////////////////////////
+    // MARK: - View Controller Life Cycle
+    ////////////////////////////////////////////////////////////
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         
-        closestToMe.didTouch = {
+        closestToMe.didTouch =
+        {
             self.sortClosestToMe()
             self.tableView.reloadData()
         }
@@ -64,7 +89,8 @@ class LocationListVC: UIViewController
         //self.modelService = MagicalRecordModelService()
         self.modelService = InMemoryModelService()
         
-        let setupTestMode = { (allLocations: [HistoricLocation]) in
+        let setupTestMode =
+        { (allLocations: [HistoricLocation]) in
             (self.modelService as! InMemoryModelService).seed(allLocations)
             let tours = self.modelService.findAllTours()
             // pick a tour just to simulate coming in from the dashboard
@@ -72,14 +98,16 @@ class LocationListVC: UIViewController
             print("\(tours.count) tours")
         }
         
-        DataService.sharedInstance.getLocations { locations in
-            let allLocations = locations.sort {
+        FirebaseDataService.sharedInstance.getLocations
+        { locations in
+            let allLocations = locations.sort
+            {
                 $0.locationTitle <= $1.locationTitle
             }
             dispatch_async(dispatch_get_main_queue())
             {
                 // !!! comment-out this line when hooked up to dashboard
-                setupTestMode(allLocations)
+                //setupTestMode(allLocations)
                 self.setAvailableTourLocations(allLocations)
                 UserLocationService.sharedService.startTracking({ (userLocation) in
                     if userLocation.coordinate != self.userLocation?.coordinate {
@@ -93,78 +121,116 @@ class LocationListVC: UIViewController
         }
     }
 
-    @IBAction func addToTourPressed(sender: UIButton) {
-        if let cellView = sender.findSuperViewOfType(LocationTableViewCell) as? LocationTableViewCell {
+    ////////////////////////////////////////////////////////////
+    // MARK: - Actions
+    ////////////////////////////////////////////////////////////
+
+    @IBAction func addToTourPressed(sender: UIButton)
+    {
+        if let cellView = sender.findSuperViewOfType(LocationTableViewCell) as? LocationTableViewCell
+        {
             let locationId = cellView.locationId
             let locationIndex = self.locations.indexOf { $0.locationId == locationId }!
             print("add to tour \(locationIndex)")
             let location = self.locations.removeAtIndex(locationIndex)
-            modelService.addLocation(location, toTour: self.tour, completion: { (ok, error) in
-                if ok {
+            modelService.addLocation(location, toTour: self.tour)
+            { (ok, error) in
+                if ok
+                {
                     let indexPath = NSIndexPath(forItem: locationIndex, inSection: 0)
                     self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
                     self.displayTour()
-                } else {
+                }
+                else
+                {
                     // !!! need to handle errors here
                 }
-            })
+            }
         }
     }
+
+    ////////////////////////////////////////////////////////////
     
-    @IBAction func listViewTapped(sender: UIButton) {
+    @IBAction func listViewTapped(sender: UIButton)
+    {
         self.viewMode = .List
     }
-    
-    @IBAction func mapViewTapped(sender: UIButton) {
+
+    ////////////////////////////////////////////////////////////
+
+    @IBAction func mapViewTapped(sender: UIButton)
+    {
         self.viewMode = .Map
     }
-    
-    func setAvailableTourLocations(allLocations: [HistoricLocation]) {
-        if let tourLocations = self.tour?.historiclocations {
-            for loc in tourLocations {
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Helper Functions
+    ////////////////////////////////////////////////////////////
+
+    func setAvailableTourLocations(allLocations: [HistoricLocation])
+    {
+        if let tourLocations = self.tour?.historicLocations
+        {
+            for loc in tourLocations
+            {
                 print("LOC: \(loc.locationTitle)")
             }
             var availableTourLocations = [HistoricLocation]()
-            for tourLoc in allLocations {
+            for tourLoc in allLocations
+            {
                 if !tourLocations.contains({ $0.locationTitle == tourLoc.locationTitle
                 }) {
                     availableTourLocations.append(tourLoc)
                 }
             }
             self.locations = availableTourLocations
-        } else {
+        }
+        else
+        {
             self.locations = allLocations
         }
     }
+
+    ////////////////////////////////////////////////////////////
     
-    func sortClosestToMe() {
-        if let userLocation = self.userLocation {
+    func sortClosestToMe()
+    {
+        if let userLocation = self.userLocation
+        {
             // first collect loc and distance together in a tuple
-            let locDist = locations.map { loc -> (CLLocationDistance, HistoricLocation) in
+            let locDist = locations.map
+            { loc -> (CLLocationDistance, HistoricLocation) in
                 let siteLoc = loc.locationPoint
                 let distanceFromCur = siteLoc.distanceFromLocation(userLocation).asMiles
                 return (distanceFromCur, loc)
             }
             // now sort by distance
-            self.locations = locDist.sort { (a,b) in
+            self.locations = locDist.sort
+            { (a,b) in
                 return a.0 <= b.0
             }
             // and finally pull out the location
-            .map { (dist, loc) in
+            .map
+            { (dist, loc) in
                 return loc
             }
         }
     }
-    
-    func displayTour() {
+
+    ////////////////////////////////////////////////////////////
+
+    func displayTour()
+    {
         print("Tour: \(self.tour?.title)")
-        let locationsByOrder = tour.historiclocations?.sort({
+        let locationsByOrder = tour.historicLocations?.sort({
             let a = $0 as! HistoricLocation
             let b = $1 as! HistoricLocation
             return a.sortOrder?.compare(b.sortOrder!) == NSComparisonResult.OrderedAscending
         })
-        if let locationsInOrder = locationsByOrder {
-            for loc in locationsInOrder {
+        if let locationsInOrder = locationsByOrder
+        {
+            for loc in locationsInOrder
+            {
                 let tourLoc = loc as! HistoricLocation
                 print("  \(tourLoc.sortOrder) \(tourLoc.locationTitle)")
             }
@@ -172,18 +238,29 @@ class LocationListVC: UIViewController
     }
 }
 
-extension LocationListVC : UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+////////////////////////////////////////////////////////////
+// MARK: - LocationListVC Extension
+////////////////////////////////////////////////////////////
+
+extension LocationListVC : UITableViewDataSource, UITableViewDelegate
+{
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
         return 1
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    ////////////////////////////////////////////////////////////
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         print("\(NSDate().timeIntervalSinceNow) COUNT \(self.locations.count)")
         return self.locations.count
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+    ////////////////////////////////////////////////////////////
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         
         let location = locations[indexPath.row]
         let locationCell = tableView.dequeueReusableCellWithIdentifier(String(LocationTableViewCell)) as! LocationTableViewCell
@@ -191,7 +268,8 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate {
         locationCell.locationId = location.locationId
         
         var locationTitle = location.locationTitle
-        if let userLocation = self.userLocation {
+        if let userLocation = self.userLocation
+        {
             let siteLoc = location.locationPoint
             let distanceFromCur = siteLoc.distanceFromLocation(userLocation).asMiles
             locationTitle = String(format: "(%0.1fmi) %@", distanceFromCur, locationTitle!)
@@ -200,8 +278,11 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate {
         
         return locationCell
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+    ////////////////////////////////////////////////////////////
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
         let storyboard = UIStoryboard(name: "LocationDetails", bundle: nil)
         let locationDetailVC = storyboard.instantiateViewControllerWithIdentifier("LocationDetails") as! LocationDetailVC
         locationDetailVC.modalTransitionStyle = .FlipHorizontal
