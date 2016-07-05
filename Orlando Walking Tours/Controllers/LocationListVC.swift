@@ -88,7 +88,6 @@ class LocationListVC: UIViewController
 
         if let tour = self.tour
         {
-            print("Tour title: \(tour.title)")
             self.navigationItem.title = tour.title
         }
 
@@ -130,19 +129,21 @@ class LocationListVC: UIViewController
         {
             let locationId = cellView.locationId
             let locationIndex = self.locations.indexOf { $0.locationId == locationId }!
-            print("add to tour \(locationIndex)")
             let location = self.locations.removeAtIndex(locationIndex)
-            modelService.addLocation(location, toTour: self.tour!)
-            { (ok, error) in
-                if ok
-                {
-                    let indexPath = NSIndexPath(forItem: locationIndex, inSection: 0)
-                    self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
-                    self.displayTour()
-                }
-                else
-                {
-                    // !!! need to handle errors here
+            if let tour = self.tour
+            {
+                modelService.addLocation(location, toTour: tour)
+                { (ok, error) in
+                    if ok
+                    {
+                        let indexPath = NSIndexPath(forItem: locationIndex, inSection: 0)
+                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+                        self.displayTour()
+                    }
+                    else
+                    {
+                        // !!! need to handle errors here
+                    }
                 }
             }
         }
@@ -220,18 +221,20 @@ class LocationListVC: UIViewController
 
     func displayTour()
     {
-        print("Tour: \(self.tour?.title)")
-        let locationsByOrder = tour!.historicLocations?.sort({
-            let a = $0 as! HistoricLocation
-            let b = $1 as! HistoricLocation
-            return a.sortOrder?.compare(b.sortOrder!) == NSComparisonResult.OrderedAscending
-        })
-        if let locationsInOrder = locationsByOrder
+        if let tour = self.tour
         {
-            for loc in locationsInOrder
+            let locationsByOrder = tour.historicLocations?.sort({
+                let a = $0 as! HistoricLocation
+                let b = $1 as! HistoricLocation
+                return a.sortOrder?.compare(b.sortOrder!) == NSComparisonResult.OrderedAscending
+            })
+            if let locationsInOrder = locationsByOrder
             {
-                let tourLoc = loc as! HistoricLocation
-                print("  \(tourLoc.sortOrder) \(tourLoc.locationTitle)")
+                for loc in locationsInOrder
+                {
+                    let tourLoc = loc as! HistoricLocation
+                    print("  \(tourLoc.sortOrder) \(tourLoc.locationTitle)")
+                }
             }
         }
     }

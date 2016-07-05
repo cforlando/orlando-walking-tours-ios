@@ -76,8 +76,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             let tour = Tour.MR_createEntityInContext(context)
             tour?.title = self.tourNameTextField.text
             tour?.uuid = self.uuid?.UUIDString
-        },
-        completion:
+        })
         { success, error in
             if success
             {
@@ -87,7 +86,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             {
                 print("Error: \(error?.localizedDescription)")
             }
-        })
+        }
 
         removeTextFieldObserver()
     }
