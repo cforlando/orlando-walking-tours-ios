@@ -15,10 +15,11 @@
     </entity>
     <entity name="Tour" representedClassName=".Tour" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="historicLocations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HistoricLocation" inverseName="tour" inverseEntity="HistoricLocation" syncable="YES"/>
     </entity>
     <elements>
         <element name="HistoricLocation" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="Tour" positionX="225" positionY="18" width="128" height="75"/>
+        <element name="Tour" positionX="225" positionY="18" width="128" height="90"/>
     </elements>
 </model>
