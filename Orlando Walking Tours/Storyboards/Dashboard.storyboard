@@ -54,7 +54,7 @@
                                                         <constraint firstItem="Vvi-bI-HAX" firstAttribute="centerX" secondItem="ERy-1N-sfJ" secondAttribute="centerX" id="eFf-gQ-RLN"/>
                                                     </constraints>
                                                 </view>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-mo-6gj">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-mo-6gj">
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                     <state key="normal" image="close"/>
                                                     <connections>
@@ -80,7 +80,6 @@
                                             <outlet property="deleteButton" destination="GIo-mo-6gj" id="NTZ-rX-h3k"/>
                                             <outlet property="imageView" destination="jmC-qE-iXE" id="eiC-tu-1NL"/>
                                             <outlet property="tourName" destination="Vvi-bI-HAX" id="tYr-Cf-7Ln"/>
-                                            <segue destination="9be-TP-5VS" kind="show" identifier="ShowTourListSegue" id="JyJ-R0-9M9"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddTourCell" id="lM1-S8-F5l" customClass="AddTourCollectionViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
@@ -209,7 +208,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addTourButtonTapped:" destination="84C-kJ-whP" eventType="touchUpInside" id="462-hx-MCZ"/>
-                                    <segue destination="9be-TP-5VS" kind="show" identifier="ShowLocationListSegue" id="Qdr-WA-bdn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,6 +230,7 @@
                     <connections>
                         <outlet property="addTourButton" destination="NdS-Tx-6hV" id="Jdu-GE-IXH"/>
                         <outlet property="tourNameTextField" destination="0zD-Sb-SYS" id="chM-6V-FlA"/>
+                        <segue destination="9be-TP-5VS" kind="show" identifier="ShowLocationListSegue" id="7fe-6M-39x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09t-Lc-UvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,6 +288,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iOl-1w-5Zl"/>
-        <segue reference="Qdr-WA-bdn"/>
     </inferredMetricsTieBreakers>
 </document>

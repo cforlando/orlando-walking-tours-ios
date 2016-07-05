@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-XH-kG5">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-XH-kG5">
                                 <rect key="frame" x="0.0" y="180" width="600" height="420"/>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-OY-qWd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-OY-qWd">
                                 <rect key="frame" x="0.0" y="180" width="600" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -122,9 +122,17 @@
                             <constraint firstItem="dkq-s3-gT2" firstAttribute="leading" secondItem="5k8-24-xpX" secondAttribute="trailing" constant="7" id="9m7-B2-Uht"/>
                             <constraint firstItem="p6J-xC-KrQ" firstAttribute="centerX" secondItem="8kL-Sk-AyZ" secondAttribute="centerX" id="Pr4-nQ-n9z"/>
                             <constraint firstItem="35I-Ww-wfN" firstAttribute="centerX" secondItem="8kL-Sk-AyZ" secondAttribute="centerX" id="Q3j-bh-NyH"/>
+                            <constraint firstItem="bGo-78-wxn" firstAttribute="top" secondItem="xcH-XH-kG5" secondAttribute="bottom" id="QoG-BQ-haj"/>
                             <constraint firstItem="p6J-xC-KrQ" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" constant="8" id="RJb-4o-vL9"/>
                             <constraint firstItem="35I-Ww-wfN" firstAttribute="top" secondItem="p6J-xC-KrQ" secondAttribute="bottom" constant="15" id="S8u-FN-7t0"/>
+                            <constraint firstItem="bGo-78-wxn" firstAttribute="top" secondItem="V9x-OY-qWd" secondAttribute="bottom" id="Ss8-Kn-qPH"/>
+                            <constraint firstAttribute="trailing" secondItem="V9x-OY-qWd" secondAttribute="trailing" id="Xpg-EY-fEt"/>
+                            <constraint firstItem="xcH-XH-kG5" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="cIt-Mv-MhL"/>
+                            <constraint firstItem="V9x-OY-qWd" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="d1l-7e-LoR"/>
+                            <constraint firstItem="V9x-OY-qWd" firstAttribute="top" secondItem="dkq-s3-gT2" secondAttribute="bottom" constant="2" id="eLS-6h-gV3"/>
+                            <constraint firstAttribute="trailing" secondItem="xcH-XH-kG5" secondAttribute="trailing" id="kYf-eV-RnD"/>
                             <constraint firstItem="dkq-s3-gT2" firstAttribute="top" secondItem="35I-Ww-wfN" secondAttribute="bottom" constant="8" id="vUe-2Q-HGY"/>
+                            <constraint firstItem="xcH-XH-kG5" firstAttribute="top" secondItem="dkq-s3-gT2" secondAttribute="bottom" constant="2" id="vxJ-Dk-fq8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour Name" id="Ays-ud-8KI"/>
@@ -137,14 +145,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiV-2O-6nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1447" y="1137"/>
-        </scene>
-        <!--Dashboard-->
-        <scene sceneID="VhQ-vB-Gyo">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" id="Cp5-vf-3Cy" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nTy-ui-NGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2018" y="912"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z11-zp-7IP">

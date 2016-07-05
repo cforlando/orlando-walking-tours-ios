@@ -78,12 +78,12 @@
 		86A7766E555F3964A9AFD00F /* Pods-Orlando Walking Tours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.release.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.release.xcconfig"; sourceTree = "<group>"; };
 		9886207BC1C22F67BFFC6B39 /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orlando_Walking_Tours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVCExtensions.swift; path = Controllers/LocationListVCExtensions.swift; sourceTree = "<group>"; };
+		BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVCExtensions.swift; path = Extensions/LocationListVCExtensions.swift; sourceTree = "<group>"; };
 		BFA485C31D270BE800918D0B /* InMemoryModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InMemoryModelService.swift; path = Services/InMemoryModelService.swift; sourceTree = "<group>"; };
 		BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicalRecordModelService.swift; path = Services/MagicalRecordModelService.swift; sourceTree = "<group>"; };
 		BFA485C61D270BE800918D0B /* UserLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationService.swift; path = Services/UserLocationService.swift; sourceTree = "<group>"; };
 		BFA485CB1D270C7700918D0B /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelService.swift; path = Services/ModelService.swift; sourceTree = "<group>"; };
-		BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = Cells/LocationTableViewCell.swift; sourceTree = "<group>"; };
+		BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = Views/LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +114,7 @@
 				42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */,
 				42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */,
 				424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */,
+				BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -135,6 +136,7 @@
 		42863A591D16FDE80014707B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */,
 				42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */,
 				42863A5C1D16FE890014707B /* UIColor+HexColor.swift */,
 				42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */,
@@ -185,7 +187,6 @@
 			children = (
 				42863A591D16FDE80014707B /* Extensions */,
 				42052F261D13789A00F28CC4 /* Views */,
-				BFA485B21D07A0EA00918D0B /* Cells */,
 				42C0C7551D0329CE00073F90 /* Storyboards */,
 				420B82CC1CE0D603005ED879 /* Services */,
 				42013C271CE02E050030D2F8 /* Annotations */,
@@ -222,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				425C68F91D282803004B4C40 /* LocationListVC.swift */,
-				BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */,
 				42C0C74D1D031CA000073F90 /* DashboardVC.swift */,
 				42C0C7531D031D3400073F90 /* LocationDetailVC.swift */,
 				42760F5A1D19D5AD007BA422 /* AddTourVC.swift */,
@@ -236,14 +236,6 @@
 				BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BFA485B21D07A0EA00918D0B /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 		C8E96D58E7330AE4B00BF007 /* Pods */ = {

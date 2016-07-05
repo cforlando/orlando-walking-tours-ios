@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import MagicalRecord
 
 class LocationListVC: UIViewController
 {
@@ -61,7 +62,8 @@ class LocationListVC: UIViewController
         }
     }
     
-    var tour: Tour!
+    var tour: Tour?
+    var tourObjectID: NSManagedObjectID?
     var locations = [HistoricLocation]()
     var modelService: ModelService!
     var userLocation: CLLocation?
@@ -83,20 +85,17 @@ class LocationListVC: UIViewController
             self.sortClosestToMe()
             self.tableView.reloadData()
         }
-        
+
+        if let tour = self.tour
+        {
+            print("Tour title: \(tour.title)")
+            self.navigationItem.title = tour.title
+        }
+
         viewMode = .List
         
         //self.modelService = MagicalRecordModelService()
         self.modelService = InMemoryModelService()
-        
-        let setupTestMode =
-        { (allLocations: [HistoricLocation]) in
-            (self.modelService as! InMemoryModelService).seed(allLocations)
-            let tours = self.modelService.findAllTours()
-            // pick a tour just to simulate coming in from the dashboard
-            self.tour = tours[1] as! Tour
-            print("\(tours.count) tours")
-        }
         
         FirebaseDataService.sharedInstance.getLocations
         { locations in
@@ -106,16 +105,16 @@ class LocationListVC: UIViewController
             }
             dispatch_async(dispatch_get_main_queue())
             {
-                // !!! comment-out this line when hooked up to dashboard
-                //setupTestMode(allLocations)
                 self.setAvailableTourLocations(allLocations)
-                UserLocationService.sharedService.startTracking({ (userLocation) in
-                    if userLocation.coordinate != self.userLocation?.coordinate {
+                UserLocationService.sharedService.startTracking
+                { userLocation in
+                    if userLocation.coordinate != self.userLocation?.coordinate
+                    {
                         // ? need to re-sort when location chgs (if using "closest to me")
                         self.userLocation = userLocation
                         self.tableView.reloadData()
                     }
-                })
+                }
                 self.tableView.reloadData()
             }
         }
@@ -133,7 +132,7 @@ class LocationListVC: UIViewController
             let locationIndex = self.locations.indexOf { $0.locationId == locationId }!
             print("add to tour \(locationIndex)")
             let location = self.locations.removeAtIndex(locationIndex)
-            modelService.addLocation(location, toTour: self.tour)
+            modelService.addLocation(location, toTour: self.tour!)
             { (ok, error) in
                 if ok
                 {
@@ -222,7 +221,7 @@ class LocationListVC: UIViewController
     func displayTour()
     {
         print("Tour: \(self.tour?.title)")
-        let locationsByOrder = tour.historicLocations?.sort({
+        let locationsByOrder = tour!.historicLocations?.sort({
             let a = $0 as! HistoricLocation
             let b = $1 as! HistoricLocation
             return a.sortOrder?.compare(b.sortOrder!) == NSComparisonResult.OrderedAscending
@@ -253,7 +252,6 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("\(NSDate().timeIntervalSinceNow) COUNT \(self.locations.count)")
         return self.locations.count
     }
 
