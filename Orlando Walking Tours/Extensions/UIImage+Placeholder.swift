@@ -7,21 +7,23 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 extension UIImage
 {
-    class func getPlaceholderImage(sized width: Int, by height: Int) -> UIImage?
+    class func getPlaceholderImage(sized width: Int, by height: Int, completion: (UIImage? -> Void)) -> Request
     {
-        guard let url = NSURL(string: "https://unsplash.it/\(width)/\(height)?random") else
-        {
-            return nil
-        }
+        let urlString = "https://unsplash.it/\(width)/\(height)?random"
 
-        guard let data = NSData(contentsOfURL: url) else
-        {
-            return nil
-        }
+        return Alamofire.request(.GET, urlString).responseImage
+        { response in
+            guard let image = response.result.value else
+            {
+                return
+            }
 
-        return UIImage(data: data)
+            completion(image)
+        }
     }
 }

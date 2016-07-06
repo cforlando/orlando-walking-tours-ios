@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (3.4.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
   - Firebase (3.2.1):
     - Firebase/Core (= 3.2.1)
   - Firebase/Analytics (3.2.1):
@@ -29,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
+  - AlamofireImage (~> 2.0)
   - Firebase
   - Firebase/Database
   - MagicalRecord
@@ -45,6 +48,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   Firebase: 6c80ac28d59d06bfd9152a7b6ea17625ca93183d
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseDatabase: 34301d11621a83546f39f670d256477ba6f7fcea

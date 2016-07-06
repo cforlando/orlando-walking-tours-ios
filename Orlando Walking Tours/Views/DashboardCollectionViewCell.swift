@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class DashboardCollectionViewCell: UICollectionViewCell
 {
@@ -17,7 +18,16 @@ class DashboardCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tourName: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
+    ////////////////////////////////////////////////////////////
+    // MARK: - Properties
+    ////////////////////////////////////////////////////////////
+
+    var request: Request?
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - UICollectionViewReusableView
     ////////////////////////////////////////////////////////////
 
     override func prepareForReuse()
@@ -29,9 +39,67 @@ class DashboardCollectionViewCell: UICollectionViewCell
 
     ////////////////////////////////////////////////////////////
 
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes)
+    {
+        if let attributes = layoutAttributes as? DashboardViewLayoutAttributes
+        {
+            if attributes.deleteButtonHidden
+            {
+                self.deleteButton.hidden = true
+                self.stopQuivering()
+            }
+            else
+            {
+                self.deleteButton.hidden = false
+                self.startQuivering()
+            }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
     @IBAction func deleteButtonPressed(sender: UIButton)
     {
         
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Helper Functions
+    ////////////////////////////////////////////////////////////
+
+    func configureImage(frame: CGRect)
+    {
+        reset()
+        loadImage(frame.width, height: frame.height)
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func reset()
+    {
+        imageView.image = nil
+        request?.cancel()
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func loadImage(width: CGFloat, height: CGFloat)
+    {
+        loadingIndicator.startAnimating()
+        
+        // TODO: Image view for cell should be random photo of a location from the tour
+        request = UIImage.getPlaceholderImage(sized: Int(width), by: Int(height))
+        { image in
+            self.populateCell(image!)
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func populateCell(image: UIImage)
+    {
+        loadingIndicator.stopAnimating()
+        imageView.image = image
     }
 
     ////////////////////////////////////////////////////////////
@@ -56,24 +124,5 @@ class DashboardCollectionViewCell: UICollectionViewCell
     func stopQuivering()
     {
         self.layer.removeAnimationForKey("quivering")
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes)
-    {
-        if let attributes = layoutAttributes as? DashboardViewLayoutAttributes
-        {
-            if attributes.deleteButtonHidden
-            {
-                self.deleteButton.hidden = true
-                self.stopQuivering()
-            }
-            else
-            {
-                self.deleteButton.hidden = false
-                self.startQuivering()
-            }
-        }
     }
 }

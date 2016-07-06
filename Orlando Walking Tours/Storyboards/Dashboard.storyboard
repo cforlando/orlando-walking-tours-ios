@@ -61,12 +61,18 @@
                                                         <action selector="deleteButtonPressed:" destination="2ha-fR-Q1R" eventType="touchUpInside" id="LAZ-Qt-lUS"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-us-PAe">
+                                                    <rect key="frame" x="57" y="56" width="37" height="37"/>
+                                                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="Rgx-us-PAe" firstAttribute="centerX" secondItem="2ha-fR-Q1R" secondAttribute="centerX" id="8H6-H4-ZNP"/>
                                             <constraint firstAttribute="bottom" secondItem="jmC-qE-iXE" secondAttribute="bottom" id="Jy3-96-wkb"/>
                                             <constraint firstAttribute="bottom" secondItem="ERy-1N-sfJ" secondAttribute="bottom" id="KmV-jR-pq9"/>
+                                            <constraint firstItem="Rgx-us-PAe" firstAttribute="centerY" secondItem="2ha-fR-Q1R" secondAttribute="centerY" id="MBo-ta-eza"/>
                                             <constraint firstItem="jmC-qE-iXE" firstAttribute="leading" secondItem="2ha-fR-Q1R" secondAttribute="leading" id="Nbz-LJ-tDf"/>
                                             <constraint firstAttribute="trailing" secondItem="jmC-qE-iXE" secondAttribute="trailing" id="VqC-NB-IC0"/>
                                             <constraint firstItem="GIo-mo-6gj" firstAttribute="top" secondItem="jmC-qE-iXE" secondAttribute="top" id="avX-80-qij"/>
@@ -79,6 +85,7 @@
                                         <connections>
                                             <outlet property="deleteButton" destination="GIo-mo-6gj" id="NTZ-rX-h3k"/>
                                             <outlet property="imageView" destination="jmC-qE-iXE" id="eiC-tu-1NL"/>
+                                            <outlet property="loadingIndicator" destination="Rgx-us-PAe" id="ZJU-Lm-3zY"/>
                                             <outlet property="tourName" destination="Vvi-bI-HAX" id="tYr-Cf-7Ln"/>
                                         </connections>
                                     </collectionViewCell>

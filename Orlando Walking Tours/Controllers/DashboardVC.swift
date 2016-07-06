@@ -159,8 +159,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         else
         {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as! DashboardCollectionViewCell
-            // TODO: Image view for cell should be random photo of a location from the tour
-            cell.imageView?.image = UIImage.getPlaceholderImage(sized: Int(cell.frame.width), by: Int(cell.frame.height))
+            cell.configureImage(cell.frame)
             cell.tourName?.text = self.tours[indexPath.item].title
             cell.deleteButton.addTarget(self, action: #selector(DashboardVC.deleteTour(_:)), forControlEvents: .TouchUpInside)
             return cell
