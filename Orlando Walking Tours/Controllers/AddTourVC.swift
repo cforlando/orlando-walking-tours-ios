@@ -23,6 +23,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     ////////////////////////////////////////////////////////////
 
     let notificationCenter = NSNotificationCenter.defaultCenter()
+    var uuid: NSUUID?
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -33,7 +34,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
 
         tourNameTextField.delegate = self
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddTourVC.handleTextFieldDidChangeNotification(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(AddTourVC.handleTextFieldDidChangeNotification(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
     }
 
     ////////////////////////////////////////////////////////////
@@ -47,16 +48,16 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     // MARK: - UITextFieldDelegate
     ////////////////////////////////////////////////////////////
 
-    func textFieldDidBeginEditing(textField: UITextField)
+    func textFieldShouldClear(textField: UITextField) -> Bool
     {
-        self.addTourButton.enabled = true
+        self.addTourButton.enabled = false
+        return true
     }
 
     ////////////////////////////////////////////////////////////
 
-    func textFieldShouldClear(textField: UITextField) -> Bool
+    func textFieldShouldReturn(textField: UITextField) -> Bool
     {
-        self.addTourButton.enabled = false
         return true
     }
 
@@ -66,10 +67,24 @@ class AddTourVC: UIViewController, UITextFieldDelegate
 
     @IBAction func addTourButtonTapped(sender: UIButton)
     {
-        MagicalRecord.saveWithBlock
+        // This block with create and save a Tour entity on a background thread
+        MagicalRecord.saveWithBlock(
         { context in
+            self.uuid = NSUUID()
+
             let tour = Tour.MR_createEntityInContext(context)
             tour?.title = self.tourNameTextField.text
+            tour?.uuid = self.uuid?.UUIDString
+        })
+        { success, error in
+            if success
+            {
+                self.performSegueWithIdentifier("ShowLocationListSegue", sender: nil)
+            }
+            else
+            {
+                print("Error: \(error?.localizedDescription)")
+            }
         }
 
         removeTextFieldObserver()
@@ -100,6 +115,21 @@ class AddTourVC: UIViewController, UITextFieldDelegate
 
     func removeTextFieldObserver()
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextFieldTextDidChangeNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UITextFieldTextDidChangeNotification, object: nil)
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ShowLocationListSegue"
+        {
+            if let navController = segue.destinationViewController as? UINavigationController,
+               let vc = navController.topViewController as? LocationListVC
+            {
+                let tour = Tour.MR_findFirstByAttribute("uuid", withValue: (self.uuid?.UUIDString)!)
+                vc.tour = tour
+            }
+        }
     }
 }

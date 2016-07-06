@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42013C261CDF8CFD0030D2F8 /* LocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */; };
 		42013C291CE02E290030D2F8 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42013C281CE02E290030D2F8 /* LocationAnnotation.swift */; };
 		42052F281D1378F600F28CC4 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */; };
 		42052F2A1D138D4800F28CC4 /* DashboardViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */; };
 		424B9CE21D20632700D835F1 /* DashboardViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */; };
+		425C68FA1D282803004B4C40 /* LocationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C68F91D282803004B4C40 /* LocationListVC.swift */; };
 		42760F551D18C8B7007BA422 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */; };
 		42760F561D18C8B7007BA422 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F531D18C8B7007BA422 /* FirebaseDataService.swift */; };
 		42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F541D18C8B7007BA422 /* SocrataDataService.swift */; };
@@ -21,9 +21,9 @@
 		42863A5B1D16FE070014707B /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */; };
 		42863A5D1D16FE890014707B /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A5C1D16FE890014707B /* UIColor+HexColor.swift */; };
 		42A1CD231D1EE9560033DE35 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */; };
-		42BAF2B51CDE9F470095324B /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BAF2B11CDE9F470095324B /* Tour.swift */; };
+		42AF56721D2C2BB700C276EA /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */; };
+		42AF56731D2C2BB700C276EA /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF56711D2C2BB700C276EA /* Tour.swift */; };
 		42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C0C74D1D031CA000073F90 /* DashboardVC.swift */; };
-		42C0C7521D031D1300073F90 /* LocationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C0C7511D031D1300073F90 /* LocationListVC.swift */; };
 		42C0C7541D031D3400073F90 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C0C7531D031D3400073F90 /* LocationDetailVC.swift */; };
 		42C0C75D1D032AD100073F90 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C0C75C1D032AD100073F90 /* Dashboard.storyboard */; };
 		42C0C75F1D032B2200073F90 /* LocationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C0C75E1D032B2200073F90 /* LocationList.storyboard */; };
@@ -34,17 +34,22 @@
 		42CBE2331CDA8CE400F9E6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2321CDA8CE400F9E6D5 /* Assets.xcassets */; };
 		42CBE2361CDA8CE400F9E6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2341CDA8CE400F9E6D5 /* LaunchScreen.storyboard */; };
 		42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */; };
-		42CE84E81D076F9C00A43005 /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */; };
 		42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */; };
 		6727DFB4A1B4B19F5F8E526F /* Pods_Orlando_Walking_Tours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */; };
+		BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */; };
+		BFA485C71D270BE800918D0B /* InMemoryModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C31D270BE800918D0B /* InMemoryModelService.swift */; };
+		BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */; };
+		BFA485CA1D270BE800918D0B /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C61D270BE800918D0B /* UserLocationService.swift */; };
+		BFA485CC1D270C7700918D0B /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485CB1D270C7700918D0B /* ModelService.swift */; };
+		BFA485CE1D270CE400918D0B /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationMapVC.swift; path = Controllers/LocationMapVC.swift; sourceTree = "<group>"; };
 		42013C281CE02E290030D2F8 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Annotations/LocationAnnotation.swift; sourceTree = "<group>"; };
 		42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardCollectionViewCell.swift; path = Views/DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewFlowLayout.swift; path = Views/DashboardViewFlowLayout.swift; sourceTree = "<group>"; };
 		424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewLayoutAttributes.swift; path = Views/DashboardViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		425C68F91D282803004B4C40 /* LocationListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVC.swift; path = Controllers/LocationListVC.swift; sourceTree = "<group>"; };
 		42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataServiceProtocol.swift; path = Services/DataServiceProtocol.swift; sourceTree = "<group>"; };
 		42760F531D18C8B7007BA422 /* FirebaseDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseDataService.swift; path = Services/FirebaseDataService.swift; sourceTree = "<group>"; };
 		42760F541D18C8B7007BA422 /* SocrataDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocrataDataService.swift; path = Services/SocrataDataService.swift; sourceTree = "<group>"; };
@@ -54,9 +59,9 @@
 		42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ThemeColors.swift"; path = "Extensions/UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		42863A5C1D16FE890014707B /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HexColor.swift"; path = "Extensions/UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "Extensions/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
-		42BAF2B11CDE9F470095324B /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tour.swift; path = Models/Tour.swift; sourceTree = "<group>"; };
+		42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42AF56711D2C2BB700C276EA /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tour.swift; path = Models/Tour.swift; sourceTree = "<group>"; };
 		42C0C74D1D031CA000073F90 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = Controllers/DashboardVC.swift; sourceTree = "<group>"; };
-		42C0C7511D031D1300073F90 /* LocationListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVC.swift; path = Controllers/LocationListVC.swift; sourceTree = "<group>"; };
 		42C0C7531D031D3400073F90 /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailVC.swift; path = Controllers/LocationDetailVC.swift; sourceTree = "<group>"; };
 		42C0C75C1D032AD100073F90 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dashboard.storyboard; path = Storyboards/Dashboard.storyboard; sourceTree = "<group>"; };
 		42C0C75E1D032B2200073F90 /* LocationList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LocationList.storyboard; path = Storyboards/LocationList.storyboard; sourceTree = "<group>"; };
@@ -69,11 +74,16 @@
 		42CBE2351CDA8CE400F9E6D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42CBE2371CDA8CE400F9E6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoricLocation+CoreDataProperties.swift"; path = "Models/HistoricLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTourCollectionViewCell.swift; path = Views/AddTourCollectionViewCell.swift; sourceTree = "<group>"; };
 		86A7766E555F3964A9AFD00F /* Pods-Orlando Walking Tours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.release.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.release.xcconfig"; sourceTree = "<group>"; };
 		9886207BC1C22F67BFFC6B39 /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orlando_Walking_Tours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVCExtensions.swift; path = Extensions/LocationListVCExtensions.swift; sourceTree = "<group>"; };
+		BFA485C31D270BE800918D0B /* InMemoryModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InMemoryModelService.swift; path = Services/InMemoryModelService.swift; sourceTree = "<group>"; };
+		BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicalRecordModelService.swift; path = Services/MagicalRecordModelService.swift; sourceTree = "<group>"; };
+		BFA485C61D270BE800918D0B /* UserLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationService.swift; path = Services/UserLocationService.swift; sourceTree = "<group>"; };
+		BFA485CB1D270C7700918D0B /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelService.swift; path = Services/ModelService.swift; sourceTree = "<group>"; };
+		BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = Views/LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,7 @@
 				42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */,
 				42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */,
 				424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */,
+				BFA485CD1D270CE400918D0B /* LocationTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -114,6 +125,10 @@
 				42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */,
 				42760F531D18C8B7007BA422 /* FirebaseDataService.swift */,
 				42760F541D18C8B7007BA422 /* SocrataDataService.swift */,
+				BFA485C31D270BE800918D0B /* InMemoryModelService.swift */,
+				BFA485CB1D270C7700918D0B /* ModelService.swift */,
+				BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */,
+				BFA485C61D270BE800918D0B /* UserLocationService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 		42863A591D16FDE80014707B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */,
 				42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */,
 				42863A5C1D16FE890014707B /* UIColor+HexColor.swift */,
 				42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */,
@@ -132,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */,
-				42CE84E61D076F9C00A43005 /* Tour+CoreDataProperties.swift */,
+				42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -198,7 +214,7 @@
 			children = (
 				42BAF2B81CDE9F500095324B /* Generated */,
 				42C0C76D1D035E0100073F90 /* HistoricLocation.swift */,
-				42BAF2B11CDE9F470095324B /* Tour.swift */,
+				42AF56711D2C2BB700C276EA /* Tour.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -206,9 +222,8 @@
 		42CBE23F1CDA8D7A00F9E6D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				42013C251CDF8CFD0030D2F8 /* LocationMapVC.swift */,
+				425C68F91D282803004B4C40 /* LocationListVC.swift */,
 				42C0C74D1D031CA000073F90 /* DashboardVC.swift */,
-				42C0C7511D031D1300073F90 /* LocationListVC.swift */,
 				42C0C7531D031D3400073F90 /* LocationDetailVC.swift */,
 				42760F5A1D19D5AD007BA422 /* AddTourVC.swift */,
 			);
@@ -364,21 +379,26 @@
 				42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */,
 				42CBE2311CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld in Sources */,
 				42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */,
+				42AF56731D2C2BB700C276EA /* Tour.swift in Sources */,
 				42760F5B1D19D5AD007BA422 /* AddTourVC.swift in Sources */,
-				42BAF2B51CDE9F470095324B /* Tour.swift in Sources */,
 				42760F551D18C8B7007BA422 /* DataServiceProtocol.swift in Sources */,
 				42052F2A1D138D4800F28CC4 /* DashboardViewFlowLayout.swift in Sources */,
-				42CE84E81D076F9C00A43005 /* Tour+CoreDataProperties.swift in Sources */,
-				42C0C7521D031D1300073F90 /* LocationListVC.swift in Sources */,
 				42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */,
+				BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */,
+				BFA485CA1D270BE800918D0B /* UserLocationService.swift in Sources */,
+				BFA485C71D270BE800918D0B /* InMemoryModelService.swift in Sources */,
+				BFA485CC1D270C7700918D0B /* ModelService.swift in Sources */,
+				BFA485CE1D270CE400918D0B /* LocationTableViewCell.swift in Sources */,
+				BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */,
 				42CBE2291CDA8CE400F9E6D5 /* AppDelegate.swift in Sources */,
 				42863A5D1D16FE890014707B /* UIColor+HexColor.swift in Sources */,
 				42052F281D1378F600F28CC4 /* DashboardCollectionViewCell.swift in Sources */,
+				42AF56721D2C2BB700C276EA /* Tour+CoreDataProperties.swift in Sources */,
 				42A1CD231D1EE9560033DE35 /* UIImage+Placeholder.swift in Sources */,
-				42013C261CDF8CFD0030D2F8 /* LocationMapVC.swift in Sources */,
 				42013C291CE02E290030D2F8 /* LocationAnnotation.swift in Sources */,
 				42C0C76F1D035E0100073F90 /* HistoricLocation.swift in Sources */,
 				424B9CE21D20632700D835F1 /* DashboardViewLayoutAttributes.swift in Sources */,
+				425C68FA1D282803004B4C40 /* LocationListVC.swift in Sources */,
 				42863A581D16FA970014707B /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
