@@ -23,7 +23,6 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     ////////////////////////////////////////////////////////////
 
     let notificationCenter = NSNotificationCenter.defaultCenter()
-    var tour: Tour?
     var uuid: NSUUID?
 
     ////////////////////////////////////////////////////////////
@@ -128,8 +127,8 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             if let navController = segue.destinationViewController as? UINavigationController,
                let vc = navController.topViewController as? LocationListVC
             {
-                self.tour = Tour.MR_findFirstByAttribute("uuid", withValue: (self.uuid?.UUIDString)!)
-                vc.tour = self.tour
+                let tour = Tour.MR_findFirstByAttribute("uuid", withValue: (self.uuid?.UUIDString)!)
+                vc.tour = tour
             }
         }
     }
