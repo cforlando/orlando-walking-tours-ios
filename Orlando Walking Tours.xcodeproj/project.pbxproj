@@ -21,6 +21,8 @@
 		42863A5B1D16FE070014707B /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */; };
 		42863A5D1D16FE890014707B /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42863A5C1D16FE890014707B /* UIColor+HexColor.swift */; };
 		42A1CD231D1EE9560033DE35 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */; };
+		42A45B2D1D315B5E00429762 /* CurrentTour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A45B2C1D315B5E00429762 /* CurrentTour.storyboard */; };
+		42A45B2F1D315CD000429762 /* CurrentTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A45B2E1D315CD000429762 /* CurrentTourVC.swift */; };
 		42AF56721D2C2BB700C276EA /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */; };
 		42AF56731D2C2BB700C276EA /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF56711D2C2BB700C276EA /* Tour.swift */; };
 		42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C0C74D1D031CA000073F90 /* DashboardVC.swift */; };
@@ -59,6 +61,8 @@
 		42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ThemeColors.swift"; path = "Extensions/UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		42863A5C1D16FE890014707B /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HexColor.swift"; path = "Extensions/UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "Extensions/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
+		42A45B2C1D315B5E00429762 /* CurrentTour.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CurrentTour.storyboard; path = Storyboards/CurrentTour.storyboard; sourceTree = "<group>"; };
+		42A45B2E1D315CD000429762 /* CurrentTourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentTourVC.swift; path = Controllers/CurrentTourVC.swift; sourceTree = "<group>"; };
 		42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42AF56711D2C2BB700C276EA /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tour.swift; path = Models/Tour.swift; sourceTree = "<group>"; };
 		42C0C74D1D031CA000073F90 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = Controllers/DashboardVC.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				42C0C75E1D032B2200073F90 /* LocationList.storyboard */,
 				42C0C75C1D032AD100073F90 /* Dashboard.storyboard */,
 				42CBE2341CDA8CE400F9E6D5 /* LaunchScreen.storyboard */,
+				42A45B2C1D315B5E00429762 /* CurrentTour.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				42C0C74D1D031CA000073F90 /* DashboardVC.swift */,
 				42C0C7531D031D3400073F90 /* LocationDetailVC.swift */,
 				42760F5A1D19D5AD007BA422 /* AddTourVC.swift */,
+				42A45B2E1D315CD000429762 /* CurrentTourVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				42C0C75F1D032B2200073F90 /* LocationList.storyboard in Resources */,
 				42C0C7611D032B4B00073F90 /* LocationDetails.storyboard in Resources */,
 				42C0C75D1D032AD100073F90 /* Dashboard.storyboard in Resources */,
+				42A45B2D1D315B5E00429762 /* CurrentTour.storyboard in Resources */,
 				42760F591D18D72E007BA422 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +383,7 @@
 				42863A5B1D16FE070014707B /* UIColor+ThemeColors.swift in Sources */,
 				42C0C7541D031D3400073F90 /* LocationDetailVC.swift in Sources */,
 				42760F561D18C8B7007BA422 /* FirebaseDataService.swift in Sources */,
+				42A45B2F1D315CD000429762 /* CurrentTourVC.swift in Sources */,
 				42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */,
 				42CBE2311CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld in Sources */,
 				42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */,

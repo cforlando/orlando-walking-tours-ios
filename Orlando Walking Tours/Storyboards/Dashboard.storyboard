@@ -156,11 +156,20 @@
                     <connections>
                         <outlet property="collectionView" destination="SXM-Mn-3kP" id="8J9-ug-fmh"/>
                         <outlet property="newTourView" destination="wmK-81-q3w" id="LUB-G0-D7z"/>
+                        <segue destination="dZ5-Jc-rwz" kind="show" identifier="CurrentTourSegue" id="dby-xq-enB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDW-68-nx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1452" y="1128"/>
+        </scene>
+        <!--CurrentTour-->
+        <scene sceneID="exz-ex-Ss6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrentTour" id="dZ5-Jc-rwz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmU-KB-6vX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1343.5" y="1648"/>
         </scene>
         <!--Tour Name-->
         <scene sceneID="3q2-d4-Ysq">
@@ -250,7 +259,7 @@
                 <viewControllerPlaceholder storyboardName="LocationList" id="9be-TP-5VS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ro6-Kw-Bgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991.5" y="1606"/>
+            <point key="canvasLocation" x="2058.5" y="1569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JK7-eS-E8x">
@@ -294,6 +303,6 @@
         <image name="plus" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iOl-1w-5Zl"/>
+        <segue reference="arf-pa-pXl"/>
     </inferredMetricsTieBreakers>
 </document>
