@@ -172,7 +172,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        // TODO
+        performSegueWithIdentifier("CurrentTourSegue", sender: self.tours[indexPath.item])
     }
 
     ////////////////////////////////////////////////////////////
@@ -189,5 +189,20 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     func isDeletionModeActiveForCollectionView(collectionView: UICollectionView, layout: UICollectionViewLayout) -> Bool
     {
         return isDeletionModeActive
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Navigation
+    ////////////////////////////////////////////////////////////
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        print(segue.identifier)
+        print(segue.destinationViewController)
+        if let navController = segue.destinationViewController as? UINavigationController,
+           let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "CurrentTourSegue"
+        {
+            vc.tour = sender as? Tour
+        }
     }
 }
