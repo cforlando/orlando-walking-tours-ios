@@ -66,6 +66,7 @@ class LocationListVC: UIViewController
     var tourObjectID: NSManagedObjectID?
     var locations = [HistoricLocation]()
     var modelService: ModelService!
+    var dataService: DataService!
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
@@ -95,8 +96,9 @@ class LocationListVC: UIViewController
         
         //self.modelService = MagicalRecordModelService()
         self.modelService = InMemoryModelService()
+        self.dataService = FirebaseDataService()
         
-        FirebaseDataService.sharedInstance.getLocations
+        self.dataService.getLocations
         { locations in
             let allLocations = locations.sort
             {

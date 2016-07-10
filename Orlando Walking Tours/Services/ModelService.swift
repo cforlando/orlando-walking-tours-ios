@@ -12,10 +12,12 @@ typealias ModelServiceCompletionHandler = (Bool, NSError?) -> Void
 
 protocol ModelService {
     
-    func findAllTours() -> NSArray
-    
-    func createTour(title title: String, completion: ModelServiceCompletionHandler?)
-    
+    func findAllTours() -> [Tour]?
+    func findTour(byUUID uuid: NSUUID, completion: Tour? -> Void)
+
+    func createTour(uuid uuid: NSUUID, title: String, completion: ModelServiceCompletionHandler?)
+    func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?)
+
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?)
     func removeLocation(location: HistoricLocation, fromTour tour: Tour, completion: ModelServiceCompletionHandler?)
 }

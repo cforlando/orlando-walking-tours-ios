@@ -13,16 +13,31 @@ import MagicalRecord
 
 class MagicalRecordModelService : ModelService {
     
-    func createTour(title title: String, completion: ModelServiceCompletionHandler?) {
+    func createTour(uuid uuid: NSUUID, title: String, completion: ModelServiceCompletionHandler?) {
         MagicalRecord.saveWithBlock({ localContext in
-            let tour = Tour.MR_createEntityInContext(localContext)!
-            tour.title = title
-            tour.historicLocations = NSSet()
+            let tour = Tour.MR_createEntityInContext(localContext)
+            tour?.uuid = uuid.UUIDString
+            tour?.title = title
         }, completion: completion)
     }
 
-    func findAllTours() -> NSArray {
-        return Tour.MR_findAll()!
+    func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?) {
+        MagicalRecord.saveWithBlock({ localContext in
+            tour.MR_deleteEntityInContext(localContext)
+        }, completion: completion)
+    }
+
+    func findAllTours() -> [Tour]? {
+        if let tours = Tour.MR_findAll() as? [Tour] {
+            return tours
+        }
+        return nil
+    }
+
+    func findTour(byUUID uuid: NSUUID, completion: Tour? -> Void) {
+        if let tour = Tour.MR_findFirstByAttribute("uuid", withValue: uuid.UUIDString) {
+            completion(tour)
+        }
     }
     
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?) {

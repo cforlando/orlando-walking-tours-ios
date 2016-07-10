@@ -12,7 +12,7 @@
 		42052F2A1D138D4800F28CC4 /* DashboardViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */; };
 		424B9CE21D20632700D835F1 /* DashboardViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */; };
 		425C68FA1D282803004B4C40 /* LocationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C68F91D282803004B4C40 /* LocationListVC.swift */; };
-		42760F551D18C8B7007BA422 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */; };
+		42760F551D18C8B7007BA422 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F521D18C8B7007BA422 /* DataService.swift */; };
 		42760F561D18C8B7007BA422 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F531D18C8B7007BA422 /* FirebaseDataService.swift */; };
 		42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F541D18C8B7007BA422 /* SocrataDataService.swift */; };
 		42760F591D18D72E007BA422 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42760F581D18D72E007BA422 /* GoogleService-Info.plist */; };
@@ -52,7 +52,7 @@
 		42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewFlowLayout.swift; path = Views/DashboardViewFlowLayout.swift; sourceTree = "<group>"; };
 		424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewLayoutAttributes.swift; path = Views/DashboardViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		425C68F91D282803004B4C40 /* LocationListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVC.swift; path = Controllers/LocationListVC.swift; sourceTree = "<group>"; };
-		42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataServiceProtocol.swift; path = Services/DataServiceProtocol.swift; sourceTree = "<group>"; };
+		42760F521D18C8B7007BA422 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
 		42760F531D18C8B7007BA422 /* FirebaseDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseDataService.swift; path = Services/FirebaseDataService.swift; sourceTree = "<group>"; };
 		42760F541D18C8B7007BA422 /* SocrataDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocrataDataService.swift; path = Services/SocrataDataService.swift; sourceTree = "<group>"; };
 		42760F581D18D72E007BA422 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		420B82CC1CE0D603005ED879 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				42760F521D18C8B7007BA422 /* DataServiceProtocol.swift */,
+				42760F521D18C8B7007BA422 /* DataService.swift */,
 				42760F531D18C8B7007BA422 /* FirebaseDataService.swift */,
 				42760F541D18C8B7007BA422 /* SocrataDataService.swift */,
 				BFA485C31D270BE800918D0B /* InMemoryModelService.swift */,
@@ -389,7 +389,7 @@
 				42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */,
 				42AF56731D2C2BB700C276EA /* Tour.swift in Sources */,
 				42760F5B1D19D5AD007BA422 /* AddTourVC.swift in Sources */,
-				42760F551D18C8B7007BA422 /* DataServiceProtocol.swift in Sources */,
+				42760F551D18C8B7007BA422 /* DataService.swift in Sources */,
 				42052F2A1D138D4800F28CC4 /* DashboardViewFlowLayout.swift in Sources */,
 				42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */,
 				BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */,

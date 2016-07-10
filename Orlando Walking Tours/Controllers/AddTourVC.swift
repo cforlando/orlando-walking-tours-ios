@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MagicalRecord
 
 class AddTourVC: UIViewController, UITextFieldDelegate
 {
@@ -24,6 +23,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
 
     let notificationCenter = NSNotificationCenter.defaultCenter()
     var uuid: NSUUID?
+    var modelService: ModelService!
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -35,6 +35,8 @@ class AddTourVC: UIViewController, UITextFieldDelegate
 
         tourNameTextField.delegate = self
         notificationCenter.addObserver(self, selector: #selector(AddTourVC.handleTextFieldDidChangeNotification(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+
+        modelService = MagicalRecordModelService()
     }
 
     ////////////////////////////////////////////////////////////
@@ -68,14 +70,8 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     @IBAction func addTourButtonTapped(sender: UIButton)
     {
         // This block with create and save a Tour entity on a background thread
-        MagicalRecord.saveWithBlock(
-        { context in
-            self.uuid = NSUUID()
-
-            let tour = Tour.MR_createEntityInContext(context)
-            tour?.title = self.tourNameTextField.text
-            tour?.uuid = self.uuid?.UUIDString
-        })
+        self.uuid = NSUUID()
+        modelService.createTour(uuid: self.uuid!, title: tourNameTextField.text!)
         { success, error in
             if success
             {
@@ -127,8 +123,10 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             if let navController = segue.destinationViewController as? UINavigationController,
                let vc = navController.topViewController as? LocationListVC
             {
-                let tour = Tour.MR_findFirstByAttribute("uuid", withValue: (self.uuid?.UUIDString)!)
-                vc.tour = tour
+                modelService.findTour(byUUID: self.uuid!)
+                { tour in
+                    vc.tour = tour
+                }
             }
         }
     }

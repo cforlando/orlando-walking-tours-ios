@@ -10,11 +10,9 @@ import Foundation
 import SwiftyJSON
 import Firebase
 
-struct FirebaseDataService : DataServiceProtocol
+struct FirebaseDataService : DataService
 {
     let ref = FIRDatabase.database().reference()
-
-    static let sharedInstance = FirebaseDataService()
 
     ////////////////////////////////////////////////////////////
 
