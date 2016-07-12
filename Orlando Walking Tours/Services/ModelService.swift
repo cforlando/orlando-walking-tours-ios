@@ -19,5 +19,6 @@ protocol ModelService {
     func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?)
 
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?)
+    func loadLocations(fromTour tour: Tour) -> [HistoricLocation]?
     func removeLocation(location: HistoricLocation, fromTour tour: Tour, completion: ModelServiceCompletionHandler?)
 }

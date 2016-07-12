@@ -69,6 +69,11 @@ class InMemoryModelService : ModelService {
         }
         completion?(true, nil)
     }
+
+    func loadLocations(fromTour tour: Tour) -> [HistoricLocation]?
+    {
+        return nil
+    }
     
     func removeLocation(location: HistoricLocation, fromTour tour: Tour, completion: ModelServiceCompletionHandler?) {
         let sortOrder = location.sortOrder

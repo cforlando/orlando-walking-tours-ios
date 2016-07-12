@@ -23,6 +23,17 @@
 		42A1CD231D1EE9560033DE35 /* UIImage+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */; };
 		42A45B2D1D315B5E00429762 /* CurrentTour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A45B2C1D315B5E00429762 /* CurrentTour.storyboard */; };
 		42A45B2F1D315CD000429762 /* CurrentTourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A45B2E1D315CD000429762 /* CurrentTourVC.swift */; };
+		42ABB6D71D3449D2008A3DAB /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6CF1D3449D2008A3DAB /* Ubuntu-Bold.ttf */; };
+		42ABB6D81D3449D2008A3DAB /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D01D3449D2008A3DAB /* Ubuntu-BoldItalic.ttf */; };
+		42ABB6D91D3449D2008A3DAB /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D11D3449D2008A3DAB /* Ubuntu-Italic.ttf */; };
+		42ABB6DA1D3449D2008A3DAB /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D21D3449D2008A3DAB /* Ubuntu-Light.ttf */; };
+		42ABB6DB1D3449D2008A3DAB /* Ubuntu-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D31D3449D2008A3DAB /* Ubuntu-LightItalic.ttf */; };
+		42ABB6DC1D3449D2008A3DAB /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D41D3449D2008A3DAB /* Ubuntu-Medium.ttf */; };
+		42ABB6DD1D3449D2008A3DAB /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D51D3449D2008A3DAB /* Ubuntu-MediumItalic.ttf */; };
+		42ABB6DE1D3449D2008A3DAB /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6D61D3449D2008A3DAB /* Ubuntu-Regular.ttf */; };
+		42ABB6E01D344C47008A3DAB /* CurrentLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABB6DF1D344C47008A3DAB /* CurrentLocationTableViewCell.swift */; };
+		42ABB6E21D344F0F008A3DAB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ABB6E11D344F0F008A3DAB /* ReusableView.swift */; };
+		42ABB6E41D34A414008A3DAB /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42ABB6E31D34A414008A3DAB /* ionicons.ttf */; };
 		42AF56721D2C2BB700C276EA /* Tour+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */; };
 		42AF56731D2C2BB700C276EA /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF56711D2C2BB700C276EA /* Tour.swift */; };
 		42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C0C74D1D031CA000073F90 /* DashboardVC.swift */; };
@@ -36,6 +47,7 @@
 		42CBE2331CDA8CE400F9E6D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2321CDA8CE400F9E6D5 /* Assets.xcassets */; };
 		42CBE2361CDA8CE400F9E6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42CBE2341CDA8CE400F9E6D5 /* LaunchScreen.storyboard */; };
 		42CE84E71D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */; };
+		42EE07191D3537F200B79384 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE07181D3537F200B79384 /* CustomNavBar.swift */; };
 		42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */; };
 		6727DFB4A1B4B19F5F8E526F /* Pods_Orlando_Walking_Tours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */; };
 		BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */; };
@@ -63,6 +75,17 @@
 		42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Placeholder.swift"; path = "Extensions/UIImage+Placeholder.swift"; sourceTree = "<group>"; };
 		42A45B2C1D315B5E00429762 /* CurrentTour.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CurrentTour.storyboard; path = Storyboards/CurrentTour.storyboard; sourceTree = "<group>"; };
 		42A45B2E1D315CD000429762 /* CurrentTourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentTourVC.swift; path = Controllers/CurrentTourVC.swift; sourceTree = "<group>"; };
+		42ABB6CF1D3449D2008A3DAB /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Bold.ttf"; path = "Resources/Fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		42ABB6D01D3449D2008A3DAB /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-BoldItalic.ttf"; path = "Resources/Fonts/Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		42ABB6D11D3449D2008A3DAB /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Italic.ttf"; path = "Resources/Fonts/Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		42ABB6D21D3449D2008A3DAB /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Light.ttf"; path = "Resources/Fonts/Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		42ABB6D31D3449D2008A3DAB /* Ubuntu-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-LightItalic.ttf"; path = "Resources/Fonts/Ubuntu-LightItalic.ttf"; sourceTree = "<group>"; };
+		42ABB6D41D3449D2008A3DAB /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Medium.ttf"; path = "Resources/Fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
+		42ABB6D51D3449D2008A3DAB /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-MediumItalic.ttf"; path = "Resources/Fonts/Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; };
+		42ABB6D61D3449D2008A3DAB /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ubuntu-Regular.ttf"; path = "Resources/Fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		42ABB6DF1D344C47008A3DAB /* CurrentLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentLocationTableViewCell.swift; path = Views/CurrentLocationTableViewCell.swift; sourceTree = "<group>"; };
+		42ABB6E11D344F0F008A3DAB /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = Extensions/ReusableView.swift; sourceTree = "<group>"; };
+		42ABB6E31D34A414008A3DAB /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ionicons.ttf; path = Resources/Fonts/ionicons.ttf; sourceTree = "<group>"; };
 		42AF56701D2C2BB700C276EA /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42AF56711D2C2BB700C276EA /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tour.swift; path = Models/Tour.swift; sourceTree = "<group>"; };
 		42C0C74D1D031CA000073F90 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = Controllers/DashboardVC.swift; sourceTree = "<group>"; };
@@ -78,6 +101,7 @@
 		42CBE2351CDA8CE400F9E6D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42CBE2371CDA8CE400F9E6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42CE84E51D076F9C00A43005 /* HistoricLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoricLocation+CoreDataProperties.swift"; path = "Models/HistoricLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42EE07181D3537F200B79384 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavBar.swift; path = Views/CustomNavBar.swift; sourceTree = "<group>"; };
 		42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTourCollectionViewCell.swift; path = Views/AddTourCollectionViewCell.swift; sourceTree = "<group>"; };
 		86A7766E555F3964A9AFD00F /* Pods-Orlando Walking Tours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.release.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.release.xcconfig"; sourceTree = "<group>"; };
 		9886207BC1C22F67BFFC6B39 /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				42863A571D16FA970014707B /* CustomButton.swift */,
+				42EE07181D3537F200B79384 /* CustomNavBar.swift */,
 				42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */,
+				42ABB6DF1D344C47008A3DAB /* CurrentLocationTableViewCell.swift */,
 				42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */,
 				42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */,
 				424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */,
@@ -144,8 +170,25 @@
 				42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */,
 				42863A5C1D16FE890014707B /* UIColor+HexColor.swift */,
 				42A1CD221D1EE9560033DE35 /* UIImage+Placeholder.swift */,
+				42ABB6E11D344F0F008A3DAB /* ReusableView.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		42ABB6CE1D3449C2008A3DAB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				42ABB6E31D34A414008A3DAB /* ionicons.ttf */,
+				42ABB6CF1D3449D2008A3DAB /* Ubuntu-Bold.ttf */,
+				42ABB6D01D3449D2008A3DAB /* Ubuntu-BoldItalic.ttf */,
+				42ABB6D11D3449D2008A3DAB /* Ubuntu-Italic.ttf */,
+				42ABB6D21D3449D2008A3DAB /* Ubuntu-Light.ttf */,
+				42ABB6D31D3449D2008A3DAB /* Ubuntu-LightItalic.ttf */,
+				42ABB6D41D3449D2008A3DAB /* Ubuntu-Medium.ttf */,
+				42ABB6D51D3449D2008A3DAB /* Ubuntu-MediumItalic.ttf */,
+				42ABB6D61D3449D2008A3DAB /* Ubuntu-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		42BAF2B81CDE9F500095324B /* Generated */ = {
@@ -208,6 +251,7 @@
 		42CBE23D1CDA8D3800F9E6D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				42ABB6CE1D3449C2008A3DAB /* Fonts */,
 				42CBE22F1CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld */,
 				42CBE2321CDA8CE400F9E6D5 /* Assets.xcassets */,
 			);
@@ -314,12 +358,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ABB6DD1D3449D2008A3DAB /* Ubuntu-MediumItalic.ttf in Resources */,
 				42CBE2361CDA8CE400F9E6D5 /* LaunchScreen.storyboard in Resources */,
 				42CBE2331CDA8CE400F9E6D5 /* Assets.xcassets in Resources */,
+				42ABB6DE1D3449D2008A3DAB /* Ubuntu-Regular.ttf in Resources */,
+				42ABB6D81D3449D2008A3DAB /* Ubuntu-BoldItalic.ttf in Resources */,
+				42ABB6D91D3449D2008A3DAB /* Ubuntu-Italic.ttf in Resources */,
+				42ABB6DB1D3449D2008A3DAB /* Ubuntu-LightItalic.ttf in Resources */,
+				42ABB6DA1D3449D2008A3DAB /* Ubuntu-Light.ttf in Resources */,
 				42C0C75F1D032B2200073F90 /* LocationList.storyboard in Resources */,
 				42C0C7611D032B4B00073F90 /* LocationDetails.storyboard in Resources */,
+				42ABB6E41D34A414008A3DAB /* ionicons.ttf in Resources */,
+				42ABB6D71D3449D2008A3DAB /* Ubuntu-Bold.ttf in Resources */,
 				42C0C75D1D032AD100073F90 /* Dashboard.storyboard in Resources */,
 				42A45B2D1D315B5E00429762 /* CurrentTour.storyboard in Resources */,
+				42ABB6DC1D3449D2008A3DAB /* Ubuntu-Medium.ttf in Resources */,
 				42760F591D18D72E007BA422 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,10 +434,13 @@
 			files = (
 				42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */,
 				42863A5B1D16FE070014707B /* UIColor+ThemeColors.swift in Sources */,
+				42EE07191D3537F200B79384 /* CustomNavBar.swift in Sources */,
 				42C0C7541D031D3400073F90 /* LocationDetailVC.swift in Sources */,
 				42760F561D18C8B7007BA422 /* FirebaseDataService.swift in Sources */,
 				42A45B2F1D315CD000429762 /* CurrentTourVC.swift in Sources */,
 				42C0C74E1D031CA000073F90 /* DashboardVC.swift in Sources */,
+				42ABB6E01D344C47008A3DAB /* CurrentLocationTableViewCell.swift in Sources */,
+				42ABB6E21D344F0F008A3DAB /* ReusableView.swift in Sources */,
 				42CBE2311CDA8CE400F9E6D5 /* WalkingTours.xcdatamodeld in Sources */,
 				42760F571D18C8B7007BA422 /* SocrataDataService.swift in Sources */,
 				42AF56731D2C2BB700C276EA /* Tour.swift in Sources */,

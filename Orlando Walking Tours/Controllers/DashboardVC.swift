@@ -195,8 +195,6 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        print(segue.identifier)
-        print(segue.destinationViewController)
         if let navController = segue.destinationViewController as? UINavigationController,
            let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "CurrentTourSegue"
         {

@@ -1,30 +1,29 @@
 //
-//  LocationTableViewCell.swift
+//  CurrentLocationTableViewCell.swift
 //  Orlando Walking Tours
 //
-//  Created by Greg Barr on 6/7/16.
+//  Created by Keli'i Martin on 7/11/16.
 //  Copyright © 2016 Code for Orlando. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class LocationTableViewCell: UITableViewCell, ReusableView
+class CurrentLocationTableViewCell: UITableViewCell, ReusableView
 {
     ////////////////////////////////////////////////////////////
     // MARK: - IBOutlets
     ////////////////////////////////////////////////////////////
 
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var locationThumbnail: UIImageView!
-    @IBOutlet weak var locationTitle: UILabel!
-    @IBOutlet weak var addLocationButton: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var locationId: String!
     var request: Request?
 
     ////////////////////////////////////////////////////////////
@@ -34,7 +33,7 @@ class LocationTableViewCell: UITableViewCell, ReusableView
     func configureImage(frame: CGRect)
     {
         reset()
-        loadImage(frame.width, height: frame.height)
+        loadImage(width: frame.width, height: frame.height)
     }
 
     ////////////////////////////////////////////////////////////
@@ -47,11 +46,10 @@ class LocationTableViewCell: UITableViewCell, ReusableView
 
     ////////////////////////////////////////////////////////////
 
-    func loadImage(width: CGFloat, height: CGFloat)
+    func loadImage(width width: CGFloat, height: CGFloat)
     {
         loadingIndicator.startAnimating()
 
-        // TODO: Image view for cell should be random photo of a location from the tour
         request = UIImage.getPlaceholderImage(sized: Int(width), by: Int(height))
         { image in
             self.populateCell(image!)

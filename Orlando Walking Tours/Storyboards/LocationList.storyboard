@@ -2,13 +2,20 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ooj-j4-Cky">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Ubuntu-Light.ttf">
+            <string>Ubuntu-Light</string>
+        </mutableArray>
+        <mutableArray key="Ubuntu-Regular.ttf">
+            <string>Ubuntu</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Tour Name-->
         <scene sceneID="bvS-cy-qEe">
             <objects>
-                <viewController id="5MQ-KI-ABR" customClass="LocationListVC" customModule="Orlando_Walking_Tours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5MQ-KI-ABR" customClass="LocationListVC" customModule="Orlando_Walking_Tours" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="syA-He-Kgz"/>
                         <viewControllerLayoutGuide type="bottom" id="bGo-78-wxn"/>
@@ -18,140 +25,149 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-XH-kG5">
-                                <rect key="frame" x="0.0" y="180" width="600" height="420"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-OY-qWd">
-                                <rect key="frame" x="0.0" y="180" width="600" height="420"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" rowHeight="88" id="eHe-sY-qHX" customClass="LocationTableViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" rowHeight="71" id="eHe-sY-qHX" customClass="LocationTableViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eHe-sY-qHX" id="gUW-PC-37p">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-6X-sUu">
-                                                    <rect key="frame" x="8" y="8" width="70" height="66"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-6X-sUu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="66" id="2h9-fy-8Hu"/>
-                                                        <constraint firstAttribute="width" constant="70" id="weg-8O-xeK"/>
+                                                        <constraint firstAttribute="width" constant="70" id="JrP-Vd-Er6"/>
+                                                        <constraint firstAttribute="height" constant="70" id="di6-ik-QgI"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title (0.2 mi)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-nc-q98">
-                                                    <rect key="frame" x="86" y="15" width="166" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlp-FJ-Gek">
-                                                    <rect key="frame" x="86" y="44" width="101" height="30"/>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Je5-Ru-5Wp">
+                                                    <rect key="frame" x="25" y="25" width="20" height="20"/>
+                                                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </activityIndicatorView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlp-FJ-Gek" customClass="CustomButton" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                                                    <rect key="frame" x="78" y="32" width="150" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="kcn-c3-TwC"/>
+                                                        <constraint firstAttribute="height" constant="30" id="xfd-Bg-PhR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="15"/>
                                                     <state key="normal" title="ADD TO TOUR"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="colorCode">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fontColor">
+                                                            <integer key="value" value="7"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="addToTourPressed:" destination="5MQ-KI-ABR" eventType="touchUpInside" id="cWa-He-qR5"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title (0.2 mi)" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-nc-q98">
+                                                    <rect key="frame" x="78" y="8" width="147" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nlp-FJ-Gek" firstAttribute="top" secondItem="Bz2-nc-q98" secondAttribute="bottom" constant="8" id="Loo-jS-Loo"/>
-                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" constant="15" id="MPk-jf-ENq"/>
-                                                <constraint firstItem="LWv-6X-sUu" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" constant="8" id="NFA-eh-YfJ"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Bz2-nc-q98" secondAttribute="trailing" constant="15" id="UP5-eg-uEK"/>
-                                                <constraint firstItem="nlp-FJ-Gek" firstAttribute="top" secondItem="Bz2-nc-q98" secondAttribute="bottom" constant="8" id="WCB-6F-TeH"/>
-                                                <constraint firstItem="LWv-6X-sUu" firstAttribute="leading" secondItem="gUW-PC-37p" secondAttribute="leading" constant="8" id="YBd-rg-Gew"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="nlp-FJ-Gek" secondAttribute="trailing" constant="15" id="i8M-QV-ehu"/>
-                                                <constraint firstItem="nlp-FJ-Gek" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="m3U-e3-Gtg"/>
-                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="rge-zA-Yzo"/>
+                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="1ke-db-kOb"/>
+                                                <constraint firstAttribute="bottom" secondItem="LWv-6X-sUu" secondAttribute="bottom" id="40h-K8-VZC"/>
+                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" constant="8" id="DBQ-s2-nt3"/>
+                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="J3l-Zi-VJZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="nlp-FJ-Gek" secondAttribute="bottom" constant="8" id="JTt-QF-bsd"/>
+                                                <constraint firstItem="nlp-FJ-Gek" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="Jft-0K-rmq"/>
+                                                <constraint firstAttribute="bottom" secondItem="LWv-6X-sUu" secondAttribute="bottom" id="Jjo-yN-ll7"/>
+                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" constant="8" id="OMr-5i-a69"/>
+                                                <constraint firstItem="Je5-Ru-5Wp" firstAttribute="centerY" secondItem="LWv-6X-sUu" secondAttribute="centerY" id="QIc-qp-t3s"/>
+                                                <constraint firstItem="LWv-6X-sUu" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" id="Wcx-k1-uBN"/>
+                                                <constraint firstAttribute="bottom" secondItem="nlp-FJ-Gek" secondAttribute="bottom" constant="8" id="WwN-by-aaI"/>
+                                                <constraint firstItem="LWv-6X-sUu" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" id="f1L-KR-ETh"/>
+                                                <constraint firstItem="Je5-Ru-5Wp" firstAttribute="centerX" secondItem="LWv-6X-sUu" secondAttribute="centerX" id="g0t-xq-2zu"/>
+                                                <constraint firstItem="LWv-6X-sUu" firstAttribute="leading" secondItem="gUW-PC-37p" secondAttribute="leading" id="h22-OT-W3B"/>
+                                                <constraint firstItem="LWv-6X-sUu" firstAttribute="leading" secondItem="gUW-PC-37p" secondAttribute="leading" id="nn6-4d-WaT"/>
+                                                <constraint firstItem="nlp-FJ-Gek" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="qr9-Fh-IfX"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="40h-K8-VZC"/>
+                                                    <exclude reference="Wcx-k1-uBN"/>
+                                                    <exclude reference="nn6-4d-WaT"/>
+                                                    <exclude reference="J3l-Zi-VJZ"/>
+                                                    <exclude reference="OMr-5i-a69"/>
+                                                    <exclude reference="JTt-QF-bsd"/>
+                                                    <exclude reference="qr9-Fh-IfX"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addLocationButton" destination="nlp-FJ-Gek" id="ITO-AI-0p2"/>
+                                            <outlet property="loadingIndicator" destination="Je5-Ru-5Wp" id="7vk-nM-Pd5"/>
                                             <outlet property="locationThumbnail" destination="LWv-6X-sUu" id="iRs-TD-d3n"/>
                                             <outlet property="locationTitle" destination="Bz2-nc-q98" id="C7t-Mp-esj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-xC-KrQ">
-                                <rect key="frame" x="265" y="72" width="71" height="30"/>
-                                <state key="normal" title="I'M DONE!"/>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35I-Ww-wfN">
-                                <rect key="frame" x="204" y="117" width="193" height="32"/>
-                                <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pHO-Qc-WQq">
-                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEZ-2r-vHo">
-                                        <rect key="frame" x="32" y="0.0" width="62" height="32"/>
-                                        <state key="normal" title="List View">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="listViewTapped:" destination="5MQ-KI-ABR" eventType="touchUpInside" id="zhV-P9-ASt"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vIi-w7-Zja">
-                                        <rect key="frame" x="94" y="0.0" width="32" height="32"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGO-nr-ATZ">
-                                        <rect key="frame" x="126" y="0.0" width="67" height="32"/>
-                                        <state key="normal" title="Map View">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="mapViewTapped:" destination="5MQ-KI-ABR" eventType="touchUpInside" id="v5G-KK-aao"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSEST TO ME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-s3-gT2" customClass="TouchableLabel" customModule="Orlando_Walking_Tours" customModuleProvider="target">
-                                <rect key="frame" x="235" y="157" width="130" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="5k8-24-xpX">
-                                <rect key="frame" x="196" y="153" width="32" height="32"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5k8-24-xpX" firstAttribute="top" secondItem="35I-Ww-wfN" secondAttribute="bottom" constant="4" id="2vT-zJ-HzR"/>
-                            <constraint firstItem="dkq-s3-gT2" firstAttribute="centerX" secondItem="8kL-Sk-AyZ" secondAttribute="centerX" id="9Xu-0I-6e9"/>
-                            <constraint firstItem="dkq-s3-gT2" firstAttribute="leading" secondItem="5k8-24-xpX" secondAttribute="trailing" constant="7" id="9m7-B2-Uht"/>
-                            <constraint firstItem="p6J-xC-KrQ" firstAttribute="centerX" secondItem="8kL-Sk-AyZ" secondAttribute="centerX" id="Pr4-nQ-n9z"/>
-                            <constraint firstItem="35I-Ww-wfN" firstAttribute="centerX" secondItem="8kL-Sk-AyZ" secondAttribute="centerX" id="Q3j-bh-NyH"/>
                             <constraint firstItem="bGo-78-wxn" firstAttribute="top" secondItem="xcH-XH-kG5" secondAttribute="bottom" id="QoG-BQ-haj"/>
-                            <constraint firstItem="p6J-xC-KrQ" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" constant="8" id="RJb-4o-vL9"/>
-                            <constraint firstItem="35I-Ww-wfN" firstAttribute="top" secondItem="p6J-xC-KrQ" secondAttribute="bottom" constant="15" id="S8u-FN-7t0"/>
                             <constraint firstItem="bGo-78-wxn" firstAttribute="top" secondItem="V9x-OY-qWd" secondAttribute="bottom" id="Ss8-Kn-qPH"/>
+                            <constraint firstItem="xcH-XH-kG5" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" id="VZU-4V-um9"/>
                             <constraint firstAttribute="trailing" secondItem="V9x-OY-qWd" secondAttribute="trailing" id="Xpg-EY-fEt"/>
                             <constraint firstItem="xcH-XH-kG5" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="cIt-Mv-MhL"/>
                             <constraint firstItem="V9x-OY-qWd" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="d1l-7e-LoR"/>
-                            <constraint firstItem="V9x-OY-qWd" firstAttribute="top" secondItem="dkq-s3-gT2" secondAttribute="bottom" constant="2" id="eLS-6h-gV3"/>
+                            <constraint firstItem="V9x-OY-qWd" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" id="dDs-bo-KsP"/>
                             <constraint firstAttribute="trailing" secondItem="xcH-XH-kG5" secondAttribute="trailing" id="kYf-eV-RnD"/>
-                            <constraint firstItem="dkq-s3-gT2" firstAttribute="top" secondItem="35I-Ww-wfN" secondAttribute="bottom" constant="8" id="vUe-2Q-HGY"/>
-                            <constraint firstItem="xcH-XH-kG5" firstAttribute="top" secondItem="dkq-s3-gT2" secondAttribute="bottom" constant="2" id="vxJ-Dk-fq8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tour Name" id="Ays-ud-8KI"/>
+                    <navigationItem key="navigationItem" title="Tour Name" id="Ays-ud-8KI">
+                        <barButtonItem key="leftBarButtonItem" title="Map" id="IBU-Ri-NbR">
+                            <connections>
+                                <action selector="viewBarButtonTapped:" destination="5MQ-KI-ABR" id="sWf-09-h7E"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZYE-DR-tb4">
+                            <connections>
+                                <action selector="doneBarButtonPressed:" destination="5MQ-KI-ABR" id="gPh-X9-N2H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="closestToMe" destination="dkq-s3-gT2" id="pwU-8Y-XzO"/>
                         <outlet property="mapView" destination="xcH-XH-kG5" id="Jo8-hg-ikv"/>
                         <outlet property="tableView" destination="V9x-OY-qWd" id="7Sk-pn-yUy"/>
+                        <outlet property="viewBarButton" destination="IBU-Ri-NbR" id="oBs-3z-nhq"/>
+                        <segue destination="5pm-x6-ywn" kind="showDetail" identifier="ShowCurrentTourSegue" id="jhr-an-TKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiV-2O-6nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1447" y="1137"/>
         </scene>
+        <!--CurrentTour-->
+        <scene sceneID="zU5-6M-j2H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrentTour" id="5pm-x6-ywn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nc-2A-IWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="851"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z11-zp-7IP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ooj-j4-Cky" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SvB-0v-x64">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SvB-0v-x64" customClass="CustomNavBar" customModule="Orlando_Walking_Tours" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -165,7 +181,4 @@
             <point key="canvasLocation" x="635" y="1137"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="placeholder" width="32" height="32"/>
-    </resources>
 </document>
