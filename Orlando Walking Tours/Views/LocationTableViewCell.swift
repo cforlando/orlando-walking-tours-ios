@@ -24,6 +24,7 @@ class LocationTableViewCell: UITableViewCell, ReusableView
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
+    // TODO: Find out what the purpose of this property is
     var locationId: String!
     var request: Request?
 
