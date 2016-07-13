@@ -17,8 +17,8 @@ class InMemoryModelService : ModelService {
     }
     
     func seed(locations:[HistoricLocation]) {
-        self.createTour(uuid: NSUUID(), title: "Classic Homes", completion: nil)
-        self.createTour(uuid: NSUUID(), title: "City Buildings", completion: nil)
+        self.createTour(withName: "Classic Homes", completion: nil)
+        self.createTour(withName: "City Buildings", completion: nil)
         let cityTour = self.tours[1]
         // add some locations to tour
         // when printed to verify why were first two in reverse order?
@@ -40,12 +40,11 @@ class InMemoryModelService : ModelService {
         }
     }
     
-    func createTour(uuid uuid: NSUUID, title: String, completion: ModelServiceCompletionHandler?) {
+    func createTour(withName title: String, completion: ((uuid: NSUUID, success: Bool, error: NSError?) -> Void)?) {
         let newTour = Tour.MR_createEntity()!
-        newTour.uuid = uuid.UUIDString
         newTour.title = title
         tours.append(newTour)
-        completion?(true, nil)
+        completion?(uuid: NSUUID(), success: true, error: nil)
     }
 
     func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?) {
