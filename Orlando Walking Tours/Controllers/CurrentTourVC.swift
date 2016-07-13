@@ -58,6 +58,7 @@ class CurrentTourVC: UIViewController
 
     override func viewDidAppear(animated: Bool)
     {
+        super.viewDidAppear(animated)
         self.loadLocations()
     }
 
@@ -76,6 +77,8 @@ class CurrentTourVC: UIViewController
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        super.prepareForSegue(segue, sender: sender)
+
         if let navController = segue.destinationViewController as? UINavigationController,
            let vc = navController.topViewController as? LocationListVC where segue.identifier == "AddMoreLocationsSegue"
         {

@@ -120,6 +120,8 @@ class LocationListVC: UIViewController
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        super.prepareForSegue(segue, sender: sender)
+        
         if let navController = segue.destinationViewController as? UINavigationController,
            let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "ShowCurrentTourSegue"
         {
