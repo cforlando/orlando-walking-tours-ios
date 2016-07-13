@@ -17,14 +17,18 @@ class MagicalRecordModelService : ModelService
     // MARK: - Tours
     ////////////////////////////////////////////////////////////
 
-    func createTour(uuid uuid: NSUUID, title: String, completion: ModelServiceCompletionHandler?)
+    func createTour(withName title: String, completion: ((uuid: NSUUID, success: Bool, error: NSError?) -> Void)?)
     {
+        let uuid = NSUUID()
         MagicalRecord.saveWithBlock(
         { localContext in
             let tour = Tour.MR_createEntityInContext(localContext)
             tour?.uuid = uuid.UUIDString
             tour?.title = title
-        }, completion: completion)
+        })
+        { success, error in
+            completion?(uuid: uuid, success: success, error: error)
+        }
     }
 
     ////////////////////////////////////////////////////////////

@@ -15,7 +15,7 @@ protocol ModelService {
     func findAllTours() -> [Tour]?
     func findTour(byUUID uuid: NSUUID, completion: Tour? -> Void)
 
-    func createTour(uuid uuid: NSUUID, title: String, completion: ModelServiceCompletionHandler?)
+    func createTour(withName title: String, completion: ((uuid: NSUUID, success: Bool, error: NSError?) -> Void)?)
     func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?)
 
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?)

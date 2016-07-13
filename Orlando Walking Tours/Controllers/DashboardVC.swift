@@ -23,7 +23,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     var tours = [Tour]()
     var isDeletionModeActive = false
-    var modelService: ModelService!
+    var modelService: ModelService = MagicalRecordModelService()
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -47,7 +47,6 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         tap.delegate = self
         self.collectionView.addGestureRecognizer(tap)
 
-        self.modelService = MagicalRecordModelService()
         if let tours = modelService.findAllTours()
         {
             self.tours = tours

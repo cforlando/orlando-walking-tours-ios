@@ -24,7 +24,7 @@ class CurrentTourVC: UIViewController
 
     var tour: Tour?
     var locations = [HistoricLocation]()
-    var modelService: ModelService!
+    var modelService: ModelService = MagicalRecordModelService()
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
@@ -39,8 +39,6 @@ class CurrentTourVC: UIViewController
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
-        self.modelService = MagicalRecordModelService()
 
         self.navigationItem.title = self.tour?.title
         self.loadLocations()
@@ -128,7 +126,11 @@ extension CurrentTourVC: UITableViewDelegate, UITableViewDataSource
     {
         let location = self.locations[indexPath.row]
 
-        let cell = tableView.dequeueReusableCellWithIdentifier(CurrentLocationTableViewCell.reuseIdentifier, forIndexPath: indexPath) as! CurrentLocationTableViewCell
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(CurrentLocationTableViewCell.reuseIdentifier, forIndexPath: indexPath) as? CurrentLocationTableViewCell else
+        {
+            return UITableViewCell()
+        }
+        
         cell.configureImage(cell.locationThumbnail.frame)
         cell.locationLabel.text = location.locationTitle
         cell.addressLabel.text = location.address

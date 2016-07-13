@@ -54,13 +54,13 @@ class LocationTableViewCell: UITableViewCell, ReusableView
         // TODO: Image view for cell should be random photo of a location from the tour
         request = UIImage.getPlaceholderImage(sized: Int(width), by: Int(height))
         { image in
-            self.populateCell(image!)
+            self.populateCell(image)
         }
     }
 
     ////////////////////////////////////////////////////////////
 
-    func populateCell(image: UIImage)
+    func populateCell(image: UIImage?)
     {
         loadingIndicator.stopAnimating()
         locationThumbnail.image = image

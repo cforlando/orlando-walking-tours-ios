@@ -55,7 +55,7 @@ class LocationListVC: UIViewController
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var viewMode : ViewMode! = .List
+    var viewMode : ViewMode = .List
     {
         didSet
         {
@@ -66,8 +66,8 @@ class LocationListVC: UIViewController
     var tour: Tour?
     var tourObjectID: NSManagedObjectID?
     var locations = [HistoricLocation]()
-    var modelService: ModelService!
-    var dataService: DataService!
+    var modelService: ModelService = MagicalRecordModelService()
+    var dataService: DataService = FirebaseDataService()
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
@@ -81,7 +81,8 @@ class LocationListVC: UIViewController
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
+
+        // TODO: Need to re-implement the "closestToMe" functionality
 //        closestToMe.didTouch =
 //        {
 //            self.sortClosestToMe()
@@ -90,10 +91,6 @@ class LocationListVC: UIViewController
 
         self.navigationItem.title = self.tour?.title ?? ""
 
-        self.modelService = MagicalRecordModelService()
-        //self.modelService = InMemoryModelService()
-        self.dataService = FirebaseDataService()
-        
         self.dataService.getLocations
         { locations in
             let allLocations = locations.sort
@@ -198,8 +195,11 @@ class LocationListVC: UIViewController
             var availableTourLocations = [HistoricLocation]()
             for tourLoc in allLocations
             {
-                if !tourLocations.contains({ $0.locationTitle == tourLoc.locationTitle
-                }) {
+                if !tourLocations.contains(
+                {
+                    $0.locationTitle == tourLoc.locationTitle
+                })
+                {
                     availableTourLocations.append(tourLoc)
                 }
             }
@@ -291,17 +291,20 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
     {
         
         let location = locations[indexPath.row]
-        let locationCell = tableView.dequeueReusableCellWithIdentifier(LocationTableViewCell.reuseIdentifier) as! LocationTableViewCell
+        guard let locationCell = tableView.dequeueReusableCellWithIdentifier(LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell else
+        {
+            return UITableViewCell()
+        }
         
         locationCell.locationId = location.locationId
         locationCell.configureImage(locationCell.locationThumbnail.frame)
         
-        var locationTitle = location.locationTitle
+        var locationTitle = location.locationTitle ?? ""
         if let userLocation = self.userLocation
         {
             let siteLoc = location.locationPoint
             let distanceFromCur = siteLoc.distanceFromLocation(userLocation).asMiles
-            locationTitle = String(format: "%@ (%0.1fmi)", locationTitle!, distanceFromCur)
+            locationTitle = String(format: "%@ (%0.1fmi)", locationTitle, distanceFromCur)
         }
         locationCell.locationTitle.text = locationTitle
         
@@ -312,10 +315,6 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-//        let storyboard = UIStoryboard(name: "LocationDetails", bundle: nil)
-//        let locationDetailVC = storyboard.instantiateViewControllerWithIdentifier("LocationDetails") as! LocationDetailVC
-//        locationDetailVC.modalTransitionStyle = .FlipHorizontal
-//        locationDetailVC.location = self.locations[indexPath.row]
-//        self.navigationController?.pushViewController(locationDetailVC, animated: true)
+        // TODO: Implement this function; should segue to the LocationDetail storyboard
     }
 }
