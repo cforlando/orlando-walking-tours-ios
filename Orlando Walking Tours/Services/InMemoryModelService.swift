@@ -10,16 +10,16 @@ import Foundation
 
 class InMemoryModelService : ModelService {
     
-    var tours: NSMutableArray
+    var tours: [Tour]
     
     init() {
-        self.tours = NSMutableArray()
+        self.tours = []
     }
     
     func seed(locations:[HistoricLocation]) {
-        self.createTour(title: "Classic Homes", completion: nil)
-        self.createTour(title: "City Buildings", completion: nil)
-        let cityTour = self.tours[1] as! Tour
+        self.createTour(withName: "Classic Homes", completion: nil)
+        self.createTour(withName: "City Buildings", completion: nil)
+        let cityTour = self.tours[1]
         // add some locations to tour
         // when printed to verify why were first two in reverse order?
         self.addLocation(locations[0], toTour: cityTour, completion: nil)
@@ -28,15 +28,33 @@ class InMemoryModelService : ModelService {
         self.addLocation(locations[5], toTour: cityTour, completion: nil)
     }
     
-    func findAllTours() -> NSArray {
+    func findAllTours() -> [Tour]? {
         return tours
     }
+
+    func findTour(byUUID uuid: NSUUID, completion: Tour? -> Void) {
+        for tour in tours {
+            if tour.uuid == uuid {
+                completion(tour)
+            }
+        }
+    }
     
-    func createTour(title title: String, completion: ModelServiceCompletionHandler?) {
+    func createTour(withName title: String, completion: ((uuid: NSUUID, success: Bool, error: NSError?) -> Void)?) {
         let newTour = Tour.MR_createEntity()!
         newTour.title = title
-        tours.addObject(newTour)
-        completion?(true, nil)
+        tours.append(newTour)
+        completion?(uuid: NSUUID(), success: true, error: nil)
+    }
+
+    func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?) {
+        for localTour in tours {
+            if localTour.uuid == tour.uuid {
+                localTour.MR_deleteEntity()
+                completion?(true, nil)
+                break
+            }
+        }
     }
     
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?) {
@@ -49,6 +67,11 @@ class InMemoryModelService : ModelService {
             tour.historicLocations = [location]
         }
         completion?(true, nil)
+    }
+
+    func loadLocations(fromTour tour: Tour) -> [HistoricLocation]?
+    {
+        return nil
     }
     
     func removeLocation(location: HistoricLocation, fromTour tour: Tour, completion: ModelServiceCompletionHandler?) {

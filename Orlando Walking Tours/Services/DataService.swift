@@ -1,5 +1,5 @@
 //
-//  DataServiceProtocol.swift
+//  DataService.swift
 //  Orlando Walking Tours
 //
 //  Created by Keli'i Martin on 6/16/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DataServiceProtocol
+protocol DataService
 {
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MagicalRecord
 
 class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, DashboardViewLayoutDelegate
 {
@@ -24,6 +23,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     var tours = [Tour]()
     var isDeletionModeActive = false
+    var modelService: ModelService = MagicalRecordModelService()
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -47,7 +47,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         tap.delegate = self
         self.collectionView.addGestureRecognizer(tap)
 
-        if let tours = Tour.MR_findAll() as? [Tour]
+        if let tours = modelService.findAllTours()
         {
             self.tours = tours
         }
@@ -121,10 +121,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             { action in
                 if let indexPath = self.collectionView.indexPathForCell(cell)
                 {
-                    MagicalRecord.saveWithBlock(
-                    { context in
-                        self.tours[indexPath.item].MR_deleteEntityInContext(context)
-                    })
+                    self.modelService.deleteTour(tour: self.tours[indexPath.item])
                     { (success, error) in
                         self.tours.removeAtIndex(indexPath.item)
                         self.collectionView.deleteItemsAtIndexPaths([indexPath])
@@ -197,8 +194,8 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        print(segue.identifier)
-        print(segue.destinationViewController)
+        super.prepareForSegue(segue, sender: sender)
+        
         if let navController = segue.destinationViewController as? UINavigationController,
            let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "CurrentTourSegue"
         {

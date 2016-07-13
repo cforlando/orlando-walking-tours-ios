@@ -18,7 +18,8 @@ class LocationListVC: UIViewController
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var closestToMe: TouchableLabel!
+//    @IBOutlet weak var closestToMe: TouchableLabel!
+    @IBOutlet weak var viewBarButton: UIBarButtonItem!
 
     ////////////////////////////////////////////////////////////
     // MARK: - Enumerations
@@ -54,7 +55,7 @@ class LocationListVC: UIViewController
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var viewMode : ViewMode!
+    var viewMode : ViewMode = .List
     {
         didSet
         {
@@ -65,7 +66,8 @@ class LocationListVC: UIViewController
     var tour: Tour?
     var tourObjectID: NSManagedObjectID?
     var locations = [HistoricLocation]()
-    var modelService: ModelService!
+    var modelService: ModelService = MagicalRecordModelService()
+    var dataService: DataService = FirebaseDataService()
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
@@ -79,24 +81,17 @@ class LocationListVC: UIViewController
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        closestToMe.didTouch =
-        {
-            self.sortClosestToMe()
-            self.tableView.reloadData()
-        }
 
-        if let tour = self.tour
-        {
-            self.navigationItem.title = tour.title
-        }
+        // TODO: Need to re-implement the "closestToMe" functionality
+//        closestToMe.didTouch =
+//        {
+//            self.sortClosestToMe()
+//            self.tableView.reloadData()
+//        }
 
-        viewMode = .List
-        
-        //self.modelService = MagicalRecordModelService()
-        self.modelService = InMemoryModelService()
-        
-        FirebaseDataService.sharedInstance.getLocations
+        self.navigationItem.title = self.tour?.title ?? ""
+
+        self.dataService.getLocations
         { locations in
             let allLocations = locations.sort
             {
@@ -116,6 +111,21 @@ class LocationListVC: UIViewController
                 }
                 self.tableView.reloadData()
             }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Navigation
+    ////////////////////////////////////////////////////////////
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let navController = segue.destinationViewController as? UINavigationController,
+           let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "ShowCurrentTourSegue"
+        {
+            vc.tour = self.tour
         }
     }
 
@@ -150,17 +160,26 @@ class LocationListVC: UIViewController
     }
 
     ////////////////////////////////////////////////////////////
-    
-    @IBAction func listViewTapped(sender: UIButton)
+
+    @IBAction func viewBarButtonTapped(sender: UIBarButtonItem)
     {
-        self.viewMode = .List
+        if self.viewMode == .List
+        {
+            self.viewMode = .Map
+            self.viewBarButton.title = "List"
+        }
+        else
+        {
+            self.viewMode = .List
+            self.viewBarButton.title = "Map"
+        }
     }
 
     ////////////////////////////////////////////////////////////
-
-    @IBAction func mapViewTapped(sender: UIButton)
+    
+    @IBAction func doneBarButtonPressed(sender: UIBarButtonItem)
     {
-        self.viewMode = .Map
+        performSegueWithIdentifier("ShowCurrentTourSegue", sender: nil)
     }
 
     ////////////////////////////////////////////////////////////
@@ -178,8 +197,11 @@ class LocationListVC: UIViewController
             var availableTourLocations = [HistoricLocation]()
             for tourLoc in allLocations
             {
-                if !tourLocations.contains({ $0.locationTitle == tourLoc.locationTitle
-                }) {
+                if !tourLocations.contains(
+                {
+                    $0.locationTitle == tourLoc.locationTitle
+                })
+                {
                     availableTourLocations.append(tourLoc)
                 }
             }
@@ -260,20 +282,31 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 
     ////////////////////////////////////////////////////////////
 
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 70
+    }
+
+    ////////////////////////////////////////////////////////////
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         
         let location = locations[indexPath.row]
-        let locationCell = tableView.dequeueReusableCellWithIdentifier(String(LocationTableViewCell)) as! LocationTableViewCell
+        guard let locationCell = tableView.dequeueReusableCellWithIdentifier(LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell else
+        {
+            return UITableViewCell()
+        }
         
         locationCell.locationId = location.locationId
+        locationCell.configureImage(locationCell.locationThumbnail.frame)
         
-        var locationTitle = location.locationTitle
+        var locationTitle = location.locationTitle ?? ""
         if let userLocation = self.userLocation
         {
             let siteLoc = location.locationPoint
             let distanceFromCur = siteLoc.distanceFromLocation(userLocation).asMiles
-            locationTitle = String(format: "(%0.1fmi) %@", distanceFromCur, locationTitle!)
+            locationTitle = String(format: "%@ (%0.1fmi)", locationTitle, distanceFromCur)
         }
         locationCell.locationTitle.text = locationTitle
         
@@ -284,10 +317,6 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let storyboard = UIStoryboard(name: "LocationDetails", bundle: nil)
-        let locationDetailVC = storyboard.instantiateViewControllerWithIdentifier("LocationDetails") as! LocationDetailVC
-        locationDetailVC.modalTransitionStyle = .FlipHorizontal
-        locationDetailVC.location = self.locations[indexPath.row]
-        self.navigationController?.pushViewController(locationDetailVC, animated: true)
+        // TODO: Implement this function; should segue to the LocationDetail storyboard
     }
 }

@@ -10,13 +10,14 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-struct SocrataDataService : DataServiceProtocol
+struct SocrataDataService : DataService
 {
-    static let sharedInstance = SocrataDataService()
+    let locationsUrlString = "https://brigades.opendatanetwork.com/resource/aq56-mwpv.json"
+
+    ////////////////////////////////////////////////////////////
     
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
     {
-        let locationsUrlString = "https://brigades.opendatanetwork.com/resource/aq56-mwpv.json"
         var locations = [HistoricLocation]()
 
         Alamofire.request(.GET, locationsUrlString).validate().responseJSON
