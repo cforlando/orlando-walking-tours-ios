@@ -89,4 +89,11 @@ struct SocrataDataService : DataService
             }
         }
     }
+
+    ////////////////////////////////////////////////////////////
+
+    func getPhotos(forLocation location: HistoricLocation, completion: [UIImage]? -> Void)
+    {
+        completion(nil)
+    }
 }

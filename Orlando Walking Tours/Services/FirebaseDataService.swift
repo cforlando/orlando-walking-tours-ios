@@ -9,16 +9,22 @@
 import Foundation
 import SwiftyJSON
 import Firebase
+import FirebaseStorage
 
 struct FirebaseDataService : DataService
 {
-    let ref = FIRDatabase.database().reference()
+    ////////////////////////////////////////////////////////////
+    // MARK: - Properties
+    ////////////////////////////////////////////////////////////
+
+    let databaseRef = FIRDatabase.database().reference()
+    let storageRef = FIRStorage.storage().referenceForURL("gs://orlando-walking-tours.appspot.com")
 
     ////////////////////////////////////////////////////////////
 
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
     {
-        let historicLocationsRef = ref.child("historic-locations")
+        let historicLocationsRef = databaseRef.child("historic-locations")
 
         historicLocationsRef.observeSingleEventOfType(.Value, withBlock:
         { snapshot in
@@ -71,5 +77,13 @@ struct FirebaseDataService : DataService
                 completion(locations: locations)
             }
         })
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func getPhotos(forLocation location: HistoricLocation, completion: [UIImage]? -> Void)
+    {
+        // TODO: Implement this function
+        completion(nil)
     }
 }
