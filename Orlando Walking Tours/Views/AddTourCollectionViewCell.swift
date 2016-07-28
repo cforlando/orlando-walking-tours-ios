@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTourCollectionViewCell: UICollectionViewCell
+class AddTourCollectionViewCell: UICollectionViewCell, ReusableView
 {
     
 }

@@ -22,7 +22,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     ////////////////////////////////////////////////////////////
 
     let notificationCenter = NSNotificationCenter.defaultCenter()
-    var modelService: ModelService = MagicalRecordModelService()
+    lazy var modelService: ModelService = MagicalRecordModelService()
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle

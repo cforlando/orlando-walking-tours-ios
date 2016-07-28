@@ -16,14 +16,15 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var newTourView: UIStackView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
 
     ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    var tours = [Tour]()
+    lazy var tours = [Tour]()
     var isDeletionModeActive = false
-    var modelService: ModelService = MagicalRecordModelService()
+    lazy var modelService: ModelService = MagicalRecordModelService()
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -151,11 +152,11 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     {
         if indexPath.item == self.tours.count
         {
-            return collectionView.dequeueReusableCellWithReuseIdentifier("AddTourCell", forIndexPath: indexPath) as! AddTourCollectionViewCell
+            return collectionView.dequeueReusableCellWithReuseIdentifier(AddTourCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as! AddTourCollectionViewCell
         }
         else
         {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as! DashboardCollectionViewCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DashboardCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as! DashboardCollectionViewCell
             cell.configureImage(cell.frame)
             cell.tourName?.text = self.tours[indexPath.item].title
             cell.deleteButton.addTarget(self, action: #selector(DashboardVC.deleteTour(_:)), forControlEvents: .TouchUpInside)
