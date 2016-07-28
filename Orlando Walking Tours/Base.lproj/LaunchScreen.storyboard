@@ -33,9 +33,9 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city_of_orlando_white" translatesAutoresizingMaskIntoConstraints="NO" id="RUx-mz-nsf" userLabel="City of Orlando Image View">
-                                        <rect key="frame" x="139" y="6" width="159" height="29"/>
+                                        <rect key="frame" x="139" y="3" width="159" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="29" id="Lgh-SL-gVR"/>
+                                            <constraint firstAttribute="height" constant="35" id="Lgh-SL-gVR"/>
                                             <constraint firstAttribute="width" constant="159" id="WpV-1v-EwN"/>
                                         </constraints>
                                     </imageView>
@@ -61,7 +61,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="city_of_orlando_white" width="157" height="29"/>
+        <image name="city_of_orlando_white" width="157" height="35"/>
         <image name="code_for_orlando_white" width="129" height="90"/>
         <image name="launch_background_blur" width="1000" height="667"/>
         <image name="walking_tours_icon" width="256" height="256"/>
