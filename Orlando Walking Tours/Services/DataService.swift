@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DataService
 {
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
+    func getPhotos(forLocation location: HistoricLocation, completion: [UIImage]? -> Void)
 }

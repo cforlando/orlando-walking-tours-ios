@@ -23,8 +23,8 @@ class CurrentTourVC: UIViewController
     ////////////////////////////////////////////////////////////
 
     var tour: Tour?
-    var locations = [HistoricLocation]()
-    var modelService: ModelService = MagicalRecordModelService()
+    lazy var locations = [HistoricLocation]()
+    lazy var modelService: ModelService = MagicalRecordModelService()
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
@@ -48,7 +48,7 @@ class CurrentTourVC: UIViewController
         self.mapView.setRegion(mapRegion, animated: true)    // animate the zoom
         let locationAnnotations = self.locations.map
         {
-                return LocationAnnotation(location: $0)
+            return LocationAnnotation(location: $0)
         }
         self.mapView.addAnnotations(locationAnnotations)
 

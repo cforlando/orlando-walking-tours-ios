@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class DashboardCollectionViewCell: UICollectionViewCell
+class DashboardCollectionViewCell: UICollectionViewCell, ReusableView
 {
     ////////////////////////////////////////////////////////////
     // MARK: - Outlets
