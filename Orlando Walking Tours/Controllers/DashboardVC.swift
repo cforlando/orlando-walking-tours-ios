@@ -125,7 +125,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
                     self.modelService.deleteTour(tour: self.tours[indexPath.item])
                     { (success, error) in
                         self.tours.removeAtIndex(indexPath.item)
-                        self.collectionView.deleteItemsAtIndexPaths([indexPath])
+                        self.collectionView.reloadData()
                     }
                 }
             }
@@ -143,6 +143,11 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
+        if (self.tours.count == 0) && (self.newTourView.hidden)
+        {
+            self.newTourView.hidden = false
+        }
+
         return (self.tours.count > 0) ? self.tours.count + 1 : self.tours.count
     }
 
