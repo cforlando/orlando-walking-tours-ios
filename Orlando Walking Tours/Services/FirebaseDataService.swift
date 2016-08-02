@@ -24,7 +24,7 @@ struct FirebaseDataService : DataService
 
     func getLocations(completion: (locations: [HistoricLocation]) -> Void)
     {
-        let historicLocationsRef = databaseRef.child("historic-locations")
+        let historicLocationsRef = databaseRef.child("historic-locations").child("orlando")
 
         historicLocationsRef.observeSingleEventOfType(.Value, withBlock:
         { snapshot in
