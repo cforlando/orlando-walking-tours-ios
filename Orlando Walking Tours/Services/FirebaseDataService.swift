@@ -28,6 +28,9 @@ struct FirebaseDataService : DataService
 
         historicLocationsRef.observeSingleEventOfType(.Value, withBlock:
         { snapshot in
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.000"
+
             var locations = [HistoricLocation]()
 
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]
@@ -60,12 +63,12 @@ struct FirebaseDataService : DataService
 
                             if let localRegistryDate = locationJSON["localRegistryDate"].string
                             {
-                                location.localRegistryDate = NSDateFormatter().dateFromString(localRegistryDate)
+                                location.localRegistryDate = formatter.dateFromString(localRegistryDate)
                             }
 
                             if let nationalRegistryDate = locationJSON["nationalRegistryDate"].string
                             {
-                                location.nrhpDate = NSDateFormatter().dateFromString(nationalRegistryDate)
+                                location.nrhpDate = formatter.dateFromString(nationalRegistryDate)
                             }
 
                             locations.append(location)
