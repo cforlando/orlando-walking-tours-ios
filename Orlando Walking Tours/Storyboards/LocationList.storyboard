@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ooj-j4-Cky">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ooj-j4-Cky">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Ubuntu-Light.ttf">
@@ -35,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eHe-sY-qHX" id="gUW-PC-37p">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-6X-sUu">
@@ -73,7 +74,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title (0.2 mi)" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-nc-q98">
-                                                    <rect key="frame" x="78" y="8" width="147" height="17"/>
+                                                    <rect key="frame" x="78" y="8" width="514" height="17"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -82,6 +83,7 @@
                                             <constraints>
                                                 <constraint firstItem="Bz2-nc-q98" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="1ke-db-kOb"/>
                                                 <constraint firstAttribute="bottom" secondItem="LWv-6X-sUu" secondAttribute="bottom" id="40h-K8-VZC"/>
+                                                <constraint firstItem="Bz2-nc-q98" firstAttribute="trailing" secondItem="gUW-PC-37p" secondAttribute="trailingMargin" id="5nb-ri-unw"/>
                                                 <constraint firstItem="Bz2-nc-q98" firstAttribute="top" secondItem="gUW-PC-37p" secondAttribute="top" constant="8" id="DBQ-s2-nt3"/>
                                                 <constraint firstItem="Bz2-nc-q98" firstAttribute="leading" secondItem="LWv-6X-sUu" secondAttribute="trailing" constant="8" id="J3l-Zi-VJZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="nlp-FJ-Gek" secondAttribute="bottom" constant="8" id="JTt-QF-bsd"/>
