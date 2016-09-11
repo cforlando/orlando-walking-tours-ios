@@ -8,33 +8,78 @@
 
 import UIKit
 
-class LocationDetailVC: UIViewController {
+class LocationDetailVC: UIViewController
+{
+    ////////////////////////////////////////////////////////////
+    // MARK: - IBOutlets
+    ////////////////////////////////////////////////////////////
 
     @IBOutlet weak var locationTitleLabel: UILabel!
-    var location: HistoricLocation!
-    
-    override func viewDidLoad() {
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var localDateLabel: UILabel!
+    @IBOutlet weak var nationalDateLabel: UILabel!
+    @IBOutlet weak var locationDescriptionLabel: UILabel!
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - Properties
+    ////////////////////////////////////////////////////////////
+
+    var location: HistoricLocation?
+
+    ////////////////////////////////////////////////////////////
+    // MARK: - View Controller Life Cycle
+    ////////////////////////////////////////////////////////////
+
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        print("Details for \(location.locationTitle)")
-        locationTitleLabel.text = location.locationTitle
+        localDateLabel.hidden = false
+        nationalDateLabel.hidden = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    ////////////////////////////////////////////////////////////
+
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+
+        guard let location = location else
+        {
+            fatalError()
+        }
+
+        locationTitleLabel.text = location.locationTitle ?? ""
+        addressLabel.text = location.address ?? ""
+        locationDescriptionLabel.text = location.locationDescription ?? ""
+
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .LongStyle
+
+        if let localDate = location.localRegistryDate
+        {
+            localDateLabel.text = "Added to Orlando Historic Registry on \(formatter.stringFromDate(localDate))"
+        }
+        else
+        {
+            localDateLabel.hidden = true
+        }
+
+        if let nationalDate = location.nrhpDate
+        {
+            nationalDateLabel.text = "Added to National Historic Registry on \(formatter.stringFromDate(nationalDate))"
+        }
+        else
+        {
+            nationalDateLabel.hidden = true
+        }
     }
-    
+    ////////////////////////////////////////////////////////////
+    // MARK: - IBActions
+    ////////////////////////////////////////////////////////////
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButtonTapped(sender: AnyObject)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
-
 }

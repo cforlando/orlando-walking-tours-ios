@@ -10,6 +10,7 @@
 		42013C291CE02E290030D2F8 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42013C281CE02E290030D2F8 /* LocationAnnotation.swift */; };
 		42052F281D1378F600F28CC4 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */; };
 		42052F2A1D138D4800F28CC4 /* DashboardViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */; };
+		420DC9B01D60B59200DDDDBC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420DC9AF1D60B59200DDDDBC /* MapKit.framework */; };
 		424B9CE21D20632700D835F1 /* DashboardViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */; };
 		425C68FA1D282803004B4C40 /* LocationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425C68F91D282803004B4C40 /* LocationListVC.swift */; };
 		42760F551D18C8B7007BA422 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42760F521D18C8B7007BA422 /* DataService.swift */; };
@@ -62,6 +63,7 @@
 		42013C281CE02E290030D2F8 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Annotations/LocationAnnotation.swift; sourceTree = "<group>"; };
 		42052F271D1378F600F28CC4 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardCollectionViewCell.swift; path = Views/DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		42052F291D138D4800F28CC4 /* DashboardViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewFlowLayout.swift; path = Views/DashboardViewFlowLayout.swift; sourceTree = "<group>"; };
+		420DC9AF1D60B59200DDDDBC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		424B9CE11D20632700D835F1 /* DashboardViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewLayoutAttributes.swift; path = Views/DashboardViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		425C68F91D282803004B4C40 /* LocationListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVC.swift; path = Controllers/LocationListVC.swift; sourceTree = "<group>"; };
 		42760F521D18C8B7007BA422 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420DC9B01D60B59200DDDDBC /* MapKit.framework in Frameworks */,
 				6727DFB4A1B4B19F5F8E526F /* Pods_Orlando_Walking_Tours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +286,7 @@
 		768FB09E8D6F3C1C53E4C9B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				420DC9AF1D60B59200DDDDBC /* MapKit.framework */,
 				BF1B209C1D0310D9491D1F73 /* Pods_Orlando_Walking_Tours.framework */,
 			);
 			name = Frameworks;
@@ -332,6 +336,11 @@
 				TargetAttributes = {
 					42CBE2241CDA8CE400F9E6D5 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -576,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codefororlando.Orlando-Walking-Tours";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};

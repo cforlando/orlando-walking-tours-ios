@@ -79,12 +79,20 @@ class CurrentTourVC: UIViewController
     {
         super.prepareForSegue(segue, sender: sender)
 
-        if let navController = segue.destinationViewController as? UINavigationController,
-           let vc = navController.topViewController as? LocationListVC where segue.identifier == "AddMoreLocationsSegue"
+        if let navController = segue.destinationViewController as? UINavigationController
         {
-            vc.tour = self.tour
+            if let vc = navController.topViewController as? LocationListVC where segue.identifier == "AddMoreLocationsSegue"
+            {
+                vc.tour = self.tour
+            }
+            else if let vc = navController.topViewController as? LocationDetailVC where segue.identifier == "ShowLocationDetailsSegue"
+            {
+                if let indexPath = sender as? NSIndexPath
+                {
+                    vc.location = locations[indexPath.row]
+                }
+            }
         }
-
     }
 
     ////////////////////////////////////////////////////////////
@@ -139,5 +147,12 @@ extension CurrentTourVC: UITableViewDelegate, UITableViewDataSource
         cell.addressLabel.text = location.address
 
         return cell
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        performSegueWithIdentifier("ShowLocationDetailsSegue", sender: indexPath)
     }
 }

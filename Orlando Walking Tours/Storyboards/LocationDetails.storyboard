@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BhG-no-iGm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mqi-bh-ZRn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </mutableArray>
+        <mutableArray key="Ubuntu-Light.ttf">
+            <string>Ubuntu-Light</string>
+            <string>Ubuntu-Light</string>
+            <string>Ubuntu-Light</string>
+        </mutableArray>
+        <mutableArray key="Ubuntu-Regular.ttf">
+            <string>Ubuntu</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Location DetailVC-->
         <scene sceneID="6kS-fE-6w7">
@@ -15,12 +28,138 @@
                     <view key="view" contentMode="scaleToFill" id="60K-CT-a1Q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vE-oL-lso" userLabel="Container Scroll View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZv-Ry-4ho">
+                                        <rect key="frame" x="20" y="220" width="560" height="27"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="24"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5Y-R2-qpB" userLabel="Image Container Scroll View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launch_background_blur" translatesAutoresizingMaskIntoConstraints="NO" id="B2y-dM-0aa">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="stf-uQ-nMc"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="B2y-dM-0aa" secondAttribute="bottom" id="6C2-dW-g8z"/>
+                                            <constraint firstItem="B2y-dM-0aa" firstAttribute="top" secondItem="J5Y-R2-qpB" secondAttribute="top" id="B5G-2b-cAE"/>
+                                            <constraint firstItem="B2y-dM-0aa" firstAttribute="leading" secondItem="J5Y-R2-qpB" secondAttribute="leading" id="WEo-UL-Wf4"/>
+                                            <constraint firstAttribute="trailing" secondItem="B2y-dM-0aa" secondAttribute="trailing" id="pGY-ze-Lif"/>
+                                            <constraint firstAttribute="height" constant="200" id="roF-Mo-3iM"/>
+                                        </constraints>
+                                    </scrollView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYb-ei-z9X">
+                                        <rect key="frame" x="20" y="255" width="63" height="20"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTo-Y9-ogF">
+                                        <rect key="frame" x="20" y="283" width="560" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Local Historic Registry Date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fho-Uw-RJr">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="17"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="National Historic Registry Date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXT-np-BAd">
+                                                <rect key="frame" x="0.0" y="25" width="560" height="17"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhB-Ou-RG1">
+                                        <rect key="frame" x="20" y="333" width="560" height="20"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xTo-Y9-ogF" secondAttribute="trailing" constant="20" id="3O8-hj-sbh"/>
+                                    <constraint firstItem="xTo-Y9-ogF" firstAttribute="leading" secondItem="5vE-oL-lso" secondAttribute="leading" constant="20" id="94I-S3-ApF"/>
+                                    <constraint firstItem="ZZv-Ry-4ho" firstAttribute="top" secondItem="J5Y-R2-qpB" secondAttribute="bottom" constant="20" id="AT4-iD-w46"/>
+                                    <constraint firstItem="J5Y-R2-qpB" firstAttribute="top" secondItem="5vE-oL-lso" secondAttribute="top" id="Awh-Xy-LTP"/>
+                                    <constraint firstItem="JYb-ei-z9X" firstAttribute="leading" secondItem="5vE-oL-lso" secondAttribute="leading" constant="20" id="DMe-Q4-j4i"/>
+                                    <constraint firstAttribute="bottom" secondItem="RhB-Ou-RG1" secondAttribute="bottom" constant="20" id="EbB-QJ-6eW"/>
+                                    <constraint firstItem="xTo-Y9-ogF" firstAttribute="top" secondItem="JYb-ei-z9X" secondAttribute="bottom" constant="8" id="KlD-E0-OGj"/>
+                                    <constraint firstItem="JYb-ei-z9X" firstAttribute="top" secondItem="ZZv-Ry-4ho" secondAttribute="bottom" constant="8" id="PJO-ja-fDz"/>
+                                    <constraint firstItem="J5Y-R2-qpB" firstAttribute="centerX" secondItem="5vE-oL-lso" secondAttribute="centerX" id="Sg2-1p-0Vh"/>
+                                    <constraint firstAttribute="trailing" secondItem="J5Y-R2-qpB" secondAttribute="trailing" id="Xx6-3I-Nb4"/>
+                                    <constraint firstAttribute="trailing" secondItem="RhB-Ou-RG1" secondAttribute="trailing" constant="20" id="YsV-ig-wk6"/>
+                                    <constraint firstItem="ZZv-Ry-4ho" firstAttribute="leading" secondItem="5vE-oL-lso" secondAttribute="leading" constant="20" id="eOx-Q8-a7w"/>
+                                    <constraint firstItem="RhB-Ou-RG1" firstAttribute="top" secondItem="xTo-Y9-ogF" secondAttribute="bottom" constant="8" id="gIb-kv-t7W"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZZv-Ry-4ho" secondAttribute="trailing" constant="20" id="gJ8-jp-gQP"/>
+                                    <constraint firstItem="J5Y-R2-qpB" firstAttribute="leading" secondItem="5vE-oL-lso" secondAttribute="leading" id="tzv-il-9sK"/>
+                                    <constraint firstItem="RhB-Ou-RG1" firstAttribute="leading" secondItem="5vE-oL-lso" secondAttribute="leading" constant="20" id="wrg-ij-Sab"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5vE-oL-lso" secondAttribute="trailing" id="7hR-nC-IAt"/>
+                            <constraint firstAttribute="bottom" secondItem="5vE-oL-lso" secondAttribute="bottom" id="Fjc-d1-g1I"/>
+                            <constraint firstItem="5vE-oL-lso" firstAttribute="leading" secondItem="60K-CT-a1Q" secondAttribute="leading" id="Pts-Xe-qWh"/>
+                            <constraint firstItem="l2f-Lm-x3t" firstAttribute="top" secondItem="5vE-oL-lso" secondAttribute="bottom" id="SCy-2U-hK1"/>
+                            <constraint firstItem="5vE-oL-lso" firstAttribute="top" secondItem="60K-CT-a1Q" secondAttribute="top" id="g5c-gt-7dd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SCy-2U-hK1"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="bMo-Tn-9UC">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="48K-x0-ewP">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="BhG-no-iGm" id="MnA-Ze-XQ2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="JYb-ei-z9X" id="I1h-xA-Zdq"/>
+                        <outlet property="localDateLabel" destination="fho-Uw-RJr" id="dky-dp-TDS"/>
+                        <outlet property="locationDescriptionLabel" destination="RhB-Ou-RG1" id="Dge-Jp-XSA"/>
+                        <outlet property="locationTitleLabel" destination="ZZv-Ry-4ho" id="Fkv-mb-39W"/>
+                        <outlet property="nationalDateLabel" destination="oXT-np-BAd" id="1f6-1A-wsV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxS-nX-kKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3198" y="446"/>
+            <point key="canvasLocation" x="4822" y="446"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K0h-sF-AO5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mqi-bh-ZRn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2lh-P9-h6k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BhG-no-iGm" kind="relationship" relationship="rootViewController" id="dya-os-PTZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0x-5f-SFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4010" y="446"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch_background_blur" width="1000" height="667"/>
+    </resources>
 </document>

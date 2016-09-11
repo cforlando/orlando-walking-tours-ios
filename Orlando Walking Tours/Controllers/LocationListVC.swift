@@ -122,10 +122,19 @@ class LocationListVC: UIViewController
     {
         super.prepareForSegue(segue, sender: sender)
         
-        if let navController = segue.destinationViewController as? UINavigationController,
-           let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "ShowCurrentTourSegue"
+        if let navController = segue.destinationViewController as? UINavigationController
         {
-            vc.tour = self.tour
+            if let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "ShowCurrentTourSegue"
+            {
+                vc.tour = self.tour
+            }
+            else if let vc = navController.topViewController as? LocationDetailVC where segue.identifier == "ShowLocationDetailsSegue"
+            {
+                if let indexPath = sender as? NSIndexPath
+                {
+                    vc.location = locations[indexPath.row]
+                }
+            }
         }
     }
 
@@ -142,6 +151,7 @@ class LocationListVC: UIViewController
             let location = self.locations.removeAtIndex(locationIndex)
             if let tour = self.tour
             {
+                print("In addToTourPressed, localRegistryDate is \(location.localRegistryDate)")
                 modelService.addLocation(location, toTour: tour)
                 { (ok, error) in
                     if ok
@@ -190,26 +200,26 @@ class LocationListVC: UIViewController
     {
         if let tourLocations = self.tour?.historicLocations
         {
-            for loc in tourLocations
+            if tourLocations.count > 0
             {
-                print("LOC: \(loc.locationTitle)")
-            }
-            var availableTourLocations = [HistoricLocation]()
-            for tourLoc in allLocations
-            {
-                if !tourLocations.contains(
+                print("Tour Locations Count is \(tourLocations.count)")
+                var availableTourLocations = [HistoricLocation]()
+                for tourLoc in allLocations
                 {
-                    $0.locationTitle == tourLoc.locationTitle
-                })
-                {
-                    availableTourLocations.append(tourLoc)
+                    if !tourLocations.contains(
+                        {
+                            $0.locationTitle == tourLoc.locationTitle
+                    })
+                    {
+                        availableTourLocations.append(tourLoc)
+                    }
                 }
+                self.locations = availableTourLocations
             }
-            self.locations = availableTourLocations
-        }
-        else
-        {
-            self.locations = allLocations
+            else
+            {
+                self.locations = allLocations
+            }
         }
     }
 
@@ -318,5 +328,6 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         // TODO: Implement this function; should segue to the LocationDetail storyboard
+        performSegueWithIdentifier("ShowLocationDetailsSegue", sender: indexPath)
     }
 }
