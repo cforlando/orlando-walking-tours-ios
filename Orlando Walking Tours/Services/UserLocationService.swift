@@ -18,7 +18,7 @@ class UserLocationService : NSObject, CLLocationManagerDelegate {
 
     static let sharedService = UserLocationService()
     
-    func startTracking(callback: Callback) {
+    func startTracking(callback: @escaping Callback) {
         self.callback = callback
         configureLocationManager()
     }
@@ -31,35 +31,35 @@ class UserLocationService : NSObject, CLLocationManagerDelegate {
 
     func configureLocationManager()
     {
-        if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Denied && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Restricted
+        if CLLocationManager.authorizationStatus() != .denied && CLLocationManager.authorizationStatus() != .restricted
         {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
+            if CLLocationManager.authorizationStatus() == .notDetermined
             {
                 locationManager.requestWhenInUseAuthorization()
             }
-            else if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse
+            else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse
             {
                 locationManager.startUpdatingLocation()
             }
         }
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
-        if status == CLAuthorizationStatus.AuthorizedWhenInUse
+        if status == .authorizedWhenInUse
         {
             locationManager.startUpdatingLocation()
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print(error.localizedDescription)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         if let location = locations.last
         {

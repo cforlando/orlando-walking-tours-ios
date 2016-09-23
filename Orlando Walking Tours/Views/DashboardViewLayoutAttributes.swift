@@ -14,9 +14,9 @@ class DashboardViewLayoutAttributes: UICollectionViewLayoutAttributes
     
     ////////////////////////////////////////////////////////////
 
-    override func copyWithZone(zone: NSZone) -> AnyObject
+    override func copy(with zone: NSZone?) -> Any
     {
-        let attributes = super.copyWithZone(zone) as! DashboardViewLayoutAttributes
+        let attributes = super.copy(with: zone) as! DashboardViewLayoutAttributes
         attributes.deleteButtonHidden = self.deleteButtonHidden
         return attributes
     }

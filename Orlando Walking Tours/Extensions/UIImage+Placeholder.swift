@@ -12,11 +12,11 @@ import AlamofireImage
 
 extension UIImage
 {
-    class func getPlaceholderImage(sized width: Int, by height: Int, completion: (UIImage? -> Void)) -> Request
+    class func getPlaceholderImage(sized width: Int, by height: Int, completion: @escaping ((UIImage?) -> Void)) -> Request
     {
         let urlString = "https://unsplash.it/\(width)/\(height)?random"
 
-        return Alamofire.request(.GET, urlString).responseImage
+        return Alamofire.request(urlString).responseImage
         { response in
             guard let image = response.result.value else
             {

@@ -17,7 +17,7 @@ class MagicalRecordModelService : ModelService
     // MARK: - Tours
     ////////////////////////////////////////////////////////////
 
-    func createTour(withName title: String, completion: ((uuid: NSUUID, success: Bool, error: NSError?) -> Void)?)
+    func createTour(withName title: String, completion: ((_ uuid: NSUUID, _ success: Bool, _ error: NSError?) -> Void)?)
     {
         let uuid = NSUUID()
         MagicalRecord.saveWithBlock(
@@ -33,7 +33,7 @@ class MagicalRecordModelService : ModelService
 
     ////////////////////////////////////////////////////////////
 
-    func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?)
+    func deleteTour(tour: Tour, completion: ModelServiceCompletionHandler?)
     {
         MagicalRecord.saveWithBlock(
         { localContext in
@@ -45,7 +45,7 @@ class MagicalRecordModelService : ModelService
 
     func findAllTours() -> [Tour]?
     {
-        if let tours = Tour.MR_findAll() as? [Tour]
+        if let tours = Tour.mr_findAll() as? [Tour]
         {
             return tours
         }
@@ -55,9 +55,9 @@ class MagicalRecordModelService : ModelService
 
     ////////////////////////////////////////////////////////////
 
-    func findTour(byUUID uuid: NSUUID, completion: Tour? -> Void)
+    func findTour(byUUID uuid: NSUUID, completion: (Tour?) -> Void)
     {
-        if let tour = Tour.MR_findFirstByAttribute("uuid", withValue: uuid.UUIDString)
+        if let tour = Tour.mr_findFirst(byAttribute: "uuid", withValue: uuid.uuidString)
         {
             completion(tour)
         }
@@ -90,7 +90,7 @@ class MagicalRecordModelService : ModelService
     func loadLocations(fromTour tour: Tour) -> [HistoricLocation]?
     {
         let predicate = NSPredicate(format: "tour == %@", argumentArray: [tour])
-        if let locations = HistoricLocation.MR_findAllWithPredicate(predicate) as? [HistoricLocation]
+        if let locations = HistoricLocation.mr_findAll(with: predicate) as? [HistoricLocation]
         {
             return locations
         }

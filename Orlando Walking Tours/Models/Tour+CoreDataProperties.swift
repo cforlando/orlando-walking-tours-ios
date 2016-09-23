@@ -2,11 +2,9 @@
 //  Tour+CoreDataProperties.swift
 //  Orlando Walking Tours
 //
-//  Created by Keli'i Martin on 7/5/16.
+//  Created by Keli'i Martin on 9/23/16.
 //  Copyright © 2016 Code for Orlando. All rights reserved.
-//
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
+//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
@@ -14,8 +12,29 @@ import CoreData
 
 extension Tour {
 
-    @NSManaged var title: String?
-    @NSManaged var uuid: String?
-    @NSManaged var historicLocations: NSSet?
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Tour> {
+        return NSFetchRequest<Tour>(entityName: "Tour");
+    }
+
+    @NSManaged public var title: String?
+    @NSManaged public var uuid: String?
+    @NSManaged public var historicLocations: NSSet?
+
+}
+
+// MARK: Generated accessors for historicLocations
+extension Tour {
+
+    @objc(addHistoricLocationsObject:)
+    @NSManaged public func addToHistoricLocations(_ value: HistoricLocation)
+
+    @objc(removeHistoricLocationsObject:)
+    @NSManaged public func removeFromHistoricLocations(_ value: HistoricLocation)
+
+    @objc(addHistoricLocations:)
+    @NSManaged public func addToHistoricLocations(_ values: NSSet)
+
+    @objc(removeHistoricLocations:)
+    @NSManaged public func removeFromHistoricLocations(_ values: NSSet)
 
 }

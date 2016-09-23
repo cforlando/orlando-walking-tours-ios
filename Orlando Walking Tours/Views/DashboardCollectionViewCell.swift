@@ -39,18 +39,18 @@ class DashboardCollectionViewCell: UICollectionViewCell, ReusableView
 
     ////////////////////////////////////////////////////////////
 
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes)
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes)
     {
         if let attributes = layoutAttributes as? DashboardViewLayoutAttributes
         {
             if attributes.deleteButtonHidden
             {
-                self.deleteButton.hidden = true
+                self.deleteButton.isHidden = true
                 self.stopQuivering()
             }
             else
             {
-                self.deleteButton.hidden = false
+                self.deleteButton.isHidden = false
                 self.startQuivering()
             }
         }
@@ -70,7 +70,7 @@ class DashboardCollectionViewCell: UICollectionViewCell, ReusableView
     func configureImage(frame: CGRect)
     {
         reset()
-        loadImage(frame.width, height: frame.height)
+        loadImage(width: frame.width, height: frame.height)
     }
 
     ////////////////////////////////////////////////////////////
@@ -90,7 +90,7 @@ class DashboardCollectionViewCell: UICollectionViewCell, ReusableView
         // TODO: Image view for cell should be random photo of a location from the tour
         request = UIImage.getPlaceholderImage(sized: Int(width), by: Int(height))
         { image in
-            self.populateCell(image)
+            self.populateCell(image: image)
         }
     }
 
@@ -116,13 +116,13 @@ class DashboardCollectionViewCell: UICollectionViewCell, ReusableView
         quiverAnimation.repeatCount = HUGE
         let timeOffset = Double(arc4random() % 100) / 100 - 0.50
         quiverAnimation.timeOffset = timeOffset
-        self.layer.addAnimation(quiverAnimation, forKey: "quivering")
+        self.layer.add(quiverAnimation, forKey: "quivering")
     }
 
     ////////////////////////////////////////////////////////////
 
     func stopQuivering()
     {
-        self.layer.removeAnimationForKey("quivering")
+        self.layer.removeAnimation(forKey: "quivering")
     }
 }
