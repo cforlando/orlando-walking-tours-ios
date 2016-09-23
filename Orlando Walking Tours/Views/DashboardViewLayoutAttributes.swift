@@ -23,7 +23,7 @@ class DashboardViewLayoutAttributes: UICollectionViewLayoutAttributes
 
     ////////////////////////////////////////////////////////////
 
-    override func isEqual(object: AnyObject?) -> Bool
+    override func isEqual(_ object: Any?) -> Bool
     {
         if let customAttributes = object as? DashboardViewLayoutAttributes
         {

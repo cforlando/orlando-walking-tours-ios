@@ -17,17 +17,17 @@ class MagicalRecordModelService : ModelService
     // MARK: - Tours
     ////////////////////////////////////////////////////////////
 
-    func createTour(withName title: String, completion: ((_ uuid: NSUUID, _ success: Bool, _ error: NSError?) -> Void)?)
+    func createTour(withName title: String, completion: ((_ uuid: UUID, _ success: Bool, _ error: Error?) -> Void)?)
     {
-        let uuid = NSUUID()
-        MagicalRecord.saveWithBlock(
+        let uuid = UUID()
+        MagicalRecord.save(
         { localContext in
-            let tour = Tour.MR_createEntityInContext(localContext)
-            tour?.uuid = uuid.UUIDString
+            let tour = Tour.mr_createEntity(in: localContext)
+            tour?.uuid = uuid.uuidString
             tour?.title = title
         })
         { success, error in
-            completion?(uuid: uuid, success: success, error: error)
+            completion?(uuid, success, error)
         }
     }
 
@@ -35,9 +35,9 @@ class MagicalRecordModelService : ModelService
 
     func deleteTour(tour: Tour, completion: ModelServiceCompletionHandler?)
     {
-        MagicalRecord.saveWithBlock(
+        MagicalRecord.save(
         { localContext in
-            tour.MR_deleteEntityInContext(localContext)
+            tour.mr_deleteEntity(in: localContext)
         }, completion: completion)
     }
 
@@ -55,7 +55,7 @@ class MagicalRecordModelService : ModelService
 
     ////////////////////////////////////////////////////////////
 
-    func findTour(byUUID uuid: NSUUID, completion: (Tour?) -> Void)
+    func findTour(byUUID uuid: UUID, completion: (Tour?) -> Void)
     {
         if let tour = Tour.mr_findFirst(byAttribute: "uuid", withValue: uuid.uuidString)
         {
@@ -69,9 +69,9 @@ class MagicalRecordModelService : ModelService
 
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?)
     {
-        MagicalRecord.saveWithBlock(
+        MagicalRecord.save(
         { localContext in
-            let localLocation = HistoricLocation.MR_createEntityInContext(localContext)
+            let localLocation = HistoricLocation.mr_createEntity(in: localContext)
             localLocation?.address = location.address;
             localLocation?.localRegistryDate = location.localRegistryDate;
             localLocation?.locationTitle = location.locationTitle;
@@ -80,7 +80,7 @@ class MagicalRecordModelService : ModelService
             localLocation?.latitude = location.latitude;
             localLocation?.longitude = location.longitude;
 
-            let localTour = tour.MR_inContext(localContext)
+            let localTour = tour.mr_(in: localContext)
             localLocation?.tour = localTour
         }, completion: completion)
     }

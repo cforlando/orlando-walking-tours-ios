@@ -8,14 +8,14 @@
 
 import Foundation
 
-typealias ModelServiceCompletionHandler = (Bool, NSError?) -> Void
+typealias ModelServiceCompletionHandler = (Bool, Error?) -> Void
 
 protocol ModelService {
     
     func findAllTours() -> [Tour]?
-    func findTour(byUUID uuid: NSUUID, completion: (Tour?) -> Void)
+    func findTour(byUUID uuid: UUID, completion: (Tour?) -> Void)
 
-    func createTour(withName title: String, completion: ((_ uuid: NSUUID, _ success: Bool, _ error: NSError?) -> Void)?)
+    func createTour(withName title: String, completion: ((_ uuid: UUID, _ success: Bool, _ error: Error?) -> Void)?)
     func deleteTour(tour: Tour, completion: ModelServiceCompletionHandler?)
 
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?)

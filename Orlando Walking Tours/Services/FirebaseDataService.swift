@@ -13,7 +13,7 @@ import FirebaseStorage
 
 struct FirebaseDataService : DataService
 {
-    ////////////////////////////////////////////////////////////
+   ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
@@ -22,7 +22,7 @@ struct FirebaseDataService : DataService
 
     ////////////////////////////////////////////////////////////
 
-    func getLocations(completion: @escaping (_ locations: [HistoricLocation]) -> Void)
+    func getLocations(completion: @escaping ([HistoricLocation]) -> Void)
     {
         let historicLocationsRef = databaseRef.child("historic-locations").child("orlando")
 
@@ -51,7 +51,7 @@ struct FirebaseDataService : DataService
                                 location.locationTitle = title
                                 location.locationDescription = description
                                 location.address = address
-                                location.locationType = locationType
+                                location.locationType = locationType 
                             }
 
                             if let latitude = locationJSON["location"]["latitude"].double,

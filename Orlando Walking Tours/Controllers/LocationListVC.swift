@@ -93,13 +93,13 @@ class LocationListVC: UIViewController
 
         self.dataService.getLocations
         { locations in
-            let allLocations = locations.sort
+            let allLocations = locations.sorted
             {
-                $0.locationTitle <= $1.locationTitle
+                $0.locationTitle! <= $1.locationTitle!
             }
             DispatchQueue.main.async
             {
-                self.setAvailableTourLocations(allLocations)
+                self.setAvailableTourLocations(allLocations: allLocations)
                 UserLocationService.sharedService.startTracking
                 { userLocation in
                     if userLocation.coordinate != self.userLocation?.coordinate
@@ -208,9 +208,10 @@ class LocationListVC: UIViewController
                 var availableTourLocations = [HistoricLocation]()
                 for tourLoc in allLocations
                 {
-                    if !tourLocations.contains(
+                    if !tourLocations.contains(where:
                     {
-                            $0.locationTitle == tourLoc.locationTitle
+                        let a = $0 as! HistoricLocation
+                        return a.locationTitle == tourLoc.locationTitle
                     })
                     {
                         availableTourLocations.append(tourLoc)

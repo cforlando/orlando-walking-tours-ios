@@ -15,7 +15,7 @@ class InMemoryModelService : ModelService {
     init() {
         self.tours = []
     }
-    
+
     func seed(locations:[HistoricLocation]) {
         self.createTour(withName: "Classic Homes", completion: nil)
         self.createTour(withName: "City Buildings", completion: nil)
@@ -32,7 +32,7 @@ class InMemoryModelService : ModelService {
         return tours
     }
 
-    func findTour(byUUID uuid: NSUUID, completion: (Tour?) -> Void) {
+    func findTour(byUUID uuid: UUID, completion: (Tour?) -> Void) {
         for tour in tours {
             if tour.uuid! == uuid.uuidString {
                 completion(tour)
@@ -40,11 +40,11 @@ class InMemoryModelService : ModelService {
         }
     }
     
-    func createTour(withName title: String, completion: ((_ uuid: NSUUID, _ success: Bool, _ error: NSError?) -> Void)?) {
+    func createTour(withName title: String, completion: ((_ uuid: UUID, _ success: Bool, _ error: Error?) -> Void)?) {
         let newTour = Tour.mr_createEntity()!
         newTour.title = title
         tours.append(newTour)
-        completion?(NSUUID(), true, nil)
+        completion?(UUID(), true, nil)
     }
 
     func deleteTour(tour: Tour, completion: ModelServiceCompletionHandler?) {
@@ -87,7 +87,7 @@ class InMemoryModelService : ModelService {
             for locTemp in tour.historicLocations! {
                 let loc = locTemp as! HistoricLocation
                 if loc.sortOrder!.compare(sortOrder!) == ComparisonResult.orderedDescending {
-                    loc.sortOrder = NSNumber(int: (loc.sortOrder?.intValue)! - 1)
+                    loc.sortOrder = NSNumber(value: (loc.sortOrder?.int32Value)! - 1)
                 }
             }
         }

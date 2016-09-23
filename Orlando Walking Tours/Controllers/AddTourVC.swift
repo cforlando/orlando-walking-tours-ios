@@ -118,7 +118,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             if let navController = segue.destination as? UINavigationController,
                let vc = navController.topViewController as? LocationListVC
             {
-                if let uuid = sender as? NSUUID
+                if let uuid = sender as? UUID
                 {
                     modelService.findTour(byUUID: uuid)
                     { tour in

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="HistoricLocation" representedClassName=".HistoricLocation" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -19,7 +19,7 @@
         <relationship name="historicLocations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HistoricLocation" inverseName="tour" inverseEntity="HistoricLocation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="HistoricLocation" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="HistoricLocation" positionX="-63" positionY="-18" width="128" height="210"/>
         <element name="Tour" positionX="225" positionY="18" width="128" height="90"/>
     </elements>
 </model>
