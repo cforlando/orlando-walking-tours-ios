@@ -2,11 +2,11 @@ language: objective-c
 
 before_install:
   - rvm install 2.2.2 
-  - sudo gem install cocoapods -v '0.39.0'
+  - sudo gem install cocoapods --pre
 
-osx-image: xcode7.3
+osx-image: xcode8
 xcode_workspace: Orlando Walking Tours.xcworkspace
-xcode_sdk: iphonesimulator9.2
+xcode_sdk: iphonesimulator10.0
 podfile: Podfile
 
 notifications:
