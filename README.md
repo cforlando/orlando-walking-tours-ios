@@ -26,13 +26,9 @@ email: kelii.d.martin@gmail.com
 ## Requirements
 -----------
 - Xcode v7.3
-- Cocoapods v0.39.0 (IMPORTANT!)
+- Cocoapods v1.0.1
 
-To ensure that we don't run into any kind of dependency conflicts, it is imperative that everyone is using CocoaPods v0.39.0.  There have been some strange issues using CocoaPods v1.0.x with this project.  If you have a version of CocoaPods that is newer than v0.39.0, we ask that you first uninstall CocoaPods and reinstall v0.39.0.
-
-To uninstall CocoaPods, open your Terminal and enter `sudo gem uninstall cocoapods`, entering your password when prompted.  If you happen to have multiple version of CocoaPods installed, one of which is v0.39.0, then just uninstall the versions you don't need and leave v0.39.0.  Otherwise, uninstall all versions.  When prompted about removing the `pod` and `sandbox-pod` executables, enter `Y` and press Enter.  Then, you can install v0.39.0 by entering `sudo gem install cocoapods -v 0.39.0`.
-
-One all that is done, you should navigate to the project directory and run `pod install`.  Make sure you open the .xcworkspace for the project.
+To install CocoaPods, open your Terminal and enter `sudo gem install cocoapods`, entering your password when prompted.  Once that is done, you should navigate to the project directory and run `pod install`.  Make sure you open the .xcworkspace for the project.
 
 ## Want to contribute?
 -----------
