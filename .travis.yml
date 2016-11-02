@@ -2,7 +2,7 @@ language: objective-c
 
 before_install:
   - rvm install 2.2.2 
-  - sudo gem install cocoapods --pre
+  - sudo gem install cocoapods
 
 osx-image: xcode8
 xcode_workspace: Orlando Walking Tours.xcworkspace
