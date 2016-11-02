@@ -10,7 +10,7 @@
 
 **Data Source** The list of historic locations is currently stored [here](https://brigades.opendatanetwork.com/dataset/Orlando-Historical-Landmarks/hzkr-id6u).
 
-**Prototype** https://invis.io/WN7KGPF6F
+**Prototype** ~~https://invis.io/WN7KGPF6F~~
 
 **Other repositories:**
 - Orlando Walking Tours for Android: https://github.com/cforlando/orlando-walking-tours-android
@@ -26,11 +26,9 @@ email: kelii.d.martin@gmail.com
 ## Requirements
 -----------
 - Xcode v8.0
-- Cocoapods v1.1.0.rc.2
+- Cocoapods v1.1.0
 
-With the release of Xcode v8.0, a new version of CocoaPods is required.  Cocoapods v1.1.0.rc.2 is a pre-release version of Cocoapods with support for Xcode 8.0.
-
-In order to install this version of Cocoapods, enter the following into your Terminal: `sudo gem install cocoapods --pre`.
+In order to install this version of Cocoapods, enter the following into your Terminal: `sudo gem install cocoapods`.
 
 One all that is done, you should navigate to the project directory and run `pod install`.  Make sure you open the .xcworkspace for the project.
 
