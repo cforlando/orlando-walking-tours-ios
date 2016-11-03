@@ -22,15 +22,6 @@ case "${TARGETED_DEVICE_FAMILY}" in
     TARGET_DEVICE_ARGS="--target-device mac"
     ;;
 esac
-<<<<<<< HEAD
-
-realpath() {
-  DIRECTORY="$(cd "${1%/*}" && pwd)"
-  FILENAME="${1##*/}"
-  echo "$DIRECTORY/$FILENAME"
-}
-=======
->>>>>>> swift3
 
 install_resource()
 {
@@ -73,11 +64,7 @@ EOM
       xcrun mapc "$RESOURCE_PATH" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$RESOURCE_PATH" .xcmappingmodel`.cdm"
       ;;
     *.xcassets)
-<<<<<<< HEAD
-      ABSOLUTE_XCASSET_FILE=$(realpath "$RESOURCE_PATH")
-=======
       ABSOLUTE_XCASSET_FILE="$RESOURCE_PATH"
->>>>>>> swift3
       XCASSET_FILES+=("$ABSOLUTE_XCASSET_FILE")
       ;;
     *)

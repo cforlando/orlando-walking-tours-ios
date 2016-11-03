@@ -583,7 +583,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 780663FCD13F7C6227744C8C /* Pods-Orlando Walking Tours.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Orlando Walking Tours/Orlando Walking Tours.entitlements";
 				DEVELOPMENT_TEAM = 4X359D924E;
@@ -601,7 +601,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3C4B9123EBF7D76D0AE3804 /* Pods-Orlando Walking Tours.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Orlando Walking Tours/Orlando Walking Tours.entitlements";
 				DEVELOPMENT_TEAM = 4X359D924E;
