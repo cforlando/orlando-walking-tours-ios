@@ -46,13 +46,13 @@ class CurrentLocationTableViewCell: UITableViewCell, ReusableView
 
     ////////////////////////////////////////////////////////////
 
-    func loadImage(width width: CGFloat, height: CGFloat)
+    func loadImage(width: CGFloat, height: CGFloat)
     {
         loadingIndicator.startAnimating()
 
         request = UIImage.getPlaceholderImage(sized: Int(width), by: Int(height))
         { image in
-            self.populateCell(image!)
+            self.populateCell(image: image!)
         }
     }
 

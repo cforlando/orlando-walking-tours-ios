@@ -35,10 +35,10 @@ class LocationListVC: UIViewController
             {
             case .List:
                 viewController.tableView.shown = true
-                viewController.mapView.hidden = true
+                viewController.mapView.isHidden = true
             case .Map:
                 viewController.mapView.shown = true
-                viewController.tableView.hidden = true
+                viewController.tableView.isHidden = true
                 let zoomLevel = 1.0.asMeters
                 let mapRegion = MKCoordinateRegionMakeWithDistance(viewController.simulatedLocation.coordinate, zoomLevel, zoomLevel)
                 viewController.mapView.setRegion(mapRegion, animated: true)    // animate the zoom
@@ -59,7 +59,7 @@ class LocationListVC: UIViewController
     {
         didSet
         {
-            viewMode.update(self)
+            viewMode.update(viewController: self)
         }
     }
     
@@ -93,13 +93,13 @@ class LocationListVC: UIViewController
 
         self.dataService.getLocations
         { locations in
-            let allLocations = locations.sort
+            let allLocations = locations.sorted
             {
-                $0.locationTitle <= $1.locationTitle
+                $0.locationTitle! <= $1.locationTitle!
             }
-            dispatch_async(dispatch_get_main_queue())
+            DispatchQueue.main.async
             {
-                self.setAvailableTourLocations(allLocations)
+                self.setAvailableTourLocations(allLocations: allLocations)
                 UserLocationService.sharedService.startTracking
                 { userLocation in
                     if userLocation.coordinate != self.userLocation?.coordinate
@@ -118,17 +118,19 @@ class LocationListVC: UIViewController
     // MARK: - Navigation
     ////////////////////////////////////////////////////////////
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        super.prepareForSegue(segue, sender: sender)
+        super.prepare(for: segue, sender: sender)
         
-        if let navController = segue.destinationViewController as? UINavigationController
+        if let navController = segue.destination as? UINavigationController
         {
-            if let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "ShowCurrentTourSegue"
+            if let vc = navController.topViewController as? CurrentTourVC,
+                segue.identifier == "ShowCurrentTourSegue"
             {
                 vc.tour = self.tour
             }
-            else if let vc = navController.topViewController as? LocationDetailVC where segue.identifier == "ShowLocationDetailsSegue"
+            else if let vc = navController.topViewController as? LocationDetailVC,
+                segue.identifier == "ShowLocationDetailsSegue"
             {
                 if let indexPath = sender as? NSIndexPath
                 {
@@ -144,20 +146,20 @@ class LocationListVC: UIViewController
 
     @IBAction func addToTourPressed(sender: UIButton)
     {
-        if let cellView = sender.findSuperViewOfType(LocationTableViewCell) as? LocationTableViewCell
+        if let cellView = sender.findSuperViewOfType(superViewClass: LocationTableViewCell.self) as? LocationTableViewCell
         {
             let locationId = cellView.locationId
-            let locationIndex = self.locations.indexOf { $0.locationId == locationId }!
-            let location = self.locations.removeAtIndex(locationIndex)
+            let locationIndex = self.locations.index { $0.locationId == locationId }!
+            let location = self.locations.remove(at: locationIndex)
             if let tour = self.tour
             {
                 print("In addToTourPressed, localRegistryDate is \(location.localRegistryDate)")
-                modelService.addLocation(location, toTour: tour)
+                modelService.addLocation(location: location, toTour: tour)
                 { (ok, error) in
                     if ok
                     {
-                        let indexPath = NSIndexPath(forItem: locationIndex, inSection: 0)
-                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+                        let indexPath = IndexPath(item: locationIndex, section: 0)
+                        self.tableView.deleteRows(at: [indexPath], with: .right)
                         self.displayTour()
                     }
                     else
@@ -189,7 +191,7 @@ class LocationListVC: UIViewController
     
     @IBAction func doneBarButtonPressed(sender: UIBarButtonItem)
     {
-        performSegueWithIdentifier("ShowCurrentTourSegue", sender: nil)
+        performSegue(withIdentifier: "ShowCurrentTourSegue", sender: nil)
     }
 
     ////////////////////////////////////////////////////////////
@@ -206,9 +208,10 @@ class LocationListVC: UIViewController
                 var availableTourLocations = [HistoricLocation]()
                 for tourLoc in allLocations
                 {
-                    if !tourLocations.contains(
-                        {
-                            $0.locationTitle == tourLoc.locationTitle
+                    if !tourLocations.contains(where:
+                    {
+                        let a = $0 as! HistoricLocation
+                        return a.locationTitle == tourLoc.locationTitle
                     })
                     {
                         availableTourLocations.append(tourLoc)
@@ -233,11 +236,11 @@ class LocationListVC: UIViewController
             let locDist = locations.map
             { loc -> (CLLocationDistance, HistoricLocation) in
                 let siteLoc = loc.locationPoint
-                let distanceFromCur = siteLoc.distanceFromLocation(userLocation).asMiles
+                let distanceFromCur = siteLoc.distance(from: userLocation).asMiles
                 return (distanceFromCur, loc)
             }
             // now sort by distance
-            self.locations = locDist.sort
+            self.locations = locDist.sorted
             { (a,b) in
                 return a.0 <= b.0
             }
@@ -255,10 +258,10 @@ class LocationListVC: UIViewController
     {
         if let tour = self.tour
         {
-            let locationsByOrder = tour.historicLocations?.sort({
+            let locationsByOrder = tour.historicLocations?.sorted(by: {
                 let a = $0 as! HistoricLocation
                 let b = $1 as! HistoricLocation
-                return a.sortOrder?.compare(b.sortOrder!) == NSComparisonResult.OrderedAscending
+                return a.sortOrder?.compare(b.sortOrder!) == ComparisonResult.orderedAscending
             })
             if let locationsInOrder = locationsByOrder
             {
@@ -278,44 +281,44 @@ class LocationListVC: UIViewController
 
 extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.locations.count
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 70
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
         let location = locations[indexPath.row]
-        guard let locationCell = tableView.dequeueReusableCellWithIdentifier(LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell else
+        guard let locationCell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.reuseIdentifier) as? LocationTableViewCell else
         {
             return UITableViewCell()
         }
         
         locationCell.locationId = location.locationId
-        locationCell.configureImage(locationCell.locationThumbnail.frame)
+        locationCell.configureImage(frame: locationCell.locationThumbnail.frame)
         
         var locationTitle = location.locationTitle ?? ""
         if let userLocation = self.userLocation
         {
             let siteLoc = location.locationPoint
-            let distanceFromCur = siteLoc.distanceFromLocation(userLocation).asMiles
+            let distanceFromCur = siteLoc.distance(from: userLocation).asMiles
             locationTitle = String(format: "%@ (%0.1fmi)", locationTitle, distanceFromCur)
         }
         locationCell.locationTitle.text = locationTitle
@@ -325,9 +328,9 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         // TODO: Implement this function; should segue to the LocationDetail storyboard
-        performSegueWithIdentifier("ShowLocationDetailsSegue", sender: indexPath)
+        performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: indexPath)
     }
 }

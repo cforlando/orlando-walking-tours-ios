@@ -16,26 +16,26 @@ struct SocrataDataService : DataService
 
     ////////////////////////////////////////////////////////////
     
-    func getLocations(completion: (locations: [HistoricLocation]) -> Void)
+    func getLocations(completion: @escaping (_ locations: [HistoricLocation]) -> Void)
     {
         var locations = [HistoricLocation]()
 
-        Alamofire.request(.GET, locationsUrlString).validate().responseJSON
+        Alamofire.request(locationsUrlString).validate().responseJSON
         { response in
             switch response.result
             {
-            case .Success:
+            case .success:
                 if let value = response.result.value
                 {
                     let json = JSON(value)
                     for (_, subJson) in json
                     {
-                        let location = HistoricLocation.MR_createEntity()
+                        let location = HistoricLocation.mr_createEntity()
                         if let location = location
                         {
                             if let id = subJson["id"].string
                             {
-                                location.id = Int(id)
+                                location.id = NumberFormatter().number(from: id)
                             }
 
                             if let title = subJson["name"].string
@@ -60,31 +60,31 @@ struct SocrataDataService : DataService
                             
                             if let longitude = subJson["location"]["coordinates"][0].double
                             {
-                                location.longitude = longitude
+                                location.longitude = NSNumber(value: longitude)
                             }
                             
                             if let latitude = subJson["location"]["coordinates"][1].double
                             {
-                                location.latitude = latitude
+                                location.latitude = NSNumber(value: latitude)
                             }
                             
                             if let localRegistryDate = subJson["local"].string
                             {
-                                location.localRegistryDate = NSDateFormatter().dateFromString(localRegistryDate)
+                                location.localRegistryDate = DateFormatter().date(from: localRegistryDate) as NSDate?
                             }
                             
                             if let nrhpDate = subJson["nhrp"].string
                             {
-                                location.nrhpDate = NSDateFormatter().dateFromString(nrhpDate)
+                                location.nrhpDate = DateFormatter().date(from: nrhpDate) as NSDate?
                             }
                             
                             locations.append(location)
                         }
                     }
                     
-                    completion(locations: locations)
+                    completion(locations)
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
         }
@@ -92,7 +92,7 @@ struct SocrataDataService : DataService
 
     ////////////////////////////////////////////////////////////
 
-    func getPhotos(forLocation location: HistoricLocation, completion: [UIImage]? -> Void)
+    func getPhotos(forLocation location: HistoricLocation, completion: ([UIImage]?) -> Void)
     {
         completion(nil)
     }

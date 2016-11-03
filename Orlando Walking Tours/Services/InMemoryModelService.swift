@@ -15,42 +15,42 @@ class InMemoryModelService : ModelService {
     init() {
         self.tours = []
     }
-    
+
     func seed(locations:[HistoricLocation]) {
         self.createTour(withName: "Classic Homes", completion: nil)
         self.createTour(withName: "City Buildings", completion: nil)
         let cityTour = self.tours[1]
         // add some locations to tour
         // when printed to verify why were first two in reverse order?
-        self.addLocation(locations[0], toTour: cityTour, completion: nil)
-        self.addLocation(locations[2], toTour: cityTour, completion: nil)
-        self.addLocation(locations[3], toTour: cityTour, completion: nil)
-        self.addLocation(locations[5], toTour: cityTour, completion: nil)
+        self.addLocation(location: locations[0], toTour: cityTour, completion: nil)
+        self.addLocation(location: locations[2], toTour: cityTour, completion: nil)
+        self.addLocation(location: locations[3], toTour: cityTour, completion: nil)
+        self.addLocation(location: locations[5], toTour: cityTour, completion: nil)
     }
     
     func findAllTours() -> [Tour]? {
         return tours
     }
 
-    func findTour(byUUID uuid: NSUUID, completion: Tour? -> Void) {
+    func findTour(byUUID uuid: UUID, completion: (Tour?) -> Void) {
         for tour in tours {
-            if tour.uuid == uuid {
+            if tour.uuid! == uuid.uuidString {
                 completion(tour)
             }
         }
     }
     
-    func createTour(withName title: String, completion: ((uuid: NSUUID, success: Bool, error: NSError?) -> Void)?) {
-        let newTour = Tour.MR_createEntity()!
+    func createTour(withName title: String, completion: ((_ uuid: UUID, _ success: Bool, _ error: Error?) -> Void)?) {
+        let newTour = Tour.mr_createEntity()!
         newTour.title = title
         tours.append(newTour)
-        completion?(uuid: NSUUID(), success: true, error: nil)
+        completion?(UUID(), true, nil)
     }
 
-    func deleteTour(tour tour: Tour, completion: ModelServiceCompletionHandler?) {
+    func deleteTour(tour: Tour, completion: ModelServiceCompletionHandler?) {
         for localTour in tours {
             if localTour.uuid == tour.uuid {
-                localTour.MR_deleteEntity()
+                localTour.mr_deleteEntity()
                 completion?(true, nil)
                 break
             }
@@ -59,9 +59,9 @@ class InMemoryModelService : ModelService {
     
     func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?) {
         if let historicLocations = tour.historicLocations {
-            location.sortOrder = historicLocations.count
+            location.sortOrder = historicLocations.count as NSNumber?
             print("Tour \(tour.title) Loc: \(location.sortOrder) \(location.locationTitle)")
-            tour.historicLocations = historicLocations.setByAddingObject(location)
+            tour.historicLocations = historicLocations.adding(location) as NSSet?
         } else {
             location.sortOrder = 0
             tour.historicLocations = [location]
@@ -86,8 +86,8 @@ class InMemoryModelService : ModelService {
             // now update sortOrder of locations since we removed one
             for locTemp in tour.historicLocations! {
                 let loc = locTemp as! HistoricLocation
-                if loc.sortOrder!.compare(sortOrder!) == NSComparisonResult.OrderedDescending {
-                    loc.sortOrder = NSNumber(int: (loc.sortOrder?.intValue)! - 1)
+                if loc.sortOrder!.compare(sortOrder!) == ComparisonResult.orderedDescending {
+                    loc.sortOrder = NSNumber(value: (loc.sortOrder?.int32Value)! - 1)
                 }
             }
         }

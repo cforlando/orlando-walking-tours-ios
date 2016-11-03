@@ -29,7 +29,7 @@ public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool
 
 class TouchableLabel : UILabel {
     var didTouch: (() -> Void)!
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         didTouch()
     }
 }
@@ -65,10 +65,10 @@ extension UIView {
     // makes calling code easier to read in some cases
     var shown: Bool {
         get {
-            return !self.hidden
+            return !self.isHidden
         }
         set {
-            self.hidden = !newValue
+            self.isHidden = !newValue
         }
     }
 }

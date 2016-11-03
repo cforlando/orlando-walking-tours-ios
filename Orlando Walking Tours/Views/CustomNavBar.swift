@@ -10,7 +10,7 @@ import UIKit
 
 class CustomNavBar: UINavigationBar
 {
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
         if let navBarFont = UIFont(name: "Ubuntu", size: 18.0)
         {

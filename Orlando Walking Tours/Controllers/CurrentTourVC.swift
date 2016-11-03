@@ -56,7 +56,7 @@ class CurrentTourVC: UIViewController
 
     ////////////////////////////////////////////////////////////
 
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         self.loadLocations()
@@ -68,24 +68,26 @@ class CurrentTourVC: UIViewController
 
     @IBAction func addMoreLocationsTapped(sender: UIBarButtonItem)
     {
-        performSegueWithIdentifier("AddMoreLocationsSegue", sender: nil)
+        performSegue(withIdentifier: "AddMoreLocationsSegue", sender: nil)
     }
 
     ////////////////////////////////////////////////////////////
     // MARK: - Navigation
     ////////////////////////////////////////////////////////////
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        super.prepareForSegue(segue, sender: sender)
+        super.prepare(for: segue, sender: sender)
 
-        if let navController = segue.destinationViewController as? UINavigationController
+        if let navController = segue.destination as? UINavigationController
         {
-            if let vc = navController.topViewController as? LocationListVC where segue.identifier == "AddMoreLocationsSegue"
+            if let vc = navController.topViewController as? LocationListVC,
+                segue.identifier == "AddMoreLocationsSegue"
             {
                 vc.tour = self.tour
             }
-            else if let vc = navController.topViewController as? LocationDetailVC where segue.identifier == "ShowLocationDetailsSegue"
+            else if let vc = navController.topViewController as? LocationDetailVC,
+                segue.identifier == "ShowLocationDetailsSegue"
             {
                 if let indexPath = sender as? NSIndexPath
                 {
@@ -112,37 +114,37 @@ class CurrentTourVC: UIViewController
 
 extension CurrentTourVC: UITableViewDelegate, UITableViewDataSource
 {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.tour?.historicLocations?.count ?? 0
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 70
     }
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let location = self.locations[indexPath.row]
 
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(CurrentLocationTableViewCell.reuseIdentifier, forIndexPath: indexPath) as? CurrentLocationTableViewCell else
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrentLocationTableViewCell.reuseIdentifier, for: indexPath) as? CurrentLocationTableViewCell else
         {
             return UITableViewCell()
         }
         
-        cell.configureImage(cell.locationThumbnail.frame)
+        cell.configureImage(frame: cell.locationThumbnail.frame)
         cell.locationLabel.text = location.locationTitle
         cell.addressLabel.text = location.address
 
@@ -151,8 +153,8 @@ extension CurrentTourVC: UITableViewDelegate, UITableViewDataSource
 
     ////////////////////////////////////////////////////////////
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        performSegueWithIdentifier("ShowLocationDetailsSegue", sender: indexPath)
+        performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: indexPath)
     }
 }

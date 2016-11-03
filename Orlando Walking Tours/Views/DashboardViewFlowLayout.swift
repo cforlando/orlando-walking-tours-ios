@@ -26,8 +26,18 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
 
         get
         {
-            let itemWidth = CGRectGetWidth(self.collectionView!.frame) / 2.0
-            return CGSizeMake(itemWidth, itemWidth)
+            let itemWidth = self.collectionView!.frame.width / 2.0
+            return CGSize(width: itemWidth, height: itemWidth)
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    override class var layoutAttributesClass: AnyClass
+    {
+        get
+        {
+            return DashboardViewLayoutAttributes.self
         }
     }
 
@@ -53,7 +63,7 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
     {
         minimumInteritemSpacing = 0
         minimumLineSpacing = 0
-        scrollDirection = .Vertical
+        scrollDirection = .vertical
     }
 
     ////////////////////////////////////////////////////////////
@@ -63,23 +73,16 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
         if let collectionView = self.collectionView,
            let delegate = collectionView.delegate as? DashboardViewLayoutDelegate
         {
-            return delegate.isDeletionModeActiveForCollectionView(collectionView, layout: self)
+            return delegate.isDeletionModeActiveForCollectionView(collectionView: collectionView, layout: self)
         }
         return false
     }
 
     ////////////////////////////////////////////////////////////
 
-    override class func layoutAttributesClass() -> AnyClass
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?
     {
-        return DashboardViewLayoutAttributes.self
-    }
-
-    ////////////////////////////////////////////////////////////
-
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes?
-    {
-        if let attributes = super.layoutAttributesForItemAtIndexPath(indexPath) as? DashboardViewLayoutAttributes
+        if let attributes = super.layoutAttributesForItem(at: indexPath) as? DashboardViewLayoutAttributes
         {
             attributes.deleteButtonHidden = isDeletionModeOn() ? false : true
             return attributes
@@ -90,9 +93,9 @@ class DashboardViewFlowLayout: UICollectionViewFlowLayout
 
     ////////////////////////////////////////////////////////////
 
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]?
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?
     {
-        if let attributesArrayInRect = super.layoutAttributesForElementsInRect(rect)
+        if let attributesArrayInRect = super.layoutAttributesForElements(in: rect)
         {
             for attributes in attributesArrayInRect
             {

@@ -53,7 +53,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             self.tours = tours
         }
 
-        self.newTourView.hidden = (self.tours.count > 0)
+        self.newTourView.isHidden = (self.tours.count > 0)
     }
 
     ////////////////////////////////////////////////////////////
@@ -67,10 +67,10 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     // MARK: - UIGestureRecognizerDelegate
     ////////////////////////////////////////////////////////////
 
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
     {
-        let point = touch.locationInView(self.collectionView)
-        let indexPath = self.collectionView.indexPathForItemAtPoint(point)
+        let point = touch.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: point)
         if ((indexPath != nil) && (gestureRecognizer is UITapGestureRecognizer))
         {
             return false
@@ -81,11 +81,11 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     ////////////////////////////////////////////////////////////
 
-    func activateDeletionMode(gestureRecognizer: UILongPressGestureRecognizer)
+    func activateDeletionMode(_ gestureRecognizer: UILongPressGestureRecognizer)
     {
-        if gestureRecognizer.state == .Began
+        if gestureRecognizer.state == .began
         {
-            if (self.collectionView.indexPathForItemAtPoint(gestureRecognizer.locationInView(self.collectionView)) != nil)
+            if (self.collectionView.indexPathForItem(at: gestureRecognizer.location(in: self.collectionView)) != nil)
             {
                 self.isDeletionModeActive = true
                 let layout = self.collectionView.collectionViewLayout as! DashboardViewFlowLayout
@@ -96,11 +96,11 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     ////////////////////////////////////////////////////////////
 
-    func endDeletionMode(tapRecognizer: UITapGestureRecognizer)
+    func endDeletionMode(_ tapRecognizer: UITapGestureRecognizer)
     {
         if self.isDeletionModeActive
         {
-            if (self.collectionView.indexPathForItemAtPoint(tapRecognizer.locationInView(self.collectionView)) == nil)
+            if (self.collectionView.indexPathForItem(at: tapRecognizer.location(in: self.collectionView)) == nil)
             {
                 self.isDeletionModeActive = false
                 let layout = self.collectionView.collectionViewLayout as! DashboardViewFlowLayout
@@ -111,20 +111,20 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     ////////////////////////////////////////////////////////////
 
-    func deleteTour(sender: UIButton)
+    func deleteTour(_ sender: UIButton)
     {
         if let cell = sender.superview?.superview as? DashboardCollectionViewCell
         {
-            let alertController = UIAlertController(title: "Are you sure?", message: "Are you sure you want to delete \(cell.tourName.text!)?", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Are you sure?", message: "Are you sure you want to delete \(cell.tourName.text!)?", preferredStyle: .alert)
 
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive)
             { action in
-                if let indexPath = self.collectionView.indexPathForCell(cell)
+                if let indexPath = self.collectionView.indexPath(for: cell)
                 {
                     self.modelService.deleteTour(tour: self.tours[indexPath.item])
                     { (success, error) in
-                        self.tours.removeAtIndex(indexPath.item)
+                        self.tours.remove(at: indexPath.item)
                         self.collectionView.reloadData()
                     }
                 }
@@ -133,7 +133,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             alertController.addAction(cancelAction)
             alertController.addAction(deleteAction)
 
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
         }
     }
 
@@ -141,11 +141,11 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     // MARK: - UICollectionViewDataSource
     ////////////////////////////////////////////////////////////
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        if (self.tours.count == 0) && (self.newTourView.hidden)
+        if (self.tours.count == 0) && (self.newTourView.isHidden)
         {
-            self.newTourView.hidden = false
+            self.newTourView.isHidden = false
         }
 
         return (self.tours.count > 0) ? self.tours.count + 1 : self.tours.count
@@ -153,18 +153,18 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     ////////////////////////////////////////////////////////////
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         if indexPath.item == self.tours.count
         {
-            return collectionView.dequeueReusableCellWithReuseIdentifier(AddTourCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as! AddTourCollectionViewCell
+            return collectionView.dequeueReusableCell(withReuseIdentifier: AddTourCollectionViewCell.reuseIdentifier, for: indexPath) as! AddTourCollectionViewCell
         }
         else
         {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DashboardCollectionViewCell.reuseIdentifier, forIndexPath: indexPath) as! DashboardCollectionViewCell
-            cell.configureImage(cell.frame)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashboardCollectionViewCell.reuseIdentifier, for: indexPath) as! DashboardCollectionViewCell
+            cell.configureImage(frame: cell.frame)
             cell.tourName?.text = self.tours[indexPath.item].title
-            cell.deleteButton.addTarget(self, action: #selector(DashboardVC.deleteTour(_:)), forControlEvents: .TouchUpInside)
+            cell.deleteButton.addTarget(self, action: #selector(DashboardVC.deleteTour(_:)), for: .touchUpInside)
             return cell
         }
     }
@@ -173,14 +173,14 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     // MARK: - UICollectionViewDelegate
     ////////////////////////////////////////////////////////////
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        performSegueWithIdentifier("CurrentTourSegue", sender: self.tours[indexPath.item])
+        performSegue(withIdentifier: "CurrentTourSegue", sender: self.tours[indexPath.item])
     }
 
     ////////////////////////////////////////////////////////////
 
-    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool
     {
         return (isDeletionModeActive) ? false : true
     }
@@ -198,12 +198,13 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     // MARK: - Navigation
     ////////////////////////////////////////////////////////////
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        super.prepareForSegue(segue, sender: sender)
+        super.prepare(for: segue, sender: sender)
         
-        if let navController = segue.destinationViewController as? UINavigationController,
-           let vc = navController.topViewController as? CurrentTourVC where segue.identifier == "CurrentTourSegue"
+        if let navController = segue.destination as? UINavigationController,
+           let vc = navController.topViewController as? CurrentTourVC,
+            segue.identifier == "CurrentTourSegue"
         {
             vc.tour = sender as? Tour
         }

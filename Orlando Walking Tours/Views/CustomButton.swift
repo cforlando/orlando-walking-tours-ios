@@ -20,7 +20,7 @@ class CustomButton: UIButton
     {
         didSet
         {
-            self.backgroundColor = setColor(colorCode)
+            self.backgroundColor = setColor(colorCode: colorCode)
         }
     }
 
@@ -38,7 +38,7 @@ class CustomButton: UIButton
     {
         didSet
         {
-            self.tintColor = setColor(fontColor)
+            self.tintColor = setColor(colorCode: fontColor)
         }
     }
 
@@ -65,7 +65,7 @@ class CustomButton: UIButton
         case 8:
             return UIColor.dividerColor()
         default:
-            return UIColor.blackColor()
+            return UIColor.black
         }
     }
 }

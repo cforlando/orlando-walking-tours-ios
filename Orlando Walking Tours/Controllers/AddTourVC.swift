@@ -21,7 +21,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
-    let notificationCenter = NSNotificationCenter.defaultCenter()
+    let notificationCenter = NotificationCenter.default
     lazy var modelService: ModelService = MagicalRecordModelService()
 
     ////////////////////////////////////////////////////////////
@@ -33,12 +33,12 @@ class AddTourVC: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
 
         tourNameTextField.delegate = self
-        notificationCenter.addObserver(self, selector: #selector(AddTourVC.handleTextFieldDidChangeNotification(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(AddTourVC.handleTextFieldDidChangeNotification(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }
 
     ////////////////////////////////////////////////////////////
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         tourNameTextField.becomeFirstResponder()
     }
@@ -47,15 +47,15 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     // MARK: - UITextFieldDelegate
     ////////////////////////////////////////////////////////////
 
-    func textFieldShouldClear(textField: UITextField) -> Bool
+    func textFieldShouldClear(_ textField: UITextField) -> Bool
     {
-        self.addTourButton.enabled = false
+        self.addTourButton.isEnabled = false
         return true
     }
 
     ////////////////////////////////////////////////////////////
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         return true
     }
@@ -70,7 +70,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
         { uuid, success, error in
             if success
             {
-                self.performSegueWithIdentifier("ShowLocationListSegue", sender: uuid)
+                self.performSegue(withIdentifier: "ShowLocationListSegue", sender: uuid)
             }
             else
             {
@@ -87,18 +87,18 @@ class AddTourVC: UIViewController, UITextFieldDelegate
     {
         tourNameTextField.resignFirstResponder()
         removeTextFieldObserver()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     ////////////////////////////////////////////////////////////
     // MARK: - Helper functions
     ////////////////////////////////////////////////////////////
 
-    func handleTextFieldDidChangeNotification(notification: NSNotification)
+    func handleTextFieldDidChangeNotification(_ notification: NSNotification)
     {
         if let textField = notification.object as? UITextField
         {
-            self.addTourButton.enabled = textField.text?.characters.count >= 1
+            self.addTourButton.isEnabled = (textField.text?.characters.count)! >= 1
         }
     }
 
@@ -106,19 +106,19 @@ class AddTourVC: UIViewController, UITextFieldDelegate
 
     func removeTextFieldObserver()
     {
-        notificationCenter.removeObserver(self, name: UITextFieldTextDidChangeNotification, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }
 
     ////////////////////////////////////////////////////////////
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "ShowLocationListSegue"
         {
-            if let navController = segue.destinationViewController as? UINavigationController,
+            if let navController = segue.destination as? UINavigationController,
                let vc = navController.topViewController as? LocationListVC
             {
-                if let uuid = sender as? NSUUID
+                if let uuid = sender as? UUID
                 {
                     modelService.findTour(byUUID: uuid)
                     { tour in

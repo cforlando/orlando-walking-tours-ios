@@ -34,13 +34,13 @@ class LocationDetailVC: UIViewController
     {
         super.viewDidLoad()
 
-        localDateLabel.hidden = false
-        nationalDateLabel.hidden = false
+        localDateLabel.isHidden = false
+        nationalDateLabel.isHidden = false
     }
 
     ////////////////////////////////////////////////////////////
 
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
 
@@ -53,25 +53,25 @@ class LocationDetailVC: UIViewController
         addressLabel.text = location.address ?? ""
         locationDescriptionLabel.text = location.locationDescription ?? ""
 
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .LongStyle
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
 
         if let localDate = location.localRegistryDate
         {
-            localDateLabel.text = "Added to Orlando Historic Registry on \(formatter.stringFromDate(localDate))"
+            localDateLabel.text = "Added to Orlando Historic Registry on \(formatter.string(from: localDate as Date))"
         }
         else
         {
-            localDateLabel.hidden = true
+            self.localDateLabel.isHidden = true
         }
 
         if let nationalDate = location.nrhpDate
         {
-            nationalDateLabel.text = "Added to National Historic Registry on \(formatter.stringFromDate(nationalDate))"
+            nationalDateLabel.text = "Added to National Historic Registry on \(formatter.string(from: nationalDate as Date))"
         }
         else
         {
-            nationalDateLabel.hidden = true
+            nationalDateLabel.isHidden = true
         }
     }
     ////////////////////////////////////////////////////////////
@@ -80,6 +80,6 @@ class LocationDetailVC: UIViewController
 
     @IBAction func backButtonTapped(sender: AnyObject)
     {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

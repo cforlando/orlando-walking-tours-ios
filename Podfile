@@ -3,9 +3,9 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Orlando Walking Tours' do
-  pod 'Alamofire', '~> 3.3'
-  pod 'AlamofireImage', '~> 2.0'
-  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+  pod 'Alamofire', '~> 4.0'
+  pod 'AlamofireImage', '~> 3.0'
+  pod 'SwiftyJSON'
   pod 'MagicalRecord'
   pod 'Firebase'
   pod 'Firebase/Database'
