@@ -14,7 +14,7 @@ extension UIImage
 {
     class func getPlaceholderImage(sized width: Int, by height: Int, completion: @escaping ((UIImage?) -> Void)) -> Request
     {
-        let urlString = "https://unsplash.it/\(width)/\(height)?random"
+        let urlString = "https://placehold.it/\(width)x\(height)"
 
         return Alamofire.request(urlString).responseImage
         { response in
