@@ -162,7 +162,7 @@ class LocationListVC: UIViewController
             let location = self.locations.remove(at: locationIndex)
             if let tour = self.tour
             {
-                modelService.add(location, to: tour)
+                modelService.add(location: location, to: tour)
                 { (ok, error) in
                     if ok
                     {

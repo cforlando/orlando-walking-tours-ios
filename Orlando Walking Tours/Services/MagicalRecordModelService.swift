@@ -33,7 +33,7 @@ class MagicalRecordModelService : ModelService
 
     ////////////////////////////////////////////////////////////
 
-    func deleteTour(tour: Tour, completion: ModelServiceCompletionHandler?)
+    func deleteTour(_ tour: Tour, completion: ModelServiceCompletionHandler?)
     {
         MagicalRecord.save(
         { localContext in
@@ -55,7 +55,7 @@ class MagicalRecordModelService : ModelService
 
     ////////////////////////////////////////////////////////////
 
-    func findTour(byUUID uuid: UUID, completion: (Tour?) -> Void)
+    func findTour(by uuid: UUID, completion: (Tour?) -> Void)
     {
         if let tour = Tour.mr_findFirst(byAttribute: "uuid", withValue: uuid.uuidString)
         {
@@ -67,7 +67,7 @@ class MagicalRecordModelService : ModelService
     // MARK: - HistoricLocations
     ////////////////////////////////////////////////////////////
 
-    func add(_ location: HistoricLocation, to tour: Tour, completion: ModelServiceCompletionHandler?)
+    func add(location: HistoricLocation, to tour: Tour, completion: ModelServiceCompletionHandler?)
     {
         MagicalRecord.save(
         { localContext in
@@ -101,7 +101,7 @@ class MagicalRecordModelService : ModelService
     ////////////////////////////////////////////////////////////
 
     // !!! Needs work, update sortOrder, etc
-    func removeLocation(location: HistoricLocation, fromTour tour: Tour, completion: ModelServiceCompletionHandler?)
+    func remove(location: HistoricLocation, from tour: Tour, completion: ModelServiceCompletionHandler?)
     {
         let locations = tour.historicLocations?.filter
         {
