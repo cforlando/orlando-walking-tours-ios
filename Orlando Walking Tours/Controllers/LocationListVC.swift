@@ -285,9 +285,9 @@ class LocationListVC: UIViewController
     func sortAlphabetically()
     {
         self.locations.sort
-        { (firstLocation, secondLocation) -> Bool in
-            guard let firstLocationTitle = firstLocation.locationTitle,
-                let secondLocationTitle = secondLocation.locationTitle else
+        {
+            guard let firstLocationTitle = $0.locationTitle,
+                let secondLocationTitle = $1.locationTitle else
             {
                 return false
             }
