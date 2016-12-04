@@ -18,8 +18,9 @@ class LocationListVC: UIViewController
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
-//    @IBOutlet weak var closestToMe: TouchableLabel!
+    @IBOutlet weak var closestToMe: TouchableLabel!
     @IBOutlet weak var viewBarButton: UIBarButtonItem!
+    @IBOutlet weak var sortButton: UIButton!
 
     ////////////////////////////////////////////////////////////
     // MARK: - Enumerations
@@ -52,6 +53,13 @@ class LocationListVC: UIViewController
     }
 
     ////////////////////////////////////////////////////////////
+
+    enum SortOrder
+    {
+        case alphabetical, byLocation
+    }
+
+    ////////////////////////////////////////////////////////////
     // MARK: - Properties
     ////////////////////////////////////////////////////////////
 
@@ -71,6 +79,7 @@ class LocationListVC: UIViewController
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
+    var sortingOrder: SortOrder = .alphabetical
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -153,8 +162,7 @@ class LocationListVC: UIViewController
             let location = self.locations.remove(at: locationIndex)
             if let tour = self.tour
             {
-                print("In addToTourPressed, localRegistryDate is \(location.localRegistryDate)")
-                modelService.addLocation(location: location, toTour: tour)
+                modelService.add(location: location, to: tour)
                 { (ok, error) in
                     if ok
                     {
@@ -192,6 +200,26 @@ class LocationListVC: UIViewController
     @IBAction func doneBarButtonPressed(sender: UIBarButtonItem)
     {
         performSegue(withIdentifier: "ShowCurrentTourSegue", sender: nil)
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    @IBAction func sortButtonTapped(_ sender: Any)
+    {
+        if self.sortingOrder == .byLocation
+        {
+            self.sortAlphabetically()
+            self.sortButton.setTitle("Current Location", for: .normal)
+            self.sortingOrder = .alphabetical
+        }
+        else
+        {
+            self.sortClosestToMe()
+            self.sortButton.setTitle("Location Name", for: .normal)
+            self.sortingOrder = .byLocation
+        }
+
+        self.tableView.reloadData()
     }
 
     ////////////////////////////////////////////////////////////
@@ -249,6 +277,22 @@ class LocationListVC: UIViewController
             { (dist, loc) in
                 return loc
             }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func sortAlphabetically()
+    {
+        self.locations.sort
+        {
+            guard let firstLocationTitle = $0.locationTitle,
+                let secondLocationTitle = $1.locationTitle else
+            {
+                return false
+            }
+
+            return firstLocationTitle.localizedCaseInsensitiveCompare(secondLocationTitle) == ComparisonResult.orderedAscending
         }
     }
 
@@ -330,7 +374,6 @@ extension LocationListVC : UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        // TODO: Implement this function; should segue to the LocationDetail storyboard
         performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: indexPath)
     }
 }

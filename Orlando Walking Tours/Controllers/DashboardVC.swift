@@ -122,7 +122,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             { action in
                 if let indexPath = self.collectionView.indexPath(for: cell)
                 {
-                    self.modelService.deleteTour(tour: self.tours[indexPath.item])
+                    self.modelService.deleteTour(self.tours[indexPath.item])
                     { (success, error) in
                         self.tours.remove(at: indexPath.item)
                         self.collectionView.reloadData()

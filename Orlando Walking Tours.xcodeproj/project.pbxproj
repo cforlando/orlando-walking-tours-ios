@@ -51,7 +51,6 @@
 		42EE07191D3537F200B79384 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE07181D3537F200B79384 /* CustomNavBar.swift */; };
 		42F2E69D1D1B42C0000EC385 /* AddTourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F2E69C1D1B42C0000EC385 /* AddTourCollectionViewCell.swift */; };
 		BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */; };
-		BFA485C71D270BE800918D0B /* InMemoryModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C31D270BE800918D0B /* InMemoryModelService.swift */; };
 		BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */; };
 		BFA485CA1D270BE800918D0B /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485C61D270BE800918D0B /* UserLocationService.swift */; };
 		BFA485CC1D270C7700918D0B /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA485CB1D270C7700918D0B /* ModelService.swift */; };
@@ -75,7 +74,6 @@
 		427BFDC71D95E17A000D9815 /* HistoricLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HistoricLocation+CoreDataProperties.swift"; path = "Models/HistoricLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		427BFDC81D95E17A000D9815 /* Tour+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataClass.swift"; path = "Models/Tour+CoreDataClass.swift"; sourceTree = "<group>"; };
 		427BFDC91D95E17A000D9815 /* Tour+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tour+CoreDataProperties.swift"; path = "Models/Tour+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		427BFDCE1D95E26F000D9815 /* Orlando Walking Tours.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Orlando Walking Tours.entitlements"; sourceTree = "<group>"; };
 		42863A571D16FA970014707B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Views/CustomButton.swift; sourceTree = "<group>"; };
 		42863A5A1D16FE070014707B /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ThemeColors.swift"; path = "Extensions/UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		42863A5C1D16FE890014707B /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HexColor.swift"; path = "Extensions/UIColor+HexColor.swift"; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		780663FCD13F7C6227744C8C /* Pods-Orlando Walking Tours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orlando Walking Tours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Orlando Walking Tours/Pods-Orlando Walking Tours.debug.xcconfig"; sourceTree = "<group>"; };
 		7B9B2FA2AEC8D13C62A24E83 /* Pods_Orlando_Walking_Tours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orlando_Walking_Tours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA485C11D270B4900918D0B /* LocationListVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVCExtensions.swift; path = Extensions/LocationListVCExtensions.swift; sourceTree = "<group>"; };
-		BFA485C31D270BE800918D0B /* InMemoryModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InMemoryModelService.swift; path = Services/InMemoryModelService.swift; sourceTree = "<group>"; };
 		BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicalRecordModelService.swift; path = Services/MagicalRecordModelService.swift; sourceTree = "<group>"; };
 		BFA485C61D270BE800918D0B /* UserLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocationService.swift; path = Services/UserLocationService.swift; sourceTree = "<group>"; };
 		BFA485CB1D270C7700918D0B /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelService.swift; path = Services/ModelService.swift; sourceTree = "<group>"; };
@@ -159,7 +156,6 @@
 				42760F521D18C8B7007BA422 /* DataService.swift */,
 				42760F531D18C8B7007BA422 /* FirebaseDataService.swift */,
 				42760F541D18C8B7007BA422 /* SocrataDataService.swift */,
-				BFA485C31D270BE800918D0B /* InMemoryModelService.swift */,
 				BFA485CB1D270C7700918D0B /* ModelService.swift */,
 				BFA485C51D270BE800918D0B /* MagicalRecordModelService.swift */,
 				BFA485C61D270BE800918D0B /* UserLocationService.swift */,
@@ -228,7 +224,6 @@
 		42CBE2271CDA8CE400F9E6D5 /* Orlando Walking Tours */ = {
 			isa = PBXGroup;
 			children = (
-				427BFDCE1D95E26F000D9815 /* Orlando Walking Tours.entitlements */,
 				42863A591D16FDE80014707B /* Extensions */,
 				42052F261D13789A00F28CC4 /* Views */,
 				42C0C7551D0329CE00073F90 /* Storyboards */,
@@ -334,7 +329,7 @@
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -458,7 +453,6 @@
 				BFA485C91D270BE800918D0B /* MagicalRecordModelService.swift in Sources */,
 				BFA485CA1D270BE800918D0B /* UserLocationService.swift in Sources */,
 				427BFDCB1D95E17A000D9815 /* HistoricLocation+CoreDataProperties.swift in Sources */,
-				BFA485C71D270BE800918D0B /* InMemoryModelService.swift in Sources */,
 				BFA485CC1D270C7700918D0B /* ModelService.swift in Sources */,
 				BFA485CE1D270CE400918D0B /* LocationTableViewCell.swift in Sources */,
 				BFA485C21D270B4900918D0B /* LocationListVCExtensions.swift in Sources */,
@@ -585,7 +579,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Orlando Walking Tours/Orlando Walking Tours.entitlements";
 				DEVELOPMENT_TEAM = 4X359D924E;
 				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -603,7 +596,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Orlando Walking Tours/Orlando Walking Tours.entitlements";
 				DEVELOPMENT_TEAM = 4X359D924E;
 				INFOPLIST_FILE = "Orlando Walking Tours/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

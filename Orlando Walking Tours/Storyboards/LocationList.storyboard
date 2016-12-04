@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ooj-j4-Cky">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ooj-j4-Cky">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,30 +25,36 @@
                         <viewControllerLayoutGuide type="bottom" id="bGo-78-wxn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8kL-Sk-AyZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-XH-kG5"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-XH-kG5">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-OY-qWd">
+                                <rect key="frame" x="0.0" y="108" width="414" height="628"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" rowHeight="71" id="eHe-sY-qHX" customClass="LocationTableViewCell" customModule="Orlando_Walking_Tours" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eHe-sY-qHX" id="gUW-PC-37p">
-                                            <frame key="frameInset" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-6X-sUu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="JrP-Vd-Er6"/>
                                                         <constraint firstAttribute="height" constant="70" id="di6-ik-QgI"/>
                                                     </constraints>
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Je5-Ru-5Wp">
+                                                    <rect key="frame" x="25" y="25" width="20" height="20"/>
                                                     <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlp-FJ-Gek" customClass="CustomButton" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                                                    <rect key="frame" x="78" y="31.999999999999996" width="150" height="30.666666666666661"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="kcn-c3-TwC"/>
                                                         <constraint firstAttribute="height" constant="30" id="xfd-Bg-PhR"/>
@@ -68,6 +77,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title (0.2 mi)" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bz2-nc-q98">
+                                                    <rect key="frame" x="78" y="8" width="328" height="17"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -94,11 +104,11 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="J3l-Zi-VJZ"/>
+                                                    <exclude reference="OMr-5i-a69"/>
                                                     <exclude reference="40h-K8-VZC"/>
                                                     <exclude reference="Wcx-k1-uBN"/>
                                                     <exclude reference="nn6-4d-WaT"/>
-                                                    <exclude reference="J3l-Zi-VJZ"/>
-                                                    <exclude reference="OMr-5i-a69"/>
                                                     <exclude reference="JTt-QF-bsd"/>
                                                     <exclude reference="qr9-Fh-IfX"/>
                                                 </mask>
@@ -113,17 +123,51 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-op-S54">
+                                <rect key="frame" x="0.0" y="64" width="414" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="j0K-iy-iZo">
+                                        <rect key="frame" x="8" y="5.6666666666666714" width="398" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhH-jh-Qt0">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="32"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZo-ck-DPO">
+                                                <rect key="frame" x="130" y="0.0" width="268" height="32"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                <state key="normal" title="Current Location"/>
+                                                <connections>
+                                                    <action selector="sortButtonTapped:" destination="5MQ-KI-ABR" eventType="touchUpInside" id="rsV-an-njU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="j0K-iy-iZo" firstAttribute="leading" secondItem="vFv-op-S54" secondAttribute="leading" constant="8" id="5af-eA-ZmO"/>
+                                    <constraint firstAttribute="trailing" secondItem="j0K-iy-iZo" secondAttribute="trailing" constant="8" id="GaW-rZ-sr6"/>
+                                    <constraint firstAttribute="height" constant="44" id="dEb-3B-GKU"/>
+                                    <constraint firstItem="j0K-iy-iZo" firstAttribute="centerY" secondItem="vFv-op-S54" secondAttribute="centerY" id="uxy-pN-KnX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vFv-op-S54" secondAttribute="trailing" id="2q8-zB-HKu"/>
+                            <constraint firstItem="V9x-OY-qWd" firstAttribute="top" secondItem="vFv-op-S54" secondAttribute="bottom" id="DMp-9U-RVe"/>
+                            <constraint firstItem="vFv-op-S54" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" id="MpV-uS-teZ"/>
                             <constraint firstItem="bGo-78-wxn" firstAttribute="top" secondItem="xcH-XH-kG5" secondAttribute="bottom" id="QoG-BQ-haj"/>
                             <constraint firstItem="bGo-78-wxn" firstAttribute="top" secondItem="V9x-OY-qWd" secondAttribute="bottom" id="Ss8-Kn-qPH"/>
                             <constraint firstItem="xcH-XH-kG5" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" id="VZU-4V-um9"/>
                             <constraint firstAttribute="trailing" secondItem="V9x-OY-qWd" secondAttribute="trailing" id="Xpg-EY-fEt"/>
                             <constraint firstItem="xcH-XH-kG5" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="cIt-Mv-MhL"/>
                             <constraint firstItem="V9x-OY-qWd" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="d1l-7e-LoR"/>
-                            <constraint firstItem="V9x-OY-qWd" firstAttribute="top" secondItem="syA-He-Kgz" secondAttribute="bottom" id="dDs-bo-KsP"/>
                             <constraint firstAttribute="trailing" secondItem="xcH-XH-kG5" secondAttribute="trailing" id="kYf-eV-RnD"/>
+                            <constraint firstItem="vFv-op-S54" firstAttribute="leading" secondItem="8kL-Sk-AyZ" secondAttribute="leading" id="ppg-l9-7IB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour Name" id="Ays-ud-8KI">
@@ -140,6 +184,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="xcH-XH-kG5" id="Jo8-hg-ikv"/>
+                        <outlet property="sortButton" destination="aZo-ck-DPO" id="TY5-Mp-DZV"/>
                         <outlet property="tableView" destination="V9x-OY-qWd" id="7Sk-pn-yUy"/>
                         <outlet property="viewBarButton" destination="IBU-Ri-NbR" id="oBs-3z-nhq"/>
                         <segue destination="5pm-x6-ywn" kind="showDetail" identifier="ShowCurrentTourSegue" id="jhr-an-TKe"/>
@@ -148,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiV-2O-6nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="1137"/>
+            <point key="canvasLocation" x="1446.376811594203" y="1136.413043478261"/>
         </scene>
         <!--CurrentTour-->
         <scene sceneID="zU5-6M-j2H">
@@ -171,7 +216,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ooj-j4-Cky" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SvB-0v-x64" customClass="CustomNavBar" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SvB-0v-x64" customClass="CustomNavBar" customModule="Orlando_Walking_Tours" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
