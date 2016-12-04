@@ -22,10 +22,10 @@ class InMemoryModelService : ModelService {
         let cityTour = self.tours[1]
         // add some locations to tour
         // when printed to verify why were first two in reverse order?
-        self.addLocation(location: locations[0], toTour: cityTour, completion: nil)
-        self.addLocation(location: locations[2], toTour: cityTour, completion: nil)
-        self.addLocation(location: locations[3], toTour: cityTour, completion: nil)
-        self.addLocation(location: locations[5], toTour: cityTour, completion: nil)
+        self.add(locations[0], to: cityTour, completion: nil)
+        self.add(locations[2], to: cityTour, completion: nil)
+        self.add(locations[3], to: cityTour, completion: nil)
+        self.add(locations[5], to: cityTour, completion: nil)
     }
     
     func findAllTours() -> [Tour]? {
@@ -57,7 +57,7 @@ class InMemoryModelService : ModelService {
         }
     }
     
-    func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?) {
+    func add(_ location: HistoricLocation, to tour: Tour, completion: ModelServiceCompletionHandler?) {
         if let historicLocations = tour.historicLocations {
             location.sortOrder = historicLocations.count as NSNumber?
             print("Tour \(tour.title) Loc: \(location.sortOrder) \(location.locationTitle)")

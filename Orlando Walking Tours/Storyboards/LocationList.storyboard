@@ -104,11 +104,11 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="J3l-Zi-VJZ"/>
+                                                    <exclude reference="OMr-5i-a69"/>
                                                     <exclude reference="40h-K8-VZC"/>
                                                     <exclude reference="Wcx-k1-uBN"/>
                                                     <exclude reference="nn6-4d-WaT"/>
-                                                    <exclude reference="J3l-Zi-VJZ"/>
-                                                    <exclude reference="OMr-5i-a69"/>
                                                     <exclude reference="JTt-QF-bsd"/>
                                                     <exclude reference="qr9-Fh-IfX"/>
                                                 </mask>

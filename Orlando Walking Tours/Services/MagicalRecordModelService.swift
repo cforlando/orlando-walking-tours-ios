@@ -67,7 +67,7 @@ class MagicalRecordModelService : ModelService
     // MARK: - HistoricLocations
     ////////////////////////////////////////////////////////////
 
-    func addLocation(location: HistoricLocation, toTour tour: Tour, completion: ModelServiceCompletionHandler?)
+    func add(_ location: HistoricLocation, to tour: Tour, completion: ModelServiceCompletionHandler?)
     {
         MagicalRecord.save(
         { localContext in

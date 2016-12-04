@@ -79,7 +79,7 @@ class LocationListVC: UIViewController
     var userLocation: CLLocation?
     // Exchange Building
     let simulatedLocation = CLLocation(latitude: 28.540951, longitude: -81.381265)
-    var sortOrder: SortOrder = .alphabetical
+    var sortingOrder: SortOrder = .alphabetical
 
     ////////////////////////////////////////////////////////////
     // MARK: - View Controller Life Cycle
@@ -162,8 +162,7 @@ class LocationListVC: UIViewController
             let location = self.locations.remove(at: locationIndex)
             if let tour = self.tour
             {
-                print("In addToTourPressed, localRegistryDate is \(location.localRegistryDate)")
-                modelService.addLocation(location: location, toTour: tour)
+                modelService.add(location, to: tour)
                 { (ok, error) in
                     if ok
                     {
@@ -207,19 +206,23 @@ class LocationListVC: UIViewController
 
     @IBAction func sortButtonTapped(_ sender: Any)
     {
-        if self.sortOrder == .byLocation
+        if self.sortingOrder == .byLocation
         {
-            self.displayTour()
+            self.sortAlphabetically()
             self.sortButton.setTitle("Current Location", for: .normal)
-            self.sortOrder = .alphabetical
+            self.sortingOrder = .alphabetical
         }
         else
         {
             self.sortClosestToMe()
             self.sortButton.setTitle("Location Name", for: .normal)
-            self.sortOrder = .byLocation
+            self.sortingOrder = .byLocation
         }
-        self.tableView.reloadData()
+
+        DispatchQueue.main.async
+        {
+            self.tableView.reloadData()
+        }
     }
 
     ////////////////////////////////////////////////////////////
@@ -277,6 +280,18 @@ class LocationListVC: UIViewController
             { (dist, loc) in
                 return loc
             }
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func sortAlphabetically()
+    {
+        self.locations.sort
+        {
+            let a = $0
+            let b = $1
+            return a.locationTitle?.localizedCaseInsensitiveCompare(b.locationTitle!) == ComparisonResult.orderedAscending
         }
     }
 
