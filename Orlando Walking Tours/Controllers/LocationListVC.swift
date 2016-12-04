@@ -219,10 +219,7 @@ class LocationListVC: UIViewController
             self.sortingOrder = .byLocation
         }
 
-        DispatchQueue.main.async
-        {
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
     }
 
     ////////////////////////////////////////////////////////////
@@ -288,10 +285,14 @@ class LocationListVC: UIViewController
     func sortAlphabetically()
     {
         self.locations.sort
-        {
-            let a = $0
-            let b = $1
-            return a.locationTitle?.localizedCaseInsensitiveCompare(b.locationTitle!) == ComparisonResult.orderedAscending
+        { (firstLocation, secondLocation) -> Bool in
+            guard let firstLocationTitle = firstLocation.locationTitle,
+                let secondLocationTitle = secondLocation.locationTitle else
+            {
+                return false
+            }
+
+            return firstLocationTitle.localizedCaseInsensitiveCompare(secondLocationTitle) == ComparisonResult.orderedAscending
         }
     }
 
