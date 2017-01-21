@@ -92,7 +92,7 @@ struct SocrataDataService : DataService
 
     ////////////////////////////////////////////////////////////
 
-    func getPhotos(forLocation location: HistoricLocation, completion: ([UIImage]?) -> Void)
+    func getPhotos(for location: HistoricLocation, at path: String, completion: ([UIImage]?) -> Void)
     {
         completion(nil)
     }

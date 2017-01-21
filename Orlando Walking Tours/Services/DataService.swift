@@ -12,5 +12,5 @@ import UIKit
 protocol DataService
 {
     func getLocations(completion: @escaping (_ locations: [HistoricLocation]) -> Void)
-    func getPhotos(forLocation location: HistoricLocation, completion: ([UIImage]?) -> Void)
+    func getPhotos(for location: HistoricLocation, at path: String, completion: ([UIImage]?) -> Void)
 }
