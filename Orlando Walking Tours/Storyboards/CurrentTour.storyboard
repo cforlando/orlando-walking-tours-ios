@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Alx-a6-fGM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Alx-a6-fGM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khI-Qq-eQw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="khI-Qq-eQw">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="Dkz-oQ-opO"/>
@@ -54,13 +54,13 @@
                                                     <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dik-AZ-eD5">
-                                                    <rect key="frame" x="78" y="8" width="289" height="19.5"/>
+                                                    <rect key="frame" x="78" y="8" width="289" height="20"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzp-iZ-cgf">
-                                                    <rect key="frame" x="78" y="-25" width="55" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzp-iZ-cgf">
+                                                    <rect key="frame" x="78" y="46" width="55" height="17"/>
                                                     <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                     <navigationItem key="navigationItem" title="Tour Name" id="9rV-P1-ppd">
                         <barButtonItem key="leftBarButtonItem" title="Home" id="fy2-ce-Ywe">
                             <connections>
-                                <segue destination="R2F-Oc-uLd" kind="show" id="6Ly-Ng-kyk"/>
+                                <action selector="homeTapped:" destination="lFh-Wr-8MB" id="bPb-kb-kCm"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lT7-jV-qjd">
@@ -117,9 +117,11 @@
                         <outlet property="tableView" destination="8OX-7d-IdT" id="dAZ-yn-2Gf"/>
                         <segue destination="aTk-40-LDv" kind="show" identifier="AddMoreLocationsSegue" id="yXs-PV-Ad0"/>
                         <segue destination="ee0-ME-WfT" kind="showDetail" identifier="ShowLocationDetailsSegue" id="Emo-Xi-Vfh"/>
+                        <segue destination="XEr-iq-mlz" kind="unwind" identifier="unwindToDashboard" unwindAction="unwindToDashboardWithUnwindseque:" id="4sM-ty-Qzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rft-Of-uiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XEr-iq-mlz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1613.5" y="480.5"/>
         </scene>
@@ -130,14 +132,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKv-fD-fkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2223.5" y="223"/>
-        </scene>
-        <!--Dashboard-->
-        <scene sceneID="1nK-jM-v4W">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" id="R2F-Oc-uLd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CFT-bz-iQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2219" y="331"/>
         </scene>
         <!--LocationDetails-->
         <scene sceneID="4Je-Rl-kXd">
@@ -152,7 +146,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Alx-a6-fGM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sVC-sn-WrL" customClass="CustomNavBar" customModule="Orlando_Walking_Tours" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sVC-sn-WrL" customClass="CustomNavBar" customModule="Orlando_Walking_Tours" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -166,4 +160,7 @@
             <point key="canvasLocation" x="803" y="482"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image_placeholder" width="100" height="100"/>
+    </resources>
 </document>

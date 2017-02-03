@@ -58,6 +58,20 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     ////////////////////////////////////////////////////////////
 
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        if let tours = modelService.findAllTours()
+        {
+            self.tours = tours
+        }
+        self.collectionView.reloadData()
+
+        self.newTourView.isHidden = (self.tours.count > 0)
+    }
+
+    ////////////////////////////////////////////////////////////
+
     @IBAction func newTourPressed(sender: UIButton)
     {
         
@@ -125,6 +139,10 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
                     self.modelService.deleteTour(self.tours[indexPath.item])
                     { (success, error) in
                         self.tours.remove(at: indexPath.item)
+                        if self.tours.count == 0
+                        {
+                            self.isDeletionModeActive = false
+                        }
                         self.collectionView.reloadData()
                     }
                 }
@@ -208,5 +226,12 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         {
             vc.tour = sender as? Tour
         }
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    @IBAction func unwindToDashboard(unwindseque: UIStoryboardSegue)
+    {
+        
     }
 }
