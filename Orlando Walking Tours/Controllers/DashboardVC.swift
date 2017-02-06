@@ -48,12 +48,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         tap.delegate = self
         self.collectionView.addGestureRecognizer(tap)
 
-        if let tours = modelService.findAllTours()
-        {
-            self.tours = tours
-        }
-
-        self.newTourView.isHidden = (self.tours.count > 0)
+        self.populateDataSource()
     }
 
     ////////////////////////////////////////////////////////////
@@ -61,13 +56,7 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        if let tours = modelService.findAllTours()
-        {
-            self.tours = tours
-        }
-        self.collectionView.reloadData()
-
-        self.newTourView.isHidden = (self.tours.count > 0)
+        self.populateDataSource()
     }
 
     ////////////////////////////////////////////////////////////
@@ -75,6 +64,19 @@ class DashboardVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     @IBAction func newTourPressed(sender: UIButton)
     {
         
+    }
+
+    ////////////////////////////////////////////////////////////
+
+    func populateDataSource()
+    {
+        if let tours = modelService.findAllTours()
+        {
+            self.tours = tours
+        }
+        self.collectionView.reloadData()
+
+        self.newTourView.isHidden = (self.tours.count > 0)
     }
 
     ////////////////////////////////////////////////////////////
