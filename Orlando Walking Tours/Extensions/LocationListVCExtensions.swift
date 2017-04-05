@@ -12,11 +12,11 @@ import CoreLocation
 
 extension HistoricLocation {
     var locationId: String {
-        return String(format: "%f%f", latitude! as Double, longitude! as Double)
+        return String(format: "%f%f", latitude! as! Double, longitude! as! Double)
     }
     // might cache this on HistoricLocation
     var locationPoint: CLLocation {
-        return CLLocation(latitude: self.latitude! as Double, longitude: self.longitude! as Double)
+        return CLLocation(latitude: self.latitude! as! Double, longitude: self.longitude! as! Double)
     }
 }
 

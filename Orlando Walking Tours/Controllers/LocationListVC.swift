@@ -306,7 +306,7 @@ class LocationListVC: UIViewController
                 for loc in locationsInOrder
                 {
                     let tourLoc = loc as! HistoricLocation
-                    print("  \(tourLoc.sortOrder) \(tourLoc.locationTitle)")
+                    print("  \(tourLoc.sortOrder ?? 0) \(tourLoc.locationTitle ?? "")")
                 }
             }
         }

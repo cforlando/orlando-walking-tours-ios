@@ -107,7 +107,7 @@ class DashboardCollectionViewCell: UICollectionViewCell, ReusableView
     func startQuivering()
     {
         let quiverAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        let startAngle = (-2) * M_PI / 180.0
+        let startAngle = (-2) * .pi / 180.0
         let stopAngle = -startAngle
         quiverAnimation.fromValue = startAngle
         quiverAnimation.toValue = 2 * stopAngle
