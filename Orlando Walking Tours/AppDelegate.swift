@@ -9,6 +9,8 @@
 import UIKit
 import MagicalRecord
 import Firebase
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         MagicalRecord.setupCoreDataStack(withAutoMigratingSqliteStoreNamed: "WalkingTours.sqlite")
         FIRApp.configure()
+        Fabric.with([Crashlytics.self])
         
         return true
     }

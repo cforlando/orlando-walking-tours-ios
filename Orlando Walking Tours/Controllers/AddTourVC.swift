@@ -74,7 +74,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             }
             else
             {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(error?.localizedDescription ?? "Unknown error")")
             }
         }
 
