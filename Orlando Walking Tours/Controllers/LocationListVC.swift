@@ -91,13 +91,6 @@ class LocationListVC: UIViewController
         tableView.dataSource = self
         tableView.delegate = self
 
-        // TODO: Need to re-implement the "closestToMe" functionality
-//        closestToMe.didTouch =
-//        {
-//            self.sortClosestToMe()
-//            self.tableView.reloadData()
-//        }
-
         self.navigationItem.title = self.tour?.title ?? ""
 
         self.dataService.getLocations
@@ -130,7 +123,7 @@ class LocationListVC: UIViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         super.prepare(for: segue, sender: sender)
-        
+
         if let navController = segue.destination as? UINavigationController
         {
             if let vc = navController.topViewController as? CurrentTourVC,
@@ -146,6 +139,7 @@ class LocationListVC: UIViewController
                     vc.location = locations[indexPath.row]
                 }
             }
+
         }
     }
 
@@ -168,7 +162,7 @@ class LocationListVC: UIViewController
                     {
                         let indexPath = IndexPath(item: locationIndex, section: 0)
                         self.tableView.deleteRows(at: [indexPath], with: .right)
-                        self.displayTour()
+                        //self.displayTour()
                     }
                     else
                     {

@@ -120,7 +120,7 @@ class AddTourVC: UIViewController, UITextFieldDelegate
             {
                 if let uuid = sender as? UUID
                 {
-                    modelService.findTour(byUUID: uuid)
+                    modelService.findTour(by: uuid)
                     { tour in
                         vc.tour = tour
                     }

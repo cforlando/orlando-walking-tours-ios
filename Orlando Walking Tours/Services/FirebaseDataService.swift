@@ -10,6 +10,8 @@ import Foundation
 import SwiftyJSON
 import Firebase
 import FirebaseStorage
+import Alamofire
+import AlamofireImage
 
 struct FirebaseDataService : DataService
 {
@@ -19,6 +21,7 @@ struct FirebaseDataService : DataService
 
     let databaseRef = FIRDatabase.database().reference()
     let storageRef = FIRStorage.storage().reference(forURL: "gs://orlando-walking-tours.appspot.com")
+    let imageCache = AutoPurgingImageCache()
 
     ////////////////////////////////////////////////////////////
 
@@ -84,7 +87,7 @@ struct FirebaseDataService : DataService
 
     ////////////////////////////////////////////////////////////
 
-    func getPhotos(forLocation location: HistoricLocation, completion: ([UIImage]?) -> Void)
+    func getPhotos(for location: HistoricLocation, at path: String, completion: ([UIImage]?) -> Void)
     {
         // TODO: Implement this function
         completion(nil)

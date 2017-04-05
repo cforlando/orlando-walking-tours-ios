@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ooj-j4-Cky">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ooj-j4-Cky">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-6X-sUu">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LWv-6X-sUu">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="JrP-Vd-Er6"/>
@@ -104,11 +104,11 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="J3l-Zi-VJZ"/>
-                                                    <exclude reference="OMr-5i-a69"/>
                                                     <exclude reference="40h-K8-VZC"/>
                                                     <exclude reference="Wcx-k1-uBN"/>
                                                     <exclude reference="nn6-4d-WaT"/>
+                                                    <exclude reference="J3l-Zi-VJZ"/>
+                                                    <exclude reference="OMr-5i-a69"/>
                                                     <exclude reference="JTt-QF-bsd"/>
                                                     <exclude reference="qr9-Fh-IfX"/>
                                                 </mask>
@@ -130,13 +130,13 @@
                                         <rect key="frame" x="8" y="5.6666666666666714" width="398" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhH-jh-Qt0">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="133.66666666666666" height="32"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZo-ck-DPO">
-                                                <rect key="frame" x="130" y="0.0" width="268" height="32"/>
+                                                <rect key="frame" x="133.66666666666669" y="0.0" width="264.33333333333337" height="32"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                 <state key="normal" title="Current Location"/>
                                                 <connections>
@@ -230,4 +230,7 @@
             <point key="canvasLocation" x="635" y="1137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image_placeholder" width="100" height="100"/>
+    </resources>
 </document>
