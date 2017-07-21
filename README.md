@@ -1,4 +1,4 @@
-# Orlando Walking Tours for iOS [![Build Status](https://travis-ci.org/cforlando/orlando-walking-tours-ios.svg?branch=master)](https://travis-ci.org/cforlando/orlando-walking-tours-ios)[![Code Climate](https://codeclimate.com/github/cforlando/orlando-walking-tours-ios/badges/gpa.svg)](https://codeclimate.com/github/cforlando/orlando-walking-tours-ios)
+# Orlando Walking Tours for iOS [![Build Status](https://travis-ci.org/cforlando/orlando-walking-tours-ios.svg?branch=develop)](https://travis-ci.org/cforlando/orlando-walking-tours-ios)
 -----------
 ## About
 -----------
