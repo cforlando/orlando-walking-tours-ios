@@ -3,48 +3,37 @@
 --------
 The purpose of the Orlando Walking Tours app is to provide users with the opportunity to put together their own self-guided walking tour of Orlando's many historic buildings and signs.  The following list details the features we would like to have implemented in order to release a minimum viable product (MVP).
 
-##### Dashboard View
+### Tours
 ----
-- The user shall be able to create a new walking tour.
-- The dasboard shall display up to 6 images of various locations once a user creates a tour.
-- The user shall be able to delete tours from the dashboard.
+- A tour shall consist of, at minimum, a name for the tour and 1 or more locations.
+- The user shall be able to create a new tour.
+- The user shall be able to save tours.
+- The user shall be able to delete tours they have previously created.
+- The user *must* provide a name for new tours.
+- The user shall be able to add locations to their tour.
+- The user *must* add at least one location to their tour.
+- The user shall be able to remove locations from their tour.
+- The user shall be able to manually rearrange locations in their tour.
+- The user shall be able to view the locations in their tour on a map.
+- The user shall be able to view the locations in their tour in a list
+- Once a tour has been created, the user shall be given the option to start their tour.
+  - The user shall be given walking directions from one location to the next in the order that said locations are listed in the tour.
 
-##### New Tour View
+### Locations
 ----
-- The user shall be able to give their new tour a name.
-
-##### Current Tour View
-----
-- The user shall be able to add historic locations to their tour.
-- The user shall be able to delete historic locations from their tour.
-- The user shall be able to manually re-order the historic locations in their tour.
-- The user shall be able to view locations in their tour in either a list view or a map view.
-
-##### Map View of Locations *
-----
-- The user shall be able to view all historic locations on a map view.
-- The user shall see a thumbnail image and name for each location in a map call out.
-
-##### List/Table View of Locations *
-----
-- The user shall be able to view all historic locations in a list view/table view.
-- When viewing locations in list view, the list shall be sortable by distance from the user's current location.
-- The user shall see a thumbnail image of each location in the list view.
-- A loading indicator shall be displayed while the list of locations is loading.
-- The user shall be able to add a location in the list view to their tour, when applicable.
-- If a user adds a location from the list view to their tour, that location shall be removed from the list view.
-- The user shall be able to delete a location in the list view from their tour, when applicable.
-
-##### Location Detail View
-----
-- The user shall be able to view a detailed description of each historic location.
-- This detailed location view shall contain one or more photos of the location, a map view showing where the location is, the name of the location, the address of the location, a description of the location, the date when the locations was added to either the Orlando Historic Landmarks or the National Registry of Historic Places, if applicable, as well as a button to save that location to the user's tour, if applicable.
-- The save button on the loation detail view shall only be available if the location has not already been added to the user's tour.
-- Tapping on the map view shall bring up a full screen map of the area.
-
-##### Under the Hood
-----
-- The user's tours shall be saved to a persistent store on the user's device.
-
-
-* These views shall be used both when the user is selecting locations to put into their tours and also to display the locations in a tour that has already been created.
+- A location shall consist of the following properties:
+  - a name
+  - an address
+  - a description
+  - latitude/longitude coordinates
+  - one or more photos
+- Locations may also contain one or both of the following properties:
+  - the date on which it was added to Orlando's list of Historic Local Landmarks and Landmark Signs
+  - the date on which it was added to the National Registry of Historic Places
+- The user shall be able to view all locations on a map.
+  - Tapping on the place marker of a location on the map shall display a callout consisting of a thumbnail image and the name of the location.
+  - Tapping on this callout shall bring the user to a view showing detailed information about the location.
+- The user shall be able to view all locations in a list.
+  - Each list item shall consist of a thumbnail image of the location as well as the name of the location.
+  - Tapping on a list item for a location shall bring the user to a view showing detailed information about the location.
+  - The user shall be given the option to sort locations by distance from the user's current location.
