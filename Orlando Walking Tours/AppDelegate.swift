@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         MagicalRecord.setupCoreDataStack(withAutoMigratingSqliteStoreNamed: "WalkingTours.sqlite")
         FIRApp.configure()
-        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self, Answers.self])
         
         return true
     }

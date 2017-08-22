@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.3.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - Crashlytics (3.8.4):
+  - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - Firebase (3.12.0):
@@ -58,7 +58,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Firebase: 8e99eb1ff553ad5bcc6072cc3d925bb89c1244d6
   FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
@@ -75,4 +75,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6d88def0f83dfd93e5bd76cb20960cbe309bc3ef
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
