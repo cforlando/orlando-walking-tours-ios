@@ -137,6 +137,7 @@ extension CurrentTourVC: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
     {
+        tableView.rowHeight = UITableViewAutomaticDimension
         return 70
     }
 
